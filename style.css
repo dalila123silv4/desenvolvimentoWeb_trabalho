@@ -205,3 +205,153 @@ nav ul li a:hover {
     background-color: #218838;
     /* Verde mais escuro no hover */
 }
+
+
+/* --- 5. Estilo da Página de Produtos (Filtros + Grade) --- */
+
+.pagina-produtos {
+    max-width: 1200px;
+    /* Limita a largura máxima do conteúdo */
+    margin: 20px auto;
+    /* Centraliza a página */
+    padding: 0 20px;
+    /* Espaçamento lateral */
+    /* === A MÁGICA DO LAYOUT DE DUAS COLUNAS === */
+    display: flex;
+    gap: 30px;
+    /* Espaço entre os filtros e os produtos */
+}
+
+
+/* --- Barra Lateral de Filtros --- */
+
+.filtros {
+    /* Define o tamanho base da barra. Não vai encolher. */
+    flex-basis: 250px;
+    flex-shrink: 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Para o layout interno dos filtros */
+    height: fit-content;
+    /* Faz a altura se ajustar ao conteúdo */
+}
+
+.filtros h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.filtros h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    /* Espaço acima de "Categorias" e "Preço" */
+}
+
+.filtros ul {
+    list-style: none;
+    /* Remove bolinhas */
+}
+
+.filtros li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    /* Alinha o checkbox com o texto */
+}
+
+.filtros li label {
+    margin-left: 8px;
+    /* Espaço entre o checkbox e o texto */
+}
+
+
+/* --- Seção de "Todos os Produtos" --- */
+
+.todos-os-produtos {
+    /* Diz para esta seção "crescer" e ocupar todo o
+       espaço restante à direita. */
+    flex-grow: 1;
+}
+
+.todos-os-produtos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* AVISO: Nós já estilizamos ".grid-produtos" e ".produto"
+   antes, então não precisamos fazer de novo! O CSS vai
+   reaproveitar esses estilos automaticamente.
+*/
+
+
+/* --- 6. Estilo do Acordeão de Filtros --- */
+
+
+/* O botão "clicável" (Categorias, Preço) */
+
+.filtro-trigger {
+    background-color: #f9f9f9;
+    /* Fundo levemente cinza */
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    width: 100%;
+    /* Ocupa toda a largura da sidebar */
+    /* Faz o "H3" e o "+" ficarem em lados opostos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    /* Alinha o h3 à esquerda */
+    cursor: pointer;
+    /* Mãozinha */
+    margin-top: 10px;
+}
+
+.filtro-trigger h3 {
+    margin: 0;
+    /* Remove margens do h3 */
+    font-size: 18px;
+}
+
+.filtro-trigger span {
+    font-size: 24px;
+    /* Tamanho do "+" */
+    font-weight: bold;
+}
+
+
+/* O conteúdo que será escondido */
+
+.filtro-conteudo {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-top: none;
+    /* Remove a borda de cima */
+    /* === A MÁGICA DE ESCONDER === */
+    display: none;
+}
+
+
+/* === A MÁGICA DE MOSTRAR === */
+
+
+/* Quando o JS adicionar a classe "ativo", 
+   o conteúdo vai aparecer! */
+
+.filtro-conteudo.ativo {
+    display: block;
+    /* Volta a ser um bloco visível */
+}
+
+
+/* Muda o ícone de "+" para "-" quando estiver ativo */
+
+.filtro-trigger.ativo span {
+    content: "−";
+    /* Símbolo de menos */
+}
