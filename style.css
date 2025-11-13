@@ -104,7 +104,7 @@ nav ul li a:hover {
 .grid-produtos {
     display: grid;
     /* Os cards vão se ajustar sozinhos à tela */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
