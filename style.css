@@ -383,3 +383,26 @@ nav ul li a:hover {
     margin-bottom: 15px;
     /* Espaço abaixo da imagem */
 }
+
+
+/* --- 7. Estilo do Rodapé (Footer) --- */
+
+footer {
+    background-color: #333;
+    /* Um fundo escuro (igual ao seu banner) */
+    color: #f4f4f4;
+    /* Um texto claro (quase branco) */
+    padding: 30px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza os textos */
+    margin-top: 50px;
+    /* Cria um espaço entre os produtos e o rodapé */
+}
+
+footer p {
+    margin: 5px 0;
+    /* Um pequeno espaço entre as linhas de texto */
+    font-size: 0.9em;
+    /* Deixa a fonte um pouco menor que o normal */
+}
