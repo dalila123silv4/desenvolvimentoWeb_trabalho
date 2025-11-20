@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DY fitwear</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>DY fitwear</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Feminino</a></li>
+                <li><a href="#">Masculino</a></li>
+                <li><a href="#">Conjuntos</a></li>
+                <li><a href="login.html" style="color: #000; border-bottom: 2px solid #000;">Login</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <h2>Bem-vindo(a) de volta!</h2>
+                <p>Acesse sua conta para ver seus pedidos.</p>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="********" required>
+                    </div>
+
+                    <div id="msgError" class="msg-error"></div>
+
+                    <div class="actions">
+                        <a href="recuperar-senha.html" class="forgot-pass">Esqueci minha senha</a>
+                    </div>
+
+                    <button type="submit" class="btn-login">ENTRAR</button>
+                </form>
+
+                <div class="register-link">
+                    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DY fitwear</h3>
+                <p>Com muito estilo e conforto queremos que vocês se sintam lindas para aproveitar todo momento DY FITWEAR por aí.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="contato.html"><i class="fa-solid fa-chevron-right"></i> Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i> contato@DYfitwear.com.br</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Redes Sociais</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> @DYfitwear</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <div class="copyright">
+                <p>Copyright ©2025 DY FITWEAR LTDA</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

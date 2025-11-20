@@ -1,17 +1,59 @@
+/* --- 1. Estilos Globais --- */
+
+
+/* 1. HTML e BODY para ocupar 100% da viewport */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove padding padrão */
+}
+
+
+/* 2. BODY como container Flexbox Vertical */
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* Organiza os filhos (header, main, footer) verticalmente */
+}
+
+
+/* 3. MAIN para expandir e preencher o espaço restante */
+
+main {
+    flex-grow: 1;
+    /* Faz com que o 'main' use todo o espaço vertical disponível, empurrando o footer para baixo */
+}
+
+
+/* Opcional: Ajuste de altura no footer para estética */
+
+footer.site-footer {
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
+
+
+/* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
 
 header {
     background-color: #fff;
@@ -23,7 +65,10 @@ header {
 }
 
 .logo h1 {
-    font-size: 28px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-transform: none;
     color: #222;
 }
 
@@ -50,39 +95,16 @@ nav ul li a:hover {
 
 /* --- 3. Estilo do Banner Principal --- */
 
-.banner {
-    background-color: #333;
-    color: #fff;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.banner-principal {
+    width: 100%;
+    margin-bottom: 50px;
+    background-color: #000;
 }
 
-.banner h2 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    font-size: 20px;
-    margin-bottom: 25px;
-}
-
-.btn-promo {
-    background-color: #fff;
-    color: #333;
-    padding: 12px 24px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn-promo:hover {
-    background-color: #e9e9e9;
+.banner-principal img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 
@@ -91,6 +113,8 @@ nav ul li a:hover {
 .produtos-destaque {
     padding: 40px 30px;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .produtos-destaque h2 {
@@ -98,35 +122,20 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-
-/* === CORREÇÃO 1: GRADE RESPONSIVA === */
-
 .grid-produtos {
     display: grid;
-    /* Os cards vão se ajustar sozinhos à tela */
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-
-
-/* === CORREÇÃO 2: LAYOUT DO CARD === */
-
-
-/* Estilo individual de cada "card" de produto */
 
 .produto {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    /* O 'padding' e 'text-align' foram removidos daqui */
+    overflow: hidden;
+    position: relative;
+    /* Importante para o slider */
 }
-
-
-/* Esta regra para 'produto img' não é mais necessária */
-
-
-/* A classe 'produto-info' (que você adiciona no HTML) 
-   recebe o padding e o alinhamento */
 
 .produto-info {
     padding: 20px;
@@ -146,7 +155,7 @@ nav ul li a:hover {
 }
 
 
-/* Este é o botão VERDE de "Adicionar ao Carrinho" */
+/* Estilo padrão do botão "Adicionar ao Carrinho" */
 
 .produto button {
     background-color: #28a745;
@@ -166,205 +175,20 @@ nav ul li a:hover {
 }
 
 
-/* --- 5. Estilo da Página de Produtos (Filtros + Grade) --- */
+/* --- 5. Estilo do Slider (Imagens) --- */
 
-.pagina-produtos {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-    display: flex;
-    gap: 30px;
-}
-
-
-/* --- Barra Lateral de Filtros --- */
-
-.filtros {
-    flex-basis: 250px;
-    flex-shrink: 0;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    height: fit-content;
-}
-
-.filtros h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-.filtros h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-}
-
-.filtros ul {
-    list-style: none;
-}
-
-.filtros li {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-}
-
-.filtros li label {
-    margin-left: 8px;
-}
-
-
-/* --- Seção de "Todos os Produtos" --- */
-
-.todos-os-produtos {
-    flex-grow: 1;
-}
-
-.todos-os-produtos h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-
-/* --- 6. Estilo do Acordeão de Filtros --- */
-
-.filtro-trigger {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 10px 15px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.filtro-trigger h3 {
-    margin: 0;
-    font-size: 18px;
-}
-
-.filtro-trigger span {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.filtro-conteudo {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-top: none;
-    display: none;
-}
-
-.filtro-conteudo.ativo {
-    display: block;
-}
-
-.filtro-trigger.ativo span {
-    content: "−";
-}
-
-
-/* === CORREÇÃO 3: CÓDIGO CORRETO DO SLIDER === */
-
-
-/* (Esta é a ÚNICA cópia que você precisa) */
-
-
-/* Estilos gerais para os botões de seta do slider */
-
-.produto .slider-container .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    cursor: pointer;
-    /* ANULA ESTILOS DO SEU .produto button */
-    width: auto;
-    padding: 5px 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #333;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-
-/* Efeito ao passar o mouse */
-
-.produto .slider-container .slider-btn:hover {
-    background-color: rgba(255, 255, 255, 1.0);
-}
-
-
-/* Posição da seta ANTERIOR */
-
-.produto .slider-container .prev-btn {
-    left: 10px;
-}
-
-
-/* Posição da seta PRÓXIMA */
-
-.produto .slider-container .next-btn {
-    right: 10px;
-}
-
-
-/* As bolinhas de navegação (dots) */
-
-.produto .slider-container .slider-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    z-index: 10;
-}
-
-.produto .slider-container .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: #bbb;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.produto .slider-container .dot.active {
-    background-color: #333;
-}
-
-
-/* O contêiner que "corta" a imagem e serve de base */
-
-.produto .slider-container {
+.slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
-    /* Arredonda só os cantos de cima */
 }
 
-
-/* O "trilho" que segura as imagens e se move */
-
-.produto .slider-container .image-slider {
+.image-slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-
-/* As imagens dentro do slider */
-
-.produto .slider-container .image-slider img {
+.image-slider img {
     width: 100%;
     flex-shrink: 0;
     object-fit: cover;
@@ -373,36 +197,517 @@ nav ul li a:hover {
 }
 
 
-/* --- Ajuste para imagens de produtos sem slider --- */
+/* --- 6. Estilo das Setas do Slider (< >) --- */
 
-.produto-info img {
-    width: 100%;
-    /* Faz a imagem ocupar 100% */
-    border-radius: 5px;
-    /* Cantos arredondados */
-    margin-bottom: 15px;
-    /* Espaço abaixo da imagem */
+
+/* Resetamos o estilo para não conflitar com o botão de comprar */
+
+.produto .slider-container .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Fundo branco transparente */
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    /* Redondo */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    /* Anula estilos herdados */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 
-/* --- 7. Estilo do Rodapé (Footer) --- */
+/* Posição Esquerda */
 
-footer {
-    background-color: #333;
-    /* Um fundo escuro (igual ao seu banner) */
-    color: #f4f4f4;
-    /* Um texto claro (quase branco) */
-    padding: 30px;
-    /* Espaçamento interno */
-    text-align: center;
-    /* Centraliza os textos */
+.produto .slider-container .prev-btn {
+    left: 10px;
+}
+
+
+/* Posição Direita */
+
+.produto .slider-container .next-btn {
+    right: 10px;
+}
+
+
+/* Hover na seta */
+
+.produto .slider-container .slider-btn:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* --- 7. Estilo das Bolinhas (Paginação) --- */
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Centraliza perfeitamente */
+    display: flex;
+    gap: 8px;
+    /* Espaço entre as bolinhas */
+    z-index: 10;
+}
+
+
+/* O JavaScript deve criar tags <span> dentro da div .slider-dots */
+
+.slider-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Branco meio transparente */
+    border: 1px solid #fff;
+    border-radius: 50%;
+    /* Redondo */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Classe que o JS adiciona na bolinha da foto atual */
+
+.slider-dots span.active {
+    background-color: #fff;
+    /* Branco sólido */
+    transform: scale(1.2);
+    /* Aumenta um pouquinho */
+    border-color: #fff;
+}
+
+
+/* --- 8. Estilo do Rodapé (Footer) --- */
+
+.site-footer {
+    background-color: #000;
+    color: #f1f1f1;
+    padding: 60px 40px;
     margin-top: 50px;
-    /* Cria um espaço entre os produtos e o rodapé */
 }
 
-footer p {
-    margin: 5px 0;
-    /* Um pequeno espaço entre as linhas de texto */
-    font-size: 0.9em;
-    /* Deixa a fonte um pouco menor que o normal */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    font-size: 14px;
+}
+
+.footer-column:first-child h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 54px;
+    text-transform: none;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-column p {
+    margin: 0 0 10px 0;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 12px;
+}
+
+.footer-column ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-column ul li i {
+    margin-right: 10px;
+    width: 15px;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 13px;
+    color: #aaa;
+}
+
+.credits p {
+    margin: 0;
+}
+
+.credits .fa-heart {
+    color: #e74c3c;
+}
+
+.payment-methods {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-methods img {
+    height: 25px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+
+/* --- PÁGINA DE LOGIN --- */
+
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 70vh; <--- REMOVIDO para que o Flexbox funcione corretamente */
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    /* Mesma cor de fundo do body */
+}
+
+.login-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    /* Largura máxima para não ficar esticado */
+    text-align: center;
+}
+
+.login-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.login-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+
+/* Estilo dos campos do formulário */
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #28a745;
+    /* Fica verde quando clica */
+}
+
+
+/* Links de "Esqueci senha" */
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.actions a {
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+
+/* Botão de Entrar */
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    /* Preto elegante */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #28a745;
+    /* Fica verde no hover (identidade da marca) */
+}
+
+
+/* Link de Cadastro */
+
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #28a745;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* --- MENSAGEM DE ERRO NO LOGIN --- */
+
+.msg-error {
+    color: #dc3545;
+    /* Vermelho alerta */
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: none;
+    /* Começa escondido */
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dc3545;
+}
+
+
+/* --- PÁGINA DO CARRINHO --- */
+
+.carrinho-section {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carrinho-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.carrinho-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Esquerda maior, direita menor */
+    gap: 40px;
+}
+
+
+/* Lista de Produtos */
+
+.item-produto {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.item-produto img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.item-produto .detalhes {
+    flex: 1;
+    /* Ocupa o espaço sobrando */
+}
+
+.item-produto h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.item-produto p {
+    font-size: 14px;
+    color: #666;
+}
+
+.item-produto .price {
+    font-weight: bold;
+    color: #000;
+    margin-top: 5px;
+}
+
+
+/* Botões de Quantidade (+ e -) */
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.btn-qty {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.input-qty {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.remover i {
+    color: #aaa;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.remover i:hover {
+    color: #dc3545;
+    /* Vermelho ao passar o mouse */
+}
+
+
+/* Resumo do Pedido (Lado Direito) */
+
+.cart-summary {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    /* Altura se ajusta ao conteúdo */
+}
+
+.cart-summary h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #555;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    margin-top: 10px;
+}
+
+.cart-summary hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    /* Verde */
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn-checkout:hover {
+    background-color: #218838;
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.continue-shopping:hover {
+    text-decoration: underline;
 }
