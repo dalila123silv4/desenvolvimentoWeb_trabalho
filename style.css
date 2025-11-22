@@ -1,7 +1,13 @@
+/* ----------------------------------------------------------------------------------- */
+
+
+/* ------------------------------- style.css COMPLETO E CORRIGIDO -------------------- */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
 /* --- 1. Estilos Globais --- */
-
-
-/* 1. HTML e BODY para ocupar 100% da viewport (Rodapé Fixo) */
 
 html,
 body {
@@ -10,23 +16,17 @@ body {
     padding: 0;
 }
 
-
-/* 2. BODY como container Flexbox Vertical */
-
 body {
     display: flex;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
-
-
-/* 3. MAIN para expandir e preencher o espaço restante */
 
 main {
     flex-grow: 1;
 }
-
-
-/* Opcional: Ajuste de altura no footer para estética */
 
 footer.site-footer {
     width: 100%;
@@ -42,14 +42,99 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
+
+/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
+
+header {
+    background-color: #fff;
+    padding: 15px 40px;
+    /* Aumenta um pouco o padding lateral */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra mais destacada */
+    display: flex;
+    justify-content: space-between;
+    /* Espaçamento entre logo e menu */
+    align-items: center;
+    position: sticky;
+    /* Opcional: Faz o header grudar no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+    /* Garante que fique acima de tudo */
+    border-bottom: 3px solid #E5E5E5;
+    /* Borda sutil na parte de baixo */
+}
+
+.logo h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 36px;
+    /* Aumenta o tamanho da logo */
+    font-weight: 500;
+    /* Um pouco mais encorpado */
+    text-transform: none;
+    color: #222;
+    letter-spacing: 1px;
+    /* Espaçamento sutil na logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /* Alinha o carrinho e os links */
+    gap: 30px;
+    /* Novo: Usa gap para espaçamento consistente */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 0;
+    /* Remove a margem antiga, agora usamos gap */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 0;
+    /* Aumenta a área de clique */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+
+/* Efeito de destaque no hover para navegação */
+
+nav ul li a:hover {
+    color: #000;
+    border-bottom: 2px solid #28a745;
+    /* Linha de destaque verde-fitness */
+}
+
+
+/* Destaque especial para o Carrinho */
+
+nav ul li a[href="carrinho.html"] {
+    color: #28a745;
+    /* Destaque o carrinho com a cor verde */
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a[href="carrinho.html"]:hover {
+    color: #218838;
+    border-bottom: none;
+}
 
 header {
     background-color: #fff;
@@ -59,7 +144,6 @@ header {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* Adicionado para z-index */
     z-index: 100;
 }
 
@@ -92,19 +176,104 @@ nav ul li a:hover {
 }
 
 
-/* --- 3. Estilo do Banner Principal --- */
+/* ----------------------------------------------------------------------------------- */
 
-.banner-principal {
+
+/* --- 3. Estilo do Carrossel de Banners (CORREÇÃO DE ALTURA APLICADA AQUI) --- */
+
+
+/* Esconde as classes antigas de banner (caso ainda existam no HTML) */
+
+.banner-principal,
+.banner-secundario {
+    display: none;
+}
+
+.banner-area {
     width: 100%;
     margin-bottom: 50px;
-    background-color: #000;
 }
 
-.banner-principal img {
+
+/* 3.1 Contêiner principal do carrossel do banner */
+
+#main-banner-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    /* IMPORTANTE: Garante que a altura do slider container se ajuste */
+}
+
+
+/* 3.2 Trilho do Carrossel (image-slider) */
+
+#main-banner-slider .image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
     width: 100%;
     height: auto;
+    /* Deixa o trilho livre para crescer */
+    align-items: flex-start;
+}
+
+
+/* 3.3 Slide individual (o link <a> que contém a imagem) */
+
+#main-banner-slider .image-slider a {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: block;
+    height: auto;
+    /* Permite que o link se adapte à imagem */
+}
+
+
+/* 3.4 A Imagem (REGRA CRUCIAL) */
+
+#main-banner-slider .image-slider img {
+    width: 100%;
+    height: auto;
+    /* Permite que a imagem determine a altura real */
+    object-fit: contain;
+    /* ALTERADO: Usa 'contain' para mostrar a imagem INTEIRA, sem cortar, mas pode deixar barras laterais se a proporção for muito diferente. */
+    /* Se a imagem ainda estiver cortada, tente 'object-fit: cover;' novamente e padronize as proporções das imagens. */
     display: block;
 }
+
+
+/* 3.5 Estilo para as Setas do Banner */
+
+#main-banner-slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#main-banner-slider .prev-btn {
+    left: 10px;
+}
+
+#main-banner-slider .next-btn {
+    right: 10px;
+}
+
+
+/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 4. Estilo da Seção de Produtos --- */
@@ -119,6 +288,10 @@ nav ul li a:hover {
 .produtos-destaque h2 {
     font-size: 32px;
     margin-bottom: 30px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .grid-produtos {
@@ -152,9 +325,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-
-/* Estilo padrão do botão "Adicionar ao Carrinho" */
-
 .produto button {
     background-color: #28a745;
     color: #fff;
@@ -173,7 +343,10 @@ nav ul li a:hover {
 }
 
 
-/* --- 5. Estilo do Slider (Imagens) --- */
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- 5. Estilo do Slider (Imagens - Produtos) --- */
 
 .slider-container {
     position: relative;
@@ -195,10 +368,10 @@ nav ul li a:hover {
 }
 
 
-/* --- 6. Estilo das Setas do Slider (< >) --- */
+/* ----------------------------------------------------------------------------------- */
 
 
-/* Resetamos o estilo para não conflitar com o botão de comprar */
+/* --- 6. Estilo das Setas do Slider (< > - Produtos) --- */
 
 .produto .slider-container .slider-btn {
     position: absolute;
@@ -222,22 +395,13 @@ nav ul li a:hover {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-
-/* Posição Esquerda */
-
 .produto .slider-container .prev-btn {
     left: 10px;
 }
 
-
-/* Posição Direita */
-
 .produto .slider-container .next-btn {
     right: 10px;
 }
-
-
-/* Hover na seta */
 
 .produto .slider-container .slider-btn:hover {
     background-color: #fff;
@@ -246,7 +410,10 @@ nav ul li a:hover {
 }
 
 
-/* --- 7. Estilo das Bolinhas (Paginação) --- */
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- 7. Estilo das Bolinhas (Paginação - Produtos) --- */
 
 .slider-dots {
     position: absolute;
@@ -258,9 +425,6 @@ nav ul li a:hover {
     z-index: 10;
 }
 
-
-/* O JavaScript deve criar tags <span> dentro da div .slider-dots */
-
 .slider-dots span {
     width: 10px;
     height: 10px;
@@ -271,14 +435,14 @@ nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-
-/* Classe que o JS adiciona na bolinha da foto atual */
-
 .slider-dots span.active {
     background-color: #fff;
     transform: scale(1.2);
     border-color: #fff;
 }
+
+
+/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 8. Estilo do Rodapé (Footer) --- */
@@ -389,6 +553,9 @@ nav ul li a:hover {
 }
 
 
+/* ----------------------------------------------------------------------------------- */
+
+
 /* --- PÁGINA DE LOGIN --- */
 
 .login-section {
@@ -421,9 +588,6 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-
-/* Estilo dos campos do formulário */
-
 .input-group {
     text-align: left;
     margin-bottom: 20px;
@@ -451,9 +615,6 @@ nav ul li a:hover {
     border-color: #28a745;
 }
 
-
-/* Links de "Esqueci senha" */
-
 .actions {
     display: flex;
     justify-content: flex-end;
@@ -470,9 +631,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-
-/* Botão de Entrar */
-
 .btn-login {
     width: 100%;
     padding: 12px;
@@ -485,16 +643,12 @@ nav ul li a:hover {
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative;
-    /* Adicionado para z-index */
     z-index: 999;
 }
 
 .btn-login:hover {
     background-color: #28a745;
 }
-
-
-/* Link de Cadastro */
 
 .register-link {
     margin-top: 20px;
@@ -511,9 +665,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-
-/* --- MENSAGEM DE ERRO NO LOGIN --- */
-
 .msg-error {
     color: #dc3545;
     font-size: 14px;
@@ -525,6 +676,9 @@ nav ul li a:hover {
     border-radius: 5px;
     border: 1px solid #dc3545;
 }
+
+
+/* ----------------------------------------------------------------------------------- */
 
 
 /* --- PÁGINA DO CARRINHO --- */
@@ -546,9 +700,6 @@ nav ul li a:hover {
     gap: 40px;
 }
 
-
-/* NOVO ESTILO: Mensagem de Frete Grátis */
-
 #shipping-message {
     text-align: center;
     background-color: #d4edda;
@@ -564,9 +715,6 @@ nav ul li a:hover {
 #shipping-message p {
     margin: 0;
 }
-
-
-/* Lista de Produtos */
 
 .item-produto {
     display: flex;
@@ -607,9 +755,6 @@ nav ul li a:hover {
     margin-top: 5px;
 }
 
-
-/* Botões de Quantidade (+ e -) */
-
 .quantidade {
     display: flex;
     align-items: center;
@@ -635,9 +780,6 @@ nav ul li a:hover {
     outline: none;
 }
 
-
-/* Lixeira */
-
 .remover {
     margin-left: auto;
     align-self: flex-start;
@@ -656,9 +798,6 @@ nav ul li a:hover {
 .remover i:hover {
     color: #dc3545;
 }
-
-
-/* Resumo do Pedido (Lado Direito) */
 
 .cart-summary {
     background: #fff;
@@ -729,6 +868,9 @@ nav ul li a:hover {
 }
 
 
+/* ----------------------------------------------------------------------------------- */
+
+
 /* --- PÁGINA DE CHECKOUT --- */
 
 .checkout-section {
@@ -777,9 +919,6 @@ nav ul li a:hover {
     background-color: #28a745 !important;
 }
 
-
-/* --- PÁGINA DE CHECKOUT: ESTILO DE PAGAMENTO --- */
-
 .payment-option {
     display: flex;
     align-items: center;
@@ -821,12 +960,14 @@ nav ul li a:hover {
 }
 
 
-/* --- ESTILO DE CONFIRMAÇÃO PIX (CHECKOUT) --- */
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- ESTILO DE CONFIRMAÇÃO PIX (AJUSTADO) --- */
 
 .pix-confirmation-section {
     padding: 40px 30px;
     max-width: 600px;
-    /* Layout mais estreito para o PIX */
     margin: 30px auto;
     text-align: center;
     background-color: #fff;
@@ -844,18 +985,26 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.pix-qr-code {
+.pix-qr-code-container {
     width: 200px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.qr-code-box {
+    width: 100%;
     height: 200px;
     background-color: #e0e0e0;
-    /* Simulação visual do QR Code */
-    margin: 20px auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 5px solid #000;
+}
+
+.scan-instruction {
     font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
 }
 
 .pix-copy-paste h4 {
@@ -876,7 +1025,6 @@ nav ul li a:hover {
 
 .btn-copy {
     background-color: #007bff !important;
-    /* Azul para o botão de copiar */
     margin-top: 10px;
     padding: 12px 15px;
     width: 100%;

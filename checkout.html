@@ -16,56 +16,57 @@
 
 
     <header>
-    
+
         <div class="logo">
-        
+
             <h1>DY fitwear</h1>
-            </div>
-    
+        </div>
+
         <nav>
-        
+
             <ul>
-            
+
                 <li><a href="index.html">Home</a></li>
-            
+
                 <li><a href="carrinho.html">🛒 Carrinho</a></li>
-                </ul>
-            </nav>
-        </header>
+            </ul>
+        </nav>
+    </header>
 
 
     <main>
-    
+
         <section id="pix-confirmation-step" class="pix-confirmation-section" style="display: none;">
-        
+
             <h2>Pagamento via Pix</h2>
 
-        
+
             <div class="pix-content">
 
-            
+
                 <p class="pix-timer">Seu código expira em: <strong>15:00</strong></p>
 
-            
-                <div class="pix-qr-code">
-                    <img src="imagem/qrcode1.png" alt="QR Code Pix" style="width: 100%; height: 100%; object-fit: cover;">
 
-                    <p>Escaneie para pagar</p>
+                <div class="pix-qr-code-container">
+                    <div class="qr-code-box">
+                        <img src="imagem/qrcode1.png" alt="QR Code Pix" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
+                    <p class="scan-instruction">Escaneie para pagar</p>
+                </div>
 
-            
+
                 <div class="pix-copy-paste">
-                
+
                     <h4>Chave Copia e Cola</h4>
                     <textarea id="pix-code-area" readonly rows="3">Código gerado pelo JavaScript</textarea>                     <button id="copy-pix-button" class="btn-checkout btn-copy">
                         <i class="fa-solid fa-copy"></i> Copiar Código Pix
                     </button>                 </div>
 
-            
+
                 <p class="pix-info">Após o pagamento, a confirmação é automática (geralmente em segundos).</p>
 
                 <a href="index.html" class="continue-shopping back-to-home">Voltar para a Loja</a>             </div>
-            </section>
+        </section>
 
         <section class="checkout-section">
             <h2>Finalizar Pedido</h2>
@@ -186,19 +187,19 @@
 
             </div>
         </section>
-        </main>
+    </main>
 
 
     <footer class="site-footer">
-    
+
         <div class="footer-bottom-bar">
-        
+
             <div class="copyright">
-            
+
                 <p>Copyright ©2025 DY FITWEAR LTDA</p>
-                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 
     <script src="script.js"></script>

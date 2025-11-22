@@ -4,26 +4,36 @@ const LIMITE_FRETE_GRATIS = 300.00;
 
 
 /* ============================================================
-    1. FUNÇÕES GERAIS DO CARRINHO (LocalStorage e Contador)
-    ============================================================ */
+    1. FUNÇÕES GERAIS DO CARRINHO (LocalStorage e Contador)
+    ============================================================ */
 
-function getCart() {  
-    try {     const cartString = localStorage.getItem('dy_carrinho');     return cartString ? JSON.parse(cartString) : [];   } catch (e) {     console.error("Erro ao ler carrinho do localStorage", e);     return [];   }
+function getCart() {
+    try {
+        const cartString = localStorage.getItem('dy_carrinho');
+        return cartString ? JSON.parse(cartString) : [];
+    } catch (e) {
+        console.error("Erro ao ler carrinho do localStorage", e);
+        return [];
+    }
 }
 
-function updateCartCounter() {  
-    const cart = getCart();  
+function updateCartCounter() {
+    const cart = getCart();
     const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
 
-      
     const cartLink = document.getElementById('cart-link') || document.querySelector('nav a[href="carrinho.html"]');
 
-      
-    if (cartLink) {     if (totalItems > 0) {       cartLink.innerHTML = `🛒 Carrinho (${totalItems})`;     } else {       cartLink.innerHTML = `🛒 Carrinho`;     }   }
+    if (cartLink) {
+        if (totalItems > 0) {
+            cartLink.innerHTML = `🛒 Carrinho (${totalItems})`;
+        } else {
+            cartLink.innerHTML = `🛒 Carrinho`;
+        }
+    }
 }
 
-function saveCart(cart) {  
-    localStorage.setItem('dy_carrinho', JSON.stringify(cart));  
+function saveCart(cart) {
+    localStorage.setItem('dy_carrinho', JSON.stringify(cart));
     updateCartCounter();
 
     // Se estiver no carrinho, atualiza a visualização
@@ -34,27 +44,29 @@ function saveCart(cart) {  
 
 
 /* ============================================================
-    2. LÓGICA DE PRODUTOS E CARRINHO (CRUD + Renderização)
-    ============================================================ */
+    2. LÓGICA DE PRODUTOS E CARRINHO (CRUD + Renderização)
+    ============================================================ */
 
-function updateQuantity(id, change) {  
-    let cart = getCart();  
+function updateQuantity(id, change) {
+    let cart = getCart();
     const item = cart.find(i => i.id === id);
 
-      
-    if (item) {    
-        item.qty += change;    
-        if (item.qty < 1) {       removeItem(id);       return;     }    
-        saveCart(cart);  
+    if (item) {
+        item.qty += change;
+        if (item.qty < 1) {
+            removeItem(id);
+            return;
+        }
+        saveCart(cart);
     }
 }
 
-function removeItem(id) {  
-    const confirmacao = confirm("Tem certeza que deseja remover este item?");  
-    if (confirmacao) {    
-        let cart = getCart();    
-        cart = cart.filter(item => item.id !== id);    
-        saveCart(cart);  
+function removeItem(id) {
+    const confirmacao = confirm("Tem certeza que deseja remover este item?");
+    if (confirmacao) {
+        let cart = getCart();
+        cart = cart.filter(item => item.id !== id);
+        saveCart(cart);
     }
 }
 
@@ -91,7 +103,7 @@ function renderCart() {
     const totalFinalEl = document.getElementById('total-final');
     const freteEl = document.getElementById('frete');
     const emptyMessage = document.getElementById('empty-cart-message');
-    const resumoPedido = document.querySelector('.resumo-pedido');
+    const resumoPedido = document.querySelector('.cart-summary');
 
     if (!cartListEl) return;
 
@@ -139,180 +151,8 @@ function renderCart() {
 
 
 /* ============================================================
-    3. LÓGICA DA PÁGINA CHECKOUT (Com Lógica PIX e Transição)
-    ============================================================ */
-
-// Funções PIX Auxiliares
-/* Substitua a função generatePixCode() no seu script.js */
-function generatePixCode() {   // 💡 Insira sua chave PIX real aqui, ou uma chave aleatória fictícia.
-      
-    return 'seu.email@exemplo.com'; // Exemplo de chave PIX
-}
-
-function displayPixConfirmation() {
-    // 1. Variáveis e Elementos
-    const checkoutContainer = document.querySelector('.checkout-container');
-    const pixConfirmationStep = document.getElementById('pix-confirmation-step');
-    const pixCodeArea = document.getElementById('pix-code-area');
-    const copyButton = document.getElementById('copy-pix-button');
-
-    // 2. Transição de tela
-    if (checkoutContainer) checkoutContainer.style.display = 'none';
-    if (pixConfirmationStep) pixConfirmationStep.style.display = 'block';
-
-    // 3. Gerar e Exibir o Código
-    const pixCode = generatePixCode();
-    if (pixCodeArea) {
-        pixCodeArea.value = pixCode;
-    }
-
-    // 4. Lógica do Botão Copiar (Remove o Listener anterior para evitar bugs)
-    if (copyButton && pixCodeArea) {
-        // Clonar o botão para remover listeners antigos e evitar duplicação (Melhor Prática)
-        const newCopyButton = copyButton.cloneNode(true);
-        copyButton.parentNode.replaceChild(newCopyButton, copyButton);
-
-        newCopyButton.addEventListener('click', () => {
-            pixCodeArea.select();
-            pixCodeArea.setSelectionRange(0, 99999);
-            document.execCommand("copy");
-
-            const originalText = newCopyButton.innerHTML;
-            newCopyButton.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
-            newCopyButton.style.backgroundColor = '#28a745';
-
-            // Simulação: Reverte o botão e processa o pedido (limpa carrinho)
-            setTimeout(() => {
-                newCopyButton.innerHTML = originalText;
-                newCopyButton.style.backgroundColor = '#007bff';
-
-                // LÓGICA DE FINALIZAÇÃO DA COMPRA (Limpa e Redireciona)
-                setTimeout(() => {
-                    alert("Simulação de Pagamento Pix Confirmada! Seu pedido foi esvaziado e o pedido está em processamento.");
-                    localStorage.removeItem('dy_carrinho');
-                    updateCartCounter();
-                    window.location.href = "index.html";
-                }, 1000); // Espera 1s após copiar para simular o processamento
-            }, 3000); // Mostra o "Copiado" por 3s
-        });
-    }
-}
-
-
-function initializeCheckout() {
-    const shippingStep = document.getElementById('shipping-step');
-    const shippingForm = document.getElementById('shipping-form');
-    const paymentForm = document.getElementById('payment-form');
-    const backButton = document.getElementById('back-to-shipping');
-    const btnAddressContinue = document.getElementById('btn-address-continue');
-    const cardRadio = document.getElementById('pay-card');
-    const pixRadio = document.getElementById('pay-pix');
-    const cardFields = document.getElementById('card-fields');
-
-
-    if (!shippingStep || !btnAddressContinue) return;
-
-    const cart = getCart();
-
-    // Lógica para mostrar/esconder campos do cartão e definir 'required'
-    function toggleCardFields() {
-        if (cardRadio && cardFields) {
-            if (cardRadio.checked) {
-                cardFields.style.display = 'block';
-                // Define os campos como obrigatórios quando selecionado
-                cardFields.querySelectorAll('input').forEach(input => input.setAttribute('required', 'required'));
-            } else {
-                cardFields.style.display = 'none';
-                // Remove a obrigatoriedade quando não selecionado
-                cardFields.querySelectorAll('input').forEach(input => input.removeAttribute('required'));
-            }
-        }
-    }
-
-    if (cardRadio) cardRadio.addEventListener('change', toggleCardFields);
-    if (pixRadio) pixRadio.addEventListener('change', toggleCardFields);
-    // Inicializa os campos corretamente no carregamento
-    toggleCardFields();
-
-
-    // 1. Carrega o resumo lateral
-    updateCartTotal(
-        document.getElementById('checkout-subtotal'),
-        document.getElementById('checkout-frete'),
-        document.getElementById('checkout-total-final'),
-        cart
-    );
-
-
-    // 2. Lógica do Botão "Continuar para Pagamento" (Endereço)
-    btnAddressContinue.addEventListener('click', () => {
-        const isFormValid = shippingForm.checkValidity();
-
-        if (!isFormValid) {
-            shippingForm.reportValidity();
-            return;
-        }
-
-        if (cart.length === 0) {
-            alert("Seu carrinho está vazio! Adicione itens para finalizar a compra.");
-            return;
-        }
-
-        shippingStep.style.display = 'none';
-        document.getElementById('payment-step').style.display = 'block';
-    });
-
-
-    // 3. Lógica do Botão "Voltar para Endereço"
-    if (backButton) {
-        backButton.addEventListener('click', () => {
-            document.getElementById('payment-step').style.display = 'none';
-            shippingStep.style.display = 'block';
-        });
-    }
-
-
-    // 4. Lógica do Botão "FINALIZAR COMPRA" (Etapa de Pagamento)
-    if (paymentForm) {
-        paymentForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
-
-            if (!selectedMethod) {
-                alert("Por favor, selecione um método de pagamento.");
-                return;
-            }
-
-            if (selectedMethod.value === 'pix') {
-                displayPixConfirmation(paymentForm); // Vai para a tela PIX
-            } else if (selectedMethod.value === 'card') {
-                // Validação de Cartão: Se os campos estiverem required (e estão), o navegador valida.
-
-                // 🚀 LÓGICA DE FINALIZAÇÃO DA COMPRA (Limpa e Redireciona)
-                alert(`Pagamento simulado com sucesso via CARTÃO! Seu pedido foi confirmado.`);
-                localStorage.removeItem('dy_carrinho');
-                updateCartCounter();
-                window.location.href = "index.html";
-            }
-        });
-    }
-}
-
-
-/* ============================================================
-    4. LÓGICA DE DIVERSOS (Sliders, Acordeão - Seções 2 e 1 originais)
-    ============================================================ */
-
-function setupDiversityLogic() {
-    // Código do slider e acordeão aqui (Mantenha o código original do seu slider aqui)
-    // ...
-}
-
-
-/* ============================================================
-    5. LÓGICA DE LOGIN, CADASTRO E RECUPERAÇÃO (Seção 6 original)
-    ============================================================ */
+    3. LÓGICA DE LOGIN, CADASTRO E RECUPERAÇÃO
+    ============================================================ */
 
 function setupAuthLogic() {
     // LÓGICA DE LOGIN, CADASTRO E RECUPERAÇÃO
@@ -371,8 +211,161 @@ function setupAuthLogic() {
 
 
 /* ============================================================
-    6. INICIALIZAÇÃO GERAL (DOMContentLoaded)
-    ============================================================ */
+    4. LÓGICA DA PÁGINA CHECKOUT (Com Lógica PIX e Transição)
+    ============================================================ */
+
+// Funções PIX Auxiliares
+function generatePixCode() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let code = '00020126410014BR.GOV.BCB.PIX0119';
+    for (let i = 0; i < 40; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return code + '5204000053039865802BR5909DYFITWEAR6009SAOLUIZ6304EE88';
+}
+
+
+function displayPixConfirmation() {
+    const checkoutContainer = document.querySelector('.checkout-container');
+    const pixConfirmationStep = document.getElementById('pix-confirmation-step');
+    const pixCodeArea = document.getElementById('pix-code-area');
+    const copyButton = document.getElementById('copy-pix-button');
+
+    if (checkoutContainer) checkoutContainer.style.display = 'none';
+    if (pixConfirmationStep) pixConfirmationStep.style.display = 'block';
+
+    const pixCode = generatePixCode();
+    if (pixCodeArea) {
+        pixCodeArea.value = pixCode;
+    }
+
+    if (copyButton && pixCodeArea) {
+        const newCopyButton = copyButton.cloneNode(true);
+        copyButton.parentNode.replaceChild(newCopyButton, copyButton);
+
+        newCopyButton.addEventListener('click', () => {
+            pixCodeArea.select();
+            pixCodeArea.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+
+            const originalText = newCopyButton.innerHTML;
+            newCopyButton.innerHTML = '<i class="fa-solid fa-check"></i> Copiado!';
+            newCopyButton.style.backgroundColor = '#28a745';
+
+            setTimeout(() => {
+                newCopyButton.innerHTML = originalText;
+                newCopyButton.style.backgroundColor = '#007bff';
+
+                setTimeout(() => {
+                    alert("Simulação de Pagamento Pix Confirmada! Seu pedido foi esvaziado e o pedido está em processamento.");
+                    localStorage.removeItem('dy_carrinho');
+                    updateCartCounter();
+                    window.location.href = "index.html";
+                }, 1000);
+            }, 3000);
+        });
+    }
+}
+
+
+function initializeCheckout() {
+    const shippingStep = document.getElementById('shipping-step');
+    const shippingForm = document.getElementById('shipping-form');
+    const paymentForm = document.getElementById('payment-form');
+    const backButton = document.getElementById('back-to-shipping');
+    const btnAddressContinue = document.getElementById('btn-address-continue');
+    const cardRadio = document.getElementById('pay-card');
+    const pixRadio = document.getElementById('pay-pix');
+    const cardFields = document.getElementById('card-fields');
+
+
+    if (!shippingStep || !btnAddressContinue) return;
+
+    const cart = getCart();
+
+    // Lógica para mostrar/esconder campos do cartão e definir 'required'
+    function toggleCardFields() {
+        if (cardRadio && cardFields) {
+            if (cardRadio.checked) {
+                cardFields.style.display = 'block';
+                cardFields.querySelectorAll('input').forEach(input => input.setAttribute('required', 'required'));
+            } else {
+                cardFields.style.display = 'none';
+                cardFields.querySelectorAll('input').forEach(input => input.removeAttribute('required'));
+            }
+        }
+    }
+
+    if (cardRadio) cardRadio.addEventListener('change', toggleCardFields);
+    if (pixRadio) pixRadio.addEventListener('change', toggleCardFields);
+    toggleCardFields();
+
+
+    // 1. Carrega o resumo lateral
+    updateCartTotal(
+        document.getElementById('checkout-subtotal'),
+        document.getElementById('checkout-frete'),
+        document.getElementById('checkout-total-final'),
+        cart
+    );
+
+
+    // 2. Lógica do Botão "Continuar para Pagamento" (Endereço)
+    btnAddressContinue.addEventListener('click', () => {
+        const isFormValid = shippingForm.checkValidity();
+
+        if (!isFormValid) {
+            shippingForm.reportValidity();
+            return;
+        }
+
+        if (cart.length === 0) {
+            alert("Seu carrinho está vazio! Adicione itens para finalizar a compra.");
+            return;
+        }
+
+        shippingStep.style.display = 'none';
+        document.getElementById('payment-step').style.display = 'block';
+    });
+
+
+    // 3. Lógica do Botão "Voltar para Endereço"
+    if (backButton) {
+        backButton.addEventListener('click', () => {
+            document.getElementById('payment-step').style.display = 'none';
+            shippingStep.style.display = 'block';
+        });
+    }
+
+
+    // 4. Lógica do Botão "FINALIZAR COMPRA" (Etapa de Pagamento)
+    if (paymentForm) {
+        paymentForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+
+            if (!selectedMethod) {
+                alert("Por favor, selecione um método de pagamento.");
+                return;
+            }
+
+            if (selectedMethod.value === 'pix') {
+                displayPixConfirmation();
+            } else if (selectedMethod.value === 'card') {
+                alert(`Pagamento simulado com sucesso via CARTÃO! Seu pedido foi confirmado.`);
+                localStorage.removeItem('dy_carrinho');
+                updateCartCounter();
+                window.location.href = "index.html";
+            }
+        });
+    }
+}
+
+
+/* ============================================================
+    5. INICIALIZAÇÃO GERAL (DOMContentLoaded)
+    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Garante que o contador do carrinho seja atualizado em TODAS as páginas
@@ -381,8 +374,83 @@ document.addEventListener("DOMContentLoaded", () => {
     // 2. Inicializa lógica de Login/Cadastro/Recuperação
     setupAuthLogic();
 
-    // 3. Inicializa lógica de Diversos (Sliders, Acordeão)
-    setupDiversityLogic();
+    /* --- INÍCIO DO CÓDIGO DO SLIDER MULTIPLO (CORREÇÃO DE EXECUÇÃO) --- */
+    // MUDANÇA AQUI: Adiciona o seletor do banner principal (assumindo id="main-banner-slider" no HTML)
+    const sliderContainers = document.querySelectorAll('.slider-container, #main-banner-slider');
+
+    sliderContainers.forEach(container => {
+        const imageSlider = container.querySelector('.image-slider');
+        const prevBtn = container.querySelector('.prev-btn');
+        const nextBtn = container.querySelector('.next-btn');
+        const dotsContainer = container.querySelector('.slider-dots');
+
+        // Busca por <a> (para banners) ou <img> (para produtos)
+        let slides = imageSlider.querySelectorAll('a');
+        if (slides.length === 0) {
+            slides = imageSlider.querySelectorAll('img');
+        }
+
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        if (totalSlides <= 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (dotsContainer) dotsContainer.style.display = 'none';
+            return;
+        }
+
+        // Cria e insere as bolinhas (dots)
+        function createDots() {
+            if (!dotsContainer) return;
+
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) {
+                    dot.classList.add('active');
+                }
+                dot.dataset.index = i;
+
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    updateSlider();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Atualiza a posição do slider e o estado das bolinhas
+        function updateSlider() {
+            const offset = -currentSlide * 100;
+            imageSlider.style.transform = `translateX(${offset}%)`;
+
+            if (dotsContainer) {
+                container.querySelectorAll('.dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+        }
+
+        // ADICIONA EVENTOS DE CLIQUE NAS SETAS
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            });
+        }
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            });
+        }
+
+        // INICIALIZAÇÃO
+        createDots();
+        updateSlider();
+    });
+    /* --- FIM DO CÓDIGO DO SLIDER MULTIPLO --- */
 
 
     // 4. Lógica específica para a página de Produtos/Home
