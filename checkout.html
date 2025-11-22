@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - DY fitwear</title>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+
+    <header>
+    
+        <div class="logo">
+        
+            <h1>DY fitwear</h1>
+            </div>
+    
+        <nav>
+        
+            <ul>
+            
+                <li><a href="index.html">Home</a></li>
+            
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+    <main>
+    
+        <section id="pix-confirmation-step" class="pix-confirmation-section" style="display: none;">
+        
+            <h2>Pagamento via Pix</h2>
+
+        
+            <div class="pix-content">
+
+            
+                <p class="pix-timer">Seu código expira em: <strong>15:00</strong></p>
+
+            
+                <div class="pix-qr-code">
+                    <img src="imagem/qrcode1.png" alt="QR Code Pix" style="width: 100%; height: 100%; object-fit: cover;">
+
+                    <p>Escaneie para pagar</p>
+                    </div>
+
+            
+                <div class="pix-copy-paste">
+                
+                    <h4>Chave Copia e Cola</h4>
+                    <textarea id="pix-code-area" readonly rows="3">Código gerado pelo JavaScript</textarea>                     <button id="copy-pix-button" class="btn-checkout btn-copy">
+                        <i class="fa-solid fa-copy"></i> Copiar Código Pix
+                    </button>                 </div>
+
+            
+                <p class="pix-info">Após o pagamento, a confirmação é automática (geralmente em segundos).</p>
+
+                <a href="index.html" class="continue-shopping back-to-home">Voltar para a Loja</a>             </div>
+            </section>
+
+        <section class="checkout-section">
+            <h2>Finalizar Pedido</h2>
+
+            <div class="checkout-container">
+
+                <div class="checkout-form-area">
+
+                    <div id="shipping-step">
+                        <h3>1. Endereço de Entrega</h3>
+                        <form id="shipping-form">
+
+                            <div class="input-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="address">Rua/Avenida</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+
+                            <div class="input-group-row">
+                                <div class="input-group">
+                                    <label for="number">Número</label>
+                                    <input type="text" id="number" name="number" required>
+                                </div>
+                                <div class="input-group">
+                                    <label for="complement">Complemento (Opcional)</label>
+                                    <input type="text" id="complement" name="complement">
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="city">Cidade / Estado</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+
+                            <button type="button" id="btn-address-continue" class="btn-login btn-continue">
+                                Continuar para Pagamento
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="payment-step" style="display: none;">
+                        <h3>2. Selecione o Método de Pagamento</h3>
+
+                        <form id="payment-form">
+
+                            <div class="payment-option">
+                                <input type="radio" id="pay-pix" name="payment-method" value="pix" required>
+                                <label for="pay-pix">
+                                    <i class="fa-solid fa-qrcode"></i> PIX (Aprovação Imediata)
+                                </label>
+                            </div>
+
+                            <div class="payment-option">
+                                <input type="radio" id="pay-card" name="payment-method" value="card">
+                                <label for="pay-card">
+                                    <i class="fa-solid fa-credit-card"></i> Cartão de Crédito (Em até 3x sem juros)
+                                </label>
+                            </div>
+
+                            <div id="card-fields" style="display: none; padding: 15px; background-color: #f9f9f9; border-radius: 5px;">
+                                <div class="input-group">
+                                    <label for="card-number">Número do Cartão</label>
+                                    <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                                </div>
+                                <div class="input-group-row">
+                                    <div class="input-group">
+                                        <label for="card-expiry">Validade</label>
+                                        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" id="card-cvv" name="card-cvv" placeholder="123">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-actions">
+                                <button type="button" id="back-to-shipping" class="btn-login" style="background-color: #555;">
+                                    ← Voltar para Endereço
+                                </button>
+                                <button type="submit" class="btn-checkout btn-login" style="width: 100%;">
+                                    FINALIZAR COMPRA
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="cart-summary checkout-summary">
+                    <h3>Resumo do Pedido</h3>
+
+                    <div id="checkout-items-list">
+                        <p>Total de itens: <span id="checkout-total-items">...</span></p>
+                    </div>
+
+                    <hr>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="checkout-subtotal">R$ 0,00</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Frete</span>
+                        <span id="checkout-frete">R$ 35,00</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total Final</span>
+                        <span id="checkout-total-final">R$ 35,00</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        </main>
+
+
+    <footer class="site-footer">
+    
+        <div class="footer-bottom-bar">
+        
+            <div class="copyright">
+            
+                <p>Copyright ©2025 DY FITWEAR LTDA</p>
+                </div>
+            </div>
+        </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
