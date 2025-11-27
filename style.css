@@ -1,13 +1,16 @@
 /* ----------------------------------------------------------------------------------- */
 
 
-/* ------------------------------- style.css COMPLETO E CORRIGIDO -------------------- */
+/* --- 1. Estilos Globais e Reset --- */
 
 
 /* ----------------------------------------------------------------------------------- */
 
-
-/* --- 1. Estilos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html,
 body {
@@ -28,20 +31,10 @@ main {
     flex-grow: 1;
 }
 
-footer.site-footer {
-    width: 100%;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 
 /* ----------------------------------------------------------------------------------- */
 
@@ -50,55 +43,36 @@ html {
 
 
 /* ----------------------------------------------------------------------------------- */
-
-
-/* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
 
 header {
     background-color: #fff;
     padding: 15px 40px;
-    /* Aumenta um pouco o padding lateral */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra mais destacada */
     display: flex;
     justify-content: space-between;
-    /* Espaçamento entre logo e menu */
     align-items: center;
     position: sticky;
-    /* Opcional: Faz o header grudar no topo ao rolar */
     top: 0;
     z-index: 1000;
-    /* Garante que fique acima de tudo */
     border-bottom: 3px solid #E5E5E5;
-    /* Borda sutil na parte de baixo */
 }
 
 .logo h1 {
     font-family: "Times New Roman", Times, serif;
     font-size: 36px;
-    /* Aumenta o tamanho da logo */
     font-weight: 500;
-    /* Um pouco mais encorpado */
     text-transform: none;
     color: #222;
     letter-spacing: 1px;
-    /* Espaçamento sutil na logo */
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    /* Alinha o carrinho e os links */
     gap: 30px;
-    /* Novo: Usa gap para espaçamento consistente */
     margin: 0;
     padding: 0;
-}
-
-nav ul li {
-    margin-left: 0;
-    /* Remove a margem antiga, agora usamos gap */
 }
 
 nav ul li a {
@@ -107,17 +81,13 @@ nav ul li a {
     font-weight: bold;
     font-size: 16px;
     padding: 5px 0;
-    /* Aumenta a área de clique */
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-
-/* Efeito de destaque no hover para navegação */
-
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active-link {
     color: #000;
     border-bottom: 2px solid #28a745;
-    /* Linha de destaque verde-fitness */
 }
 
 
@@ -125,7 +95,6 @@ nav ul li a:hover {
 
 nav ul li a[href="carrinho.html"] {
     color: #28a745;
-    /* Destaque o carrinho com a cor verde */
     font-size: 17px;
     display: flex;
     align-items: center;
@@ -136,58 +105,88 @@ nav ul li a[href="carrinho.html"]:hover {
     border-bottom: none;
 }
 
-header {
-    background-color: #fff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- 3. Estilo do Dropdown Mega-Menu (Conjuntos) --- */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* 1. O LI pai deve ser o ponto de referência para posicionamento */
+
+.dropdown {
     position: relative;
-    z-index: 100;
 }
 
-.logo h1 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 32px;
-    font-weight: 400;
-    text-transform: none;
-    color: #222;
-}
 
-nav ul {
+/* 2. O menu flutuante - Torná-lo GRANDE, BRANCO e ABSOLUTO */
+
+.dropdown-content {
+    display: none;
+    /* Esconde por padrão */
+    position: absolute;
+    /* Layout de Mega-Menu */
+    min-width: 380px;
+    padding: 20px 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    z-index: 10;
+    /* Posicionamento e centralização */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     list-style: none;
-    display: flex;
 }
 
-nav ul li {
-    margin-left: 25px;
+
+/* 3. Estilizando e posicionando os LI's internos (as "colunas") */
+
+.dropdown-content li {
+    flex: 1;
+    text-align: center;
+    margin: 0 15px;
+    padding: 0;
 }
 
-nav ul li a {
+
+/* 4. Estilizando os links para se parecerem com os títulos da referência */
+
+.dropdown-content li a {
+    color: #333;
     text-decoration: none;
-    color: #555;
     font-weight: bold;
-    font-size: 16px;
+    display: block;
+    padding: 5px 0;
 }
 
-nav ul li a:hover {
-    color: #000;
+
+/* 5. Efeito hover */
+
+.dropdown-content li a:hover {
+    color: #28a745;
+    /* Destaque na cor principal do seu menu */
+    background-color: transparent;
+}
+
+
+/* 6. Ação principal: Mostrar o menu ao passar o mouse sobre o item pai */
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    /* Ativa o layout de duas "colunas" */
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 3. Estilo do Carrossel de Banners (CORREÇÃO DE ALTURA APLICADA AQUI) --- */
+/* --- 4. Estilo do Carrossel de Banners e Produtos (Principal) --- */
 
 
-/* Esconde as classes antigas de banner (caso ainda existam no HTML) */
-
-.banner-principal,
-.banner-secundario {
-    display: none;
-}
+/* ----------------------------------------------------------------------------------- */
 
 .banner-area {
     width: 100%;
@@ -195,56 +194,60 @@ nav ul li a:hover {
 }
 
 
-/* 3.1 Contêiner principal do carrossel do banner */
+/* Contêiner principal do carrossel do banner */
 
 #main-banner-slider {
     position: relative;
     width: 100%;
     overflow: hidden;
     height: auto;
-    /* IMPORTANTE: Garante que a altura do slider container se ajuste */
 }
 
 
-/* 3.2 Trilho do Carrossel (image-slider) */
+/* Trilho do Carrossel (image-slider) */
 
 #main-banner-slider .image-slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
     height: auto;
-    /* Deixa o trilho livre para crescer */
     align-items: flex-start;
 }
 
 
-/* 3.3 Slide individual (o link <a> que contém a imagem) */
-
-#main-banner-slider .image-slider a {
-    min-width: 100%;
-    flex-shrink: 0;
-    display: block;
-    height: auto;
-    /* Permite que o link se adapte à imagem */
-}
-
-
-/* 3.4 A Imagem (REGRA CRUCIAL) */
+/* A Imagem (REGRA CRUCIAL) */
 
 #main-banner-slider .image-slider img {
     width: 100%;
     height: auto;
-    /* Permite que a imagem determine a altura real */
     object-fit: contain;
-    /* ALTERADO: Usa 'contain' para mostrar a imagem INTEIRA, sem cortar, mas pode deixar barras laterais se a proporção for muito diferente. */
-    /* Se a imagem ainda estiver cortada, tente 'object-fit: cover;' novamente e padronize as proporções das imagens. */
     display: block;
 }
 
 
-/* 3.5 Estilo para as Setas do Banner */
+/* Estilo para Setas e Bolinhas (Aplicável a Banner e Produtos) */
 
-#main-banner-slider .slider-btn {
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-slider img {
+    width: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+
+/* Estilo das Setas */
+
+.slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -255,28 +258,57 @@ nav ul li a:hover {
     font-size: 24px;
     width: 45px;
     height: 45px;
-    padding: 0;
     cursor: pointer;
     z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
 }
 
-#main-banner-slider .prev-btn {
+.prev-btn {
     left: 10px;
 }
 
-#main-banner-slider .next-btn {
+.next-btn {
     right: 10px;
+}
+
+
+/* Estilo das Bolinhas */
+
+.slider-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.slider-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dots span.active {
+    background-color: #fff;
+    transform: scale(1.2);
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 4. Estilo da Seção de Produtos --- */
+/* --- 5. Estilo da Seção de Produtos em Destaque e Grade --- */
+
+
+/* ----------------------------------------------------------------------------------- */
 
 .produtos-destaque {
     padding: 40px 30px;
@@ -325,7 +357,7 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-.produto button {
+.produto .btn-add-to-cart {
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -338,254 +370,146 @@ nav ul li a:hover {
     transition: background-color 0.3s;
 }
 
-.produto button:hover {
+.produto .btn-add-to-cart:hover {
     background-color: #218838;
 }
 
 
-/* ----------------------------------------------------------------------------------- */
+/* --- ESTILOS DOS SLIDERS INDIVIDUAIS DE PRODUTO --- */
 
-
-/* --- 5. Estilo do Slider (Imagens - Produtos) --- */
-
-.slider-container {
+.product-slider-container {
     position: relative;
     width: 100%;
     overflow: hidden;
+    aspect-ratio: 1/1;
+    /* Garante que a proporção da imagem seja quadrada */
 }
 
-.image-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.image-slider img {
+.product-image-slider {
+    position: relative;
     width: 100%;
-    flex-shrink: 0;
+    height: 100%;
+}
+
+.product-image-slider img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 0;
-    border-radius: 0;
+    flex-shrink: 0;
+    display: none;
+    /* ESCONDE POR PADRÃO */
 }
 
 
-/* ----------------------------------------------------------------------------------- */
+/* O CSS CRÍTICO PARA FAZER A FOTO APARECER */
+
+.product-image-slider img.active-slide {
+    display: block;
+}
 
 
-/* --- 6. Estilo das Setas do Slider (< > - Produtos) --- */
+/* Estilo para setas e dots */
 
-.produto .slider-container .slider-btn {
+.product-slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #333;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
     border: none;
     border-radius: 50%;
     font-size: 18px;
-    font-weight: bold;
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    z-index: 10;
-    padding: 0;
-    margin: 0;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    /* ESCONDE AS SETAS POR PADRÃO */
+    transition: opacity 0.2s;
 }
 
-.produto .slider-container .prev-btn {
-    left: 10px;
+.product-slider-btn.prev-btn {
+    left: 8px;
 }
 
-.produto .slider-container .next-btn {
-    right: 10px;
+.product-slider-btn.next-btn {
+    right: 8px;
 }
 
-.produto .slider-container .slider-btn:hover {
-    background-color: #fff;
-    color: #000;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+.produto:hover .product-slider-btn {
+    opacity: 1;
+    /* MOSTRA AS SETAS NO HOVER */
 }
 
-
-/* ----------------------------------------------------------------------------------- */
-
-
-/* --- 7. Estilo das Bolinhas (Paginação - Produtos) --- */
-
-.slider-dots {
+.product-slider-dots {
     position: absolute;
-    bottom: 15px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 8px;
-    z-index: 10;
+    gap: 6px;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
-.slider-dots span {
-    width: 10px;
-    height: 10px;
+.produto:hover .product-slider-dots {
+    opacity: 1;
+}
+
+.product-slider-dots .dot {
+    width: 8px;
+    height: 8px;
     background-color: rgba(255, 255, 255, 0.5);
-    border: 1px solid #fff;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.slider-dots span.active {
+.product-slider-dots .dot.active {
     background-color: #fff;
-    transform: scale(1.2);
-    border-color: #fff;
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 8. Estilo do Rodapé (Footer) --- */
-
-.site-footer {
-    background-color: #000;
-    color: #f1f1f1;
-    padding: 60px 40px;
-    margin-top: 50px;
-    position: relative;
-    z-index: 10;
-}
-
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-column {
-    font-size: 14px;
-}
-
-.footer-column:first-child h3 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 54px;
-    text-transform: none;
-    font-weight: 400;
-    margin-bottom: 25px;
-    color: #fff;
-}
-
-.footer-column h3,
-.footer-column h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.footer-column p {
-    margin: 0 0 10px 0;
-    line-height: 1.6;
-}
-
-.footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-column ul li {
-    margin-bottom: 12px;
-}
-
-.footer-column ul li a {
-    color: #f1f1f1;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-column ul li a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.footer-column ul li i {
-    margin-right: 10px;
-    width: 15px;
-}
-
-.footer-bottom-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 30px;
-    margin-top: 40px;
-    border-top: 1px solid #333;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 13px;
-    color: #aaa;
-}
-
-.credits p {
-    margin: 0;
-}
-
-.credits .fa-heart {
-    color: #e74c3c;
-}
-
-.payment-methods {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.payment-methods img {
-    height: 25px;
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 2px;
-    box-sizing: border-box;
-}
+/* --- 6. Estilo da Página de Login / Cadastro / Contato --- */
 
 
 /* ----------------------------------------------------------------------------------- */
-
-
-/* --- PÁGINA DE LOGIN --- */
 
 .login-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 70vh;
     padding: 40px 20px;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8;
 }
 
 .login-card {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
 
 .login-card h2 {
+    margin-bottom: 5px;
+    color: #333;
     font-size: 24px;
-    margin-bottom: 10px;
-    color: #222;
 }
 
 .login-card p {
-    font-size: 14px;
-    color: #666;
     margin-bottom: 30px;
+    color: #666;
+    font-size: 0.9em;
 }
 
 .input-group {
@@ -595,55 +519,63 @@ nav ul li a:hover {
 
 .input-group label {
     display: block;
+    margin-bottom: 8px;
     font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
+    color: #555;
+    font-size: 0.9em;
 }
 
-.input-group input {
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="text"],
+.input-group textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
-    outline: none;
+    box-sizing: border-box;
     transition: border-color 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    resize: vertical;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group textarea:focus {
     border-color: #28a745;
+    outline: none;
 }
 
 .actions {
-    display: flex;
-    justify-content: flex-end;
+    text-align: right;
     margin-bottom: 20px;
 }
 
-.actions a {
-    font-size: 13px;
-    color: #555;
+.forgot-pass {
+    font-size: 0.85em;
+    color: #28a745;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.actions a:hover {
+.forgot-pass:hover {
+    color: #218838;
     text-decoration: underline;
 }
 
 .btn-login {
     width: 100%;
-    padding: 12px;
+    padding: 15px;
     background-color: #000;
-    color: #fff;
+    /* Preto forte */
+    color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
     transition: background-color 0.3s;
-    position: relative;
-    z-index: 999;
 }
 
 .btn-login:hover {
@@ -651,8 +583,10 @@ nav ul li a:hover {
 }
 
 .register-link {
-    margin-top: 20px;
-    font-size: 14px;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
 }
 
 .register-link a {
@@ -670,18 +604,32 @@ nav ul li a:hover {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 15px;
-    display: none;
     background-color: #ffe6e6;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #dc3545;
+    text-align: center;
+}
+
+
+/* --- CORREÇÃO DE ERRO VISUAL DA CAIXA VAZIA --- */
+
+.msg-error:empty {
+    padding: 0;
+    border: none;
+    height: 0;
+    margin-bottom: 0;
+    display: none !important;
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- PÁGINA DO CARRINHO --- */
+/* --- 7. Estilo da Página de Carrinho --- */
+
+
+/* ----------------------------------------------------------------------------------- */
 
 .carrinho-section {
     padding: 40px 30px;
@@ -692,13 +640,21 @@ nav ul li a:hover {
 .carrinho-section h2 {
     font-size: 32px;
     margin-bottom: 30px;
+    text-align: center;
 }
+
+
+/* Container para a grade de 2 colunas */
 
 .carrinho-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
+    align-items: flex-start;
 }
+
+
+/* Estilo da Mensagem de Frete Grátis/Aviso */
 
 #shipping-message {
     text-align: center;
@@ -710,16 +666,17 @@ nav ul li a:hover {
     margin-bottom: 30px;
     font-size: 16px;
     font-weight: bold;
+    grid-column: 1 / -1;
+    /* Ocupa as duas colunas */
 }
 
-#shipping-message p {
-    margin: 0;
-}
+
+/* Estilo de cada produto individual */
 
 .item-produto {
     display: flex;
-    align-items: flex-start;
-    position: relative;
+    align-items: center;
+    justify-content: space-between;
     background: #fff;
     padding: 20px;
     margin-bottom: 20px;
@@ -737,37 +694,43 @@ nav ul li a:hover {
 
 .item-produto .detalhes {
     flex-grow: 1;
+    margin-right: 20px;
 }
 
 .item-produto h3 {
     font-size: 16px;
     margin-bottom: 5px;
-}
-
-.item-produto p {
-    font-size: 14px;
-    color: #666;
+    color: #000;
 }
 
 .item-produto .price {
     font-weight: bold;
-    color: #000;
-    margin-top: 5px;
+    color: #28a745;
+    font-size: 1.1em;
 }
+
+
+/* Estilo do Seletor de Quantidade */
 
 .quantidade {
     display: flex;
     align-items: center;
-    margin-right: 15px;
 }
 
 .btn-qty {
     width: 30px;
     height: 30px;
-    border: 1px solid #ddd;
+    border: 1px solid #28a745;
     background: #fff;
+    color: #28a745;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-qty:hover {
+    background: #28a745;
+    color: #fff;
 }
 
 .input-qty {
@@ -780,24 +743,23 @@ nav ul li a:hover {
     outline: none;
 }
 
-.remover {
-    margin-left: auto;
-    align-self: flex-start;
-    padding-top: 5px;
-    position: static;
-    z-index: auto;
-}
+
+/* Estilo do Ícone de Remover (Lixeira) */
 
 .remover i {
     color: #aaa;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: color 0.3s;
+    margin-left: 20px;
 }
 
 .remover i:hover {
     color: #dc3545;
 }
+
+
+/* Estilo do Painel de Resumo (Summary) */
 
 .cart-summary {
     background: #fff;
@@ -805,8 +767,8 @@ nav ul li a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     height: fit-content;
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 100px;
 }
 
 .cart-summary h3 {
@@ -824,9 +786,9 @@ nav ul li a:hover {
 
 .summary-row.total {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.2em;
     color: #000;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .cart-summary hr {
@@ -838,21 +800,18 @@ nav ul li a:hover {
 .btn-checkout {
     width: 100%;
     padding: 15px;
-    background-color: #28a745;
+    background-color: #000;
     color: #fff;
     border: none;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background 0.3s;
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 20;
+    transition: background-color 0.3s;
 }
 
 .btn-checkout:hover {
-    background-color: #218838;
+    background-color: #28a745;
 }
 
 .continue-shopping {
@@ -865,171 +824,245 @@ nav ul li a:hover {
 
 .continue-shopping:hover {
     text-decoration: underline;
+    color: #28a745;
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- PÁGINA DE CHECKOUT --- */
+/* --- 8. ESTILO DO RODAPÉ (FOOTER) - Final Consolidado --- */
 
-.checkout-section {
-    padding: 40px 30px;
+
+/* ----------------------------------------------------------------------------------- */
+
+.site-footer {
+    background-color: #000;
+    color: #f1f1f1;
+    padding-top: 50px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 5;
+    padding: 0 20px 40px;
 }
 
-.checkout-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.checkout-form-area h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.input-group-row {
-    display: flex;
-    gap: 20px;
-}
-
-.input-group-row .input-group {
+.footer-column {
     flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+    padding: 0 15px;
 }
 
-.checkout-summary {
-    padding: 25px;
+
+/* Estilo especial para o título da Logo no Rodapé */
+
+.footer-column:first-child h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 36px;
+    text-transform: none;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
-.btn-continue {
-    margin-top: 20px;
-    background-color: #000 !important;
-    position: relative;
-    z-index: 20;
+.footer-column h3,
+.footer-column h4 {
+    color: white;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 5px;
 }
 
-.btn-continue:hover {
-    background-color: #28a745 !important;
+.footer-column ul {
+    list-style: none;
+    padding: 0;
 }
 
-.payment-option {
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #28a745;
+}
+
+.footer-column i {
+    margin-right: 8px;
+    font-size: 0.8em;
+    color: #28a745;
+}
+
+
+/* --- Barra Inferior do Rodapé (Copyright e Pagamentos) --- */
+
+.footer-bottom-bar {
+    background-color: #111;
+    color: #aaa;
+    padding: 15px 20px;
+    border-top: 1px solid #333;
     display: flex;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    transition: border-color 0.3s;
-}
-
-.payment-option:hover {
-    border-color: #28a745;
-}
-
-.payment-option input[type="radio"] {
-    margin-right: 15px;
-}
-
-.payment-option label {
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-}
-
-.payment-option label i {
-    margin-right: 10px;
-    font-size: 1.2em;
-    color: #555;
-}
-
-.checkout-actions {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
-    margin-top: 30px;
+    align-items: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-bottom-bar .copyright,
+.footer-bottom-bar .credits {
+    font-size: 0.8em;
+}
+
+.payment-methods img {
+    height: 25px;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- ESTILO DE CONFIRMAÇÃO PIX (AJUSTADO) --- */
+/* --- Estilos para Páginas de Conteúdo (Sobre, Políticas, etc.) --- */
 
-.pix-confirmation-section {
+.content-page {
     padding: 40px 30px;
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: center;
     background-color: #fff;
+    /* Fundo branco para a leitura */
+    margin: 30px auto;
+    max-width: 900px;
+    /* Limita a largura para melhor leitura do texto */
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.pix-content {
-    margin-top: 20px;
+.content-page h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #000;
 }
 
-.pix-timer {
-    color: #dc3545;
-    font-size: 1.1em;
+.content-page ul {
+    list-style: disc;
+    margin-left: 20px;
     margin-bottom: 20px;
 }
 
-.pix-qr-code-container {
-    width: 200px;
-    margin: 20px auto 0;
-    text-align: center;
+.content-page ul li {
+    line-height: 1.7;
+    margin-bottom: 5px;
 }
 
-.qr-code-box {
-    width: 100%;
-    height: 200px;
-    background-color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 5px solid #000;
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- 9. Media Queries para Responsividade (FINAL) --- */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    /* Ajustes na grade de produtos em tablets (3 colunas) */
+    .grid-produtos {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.scan-instruction {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 10px;
+@media (max-width: 768px) {
+    /* Layout de coluna para navegação */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    nav ul {
+        /* Garante que os links quebrem em várias linhas (ajuste fino para caber todos) */
+        gap: 10px 15px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    /* Remove o Mega-Menu horizontalmente em telas pequenas */
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    /* Ajuste para grids menores (2 colunas em telas de tablet/portrait) */
+    .grid-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Carrinho Responsivo (Coluna Única) */
+    .carrinho-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    /* Itens do Carrinho - Organização Vertical */
+    .item-produto {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        /* Alinha a imagem e os detalhes um abaixo do outro */
+    }
+    .item-produto img {
+        margin-bottom: 15px;
+    }
+    .item-produto .detalhes {
+        order: -1;
+        width: 100%;
+        margin-right: 0;
+    }
+    .quantidade {
+        margin-top: 10px;
+        order: 1;
+    }
+    .remover {
+        margin-top: 10px;
+        order: 2;
+        margin-left: 20px;
+        padding-top: 0;
+    }
+    /* Rodapé Responsivo (Empilhamento) */
+    .footer-container {
+        flex-direction: column;
+        padding: 0 20px 20px;
+    }
+    .footer-column {
+        min-width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .footer-bottom-bar {
+        justify-content: center;
+        text-align: center;
+    }
+    .footer-bottom-bar>div {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .payment-methods {
+        order: -1;
+        margin-bottom: 10px;
+    }
 }
 
-.pix-copy-paste h4 {
-    margin: 30px 0 10px;
-}
-
-#pix-code-area {
-    width: 100%;
-    resize: none;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: monospace;
-    font-size: 14px;
-    text-align: center;
-    cursor: default;
-}
-
-.btn-copy {
-    background-color: #007bff !important;
-    margin-top: 10px;
-    padding: 12px 15px;
-    width: 100%;
-}
-
-.btn-copy:hover {
-    background-color: #0056b3 !important;
+@media (max-width: 480px) {
+    /* Layout de coluna única em celulares (Telas menores) */
+    .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+    /* Diminui o padding geral em telas muito pequenas */
+    .produtos-destaque,
+    .carrinho-section,
+    .checkout-section {
+        padding: 20px 15px;
+    }
 }

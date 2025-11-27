@@ -2,11 +2,9 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - DY fitwear</title>
-
+    <title>Meu Carrinho | DY fitwear</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,101 +12,88 @@
 
 <body>
 
-
     <header>
-
         <div class="logo">
-
             <h1>DY fitwear</h1>
         </div>
-
         <nav>
-
             <ul>
-
                 <li><a href="index.html">Home</a></li>
-
-                <li><a href="#">Feminino</a></li>
-
-                <li><a href="#">Masculino</a></li>
-
-                <li><a href="#">Conjuntos</a></li>
-
+                <li><a href="produtos.html">Todos</a></li>
+                <li><a href="produtos.html?categoria=shorts">Shorts</a></li>
+                <li><a href="produtos.html?categoria=tops">Tops</a></li>
+                <li><a href="produtos.html?categoria=leggin">Leggin</a></li>
+                <li><a href="produtos.html?categoria=macaquinhos">Macaquinhos</a></li>
+                <li class="dropdown">
+                    <a href="produtos.html?categoria=conjuntos" class="dropbtn">Conjuntos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="conjuntos-calca.html">Conjunto com Calça</a></li>
+                        <li><a href="conjuntos-short.html">Conjunto com Short</a></li>
+                    </ul>
+                </li>
                 <li><a href="login.html">Login</a></li>
-
-                <li><a href="carrinho.html" style="color: #000; border-bottom: 2px solid #000;">🛒 Carrinho</a></li>
+                <li><a href="carrinho.html" class="active-link">🛒 Carrinho</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
-
-
         <section class="carrinho-section">
-
-
-            <h2>Seu Carrinho</h2>
-
+            <h2>Meu Carrinho</h2>
 
             <div id="shipping-message">
-
-                <p>🚚 Compras acima de R$ 300,00 têm **FRETE GRÁTIS** para todo o Brasil!</p>
+                <p>🛍️ Adicione mais produtos e garanta **FRETE GRÁTIS** acima de R$ 300,00!</p>
             </div>
-
-            <div id="empty-cart-message" style="display: none; text-align: center; margin-top: 30px; font-size: 18px; color: #555;">
-                Seu carrinho está vazio! </div>
-
 
             <div class="carrinho-container">
 
+                <div class="carrinho-lista">
 
-                <div class="cart-items" id="lista-de-produtos-carrinho">
+                    <div id="empty-cart-message" style="display: none; text-align: center;">
+                        <h3>Seu carrinho está vazio.</h3>
+                        <p>Visite nossa página inicial para encontrar ofertas incríveis!</p>
+                        <a href="index.html" class="btn-checkout" style="margin-top: 20px; max-width: 300px; display: block; margin-left: auto; margin-right: auto;">
+                            Voltar às Compras
+                        </a>
+                    </div>
+
+                    <div id="lista-de-produtos-carrinho">
+                    </div>
                 </div>
 
-
-
-                <div class="cart-summary resumo-pedido">
-
+                <div class="cart-summary">
                     <h3>Resumo do Pedido</h3>
 
-
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">R$ 0,00</span>
+                    </div>
 
                     <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="subtotal">R$ 0,00</span> </div>
-
-
-
-                    <div class="summary-row">
-                        <span>Frete</span>
-                        <span id="frete">R$ 35,00</span> </div>
-
-
+                        <span>Frete:</span>
+                        <span id="frete">R$ 35,00</span>
+                    </div>
 
                     <hr>
-                    <div class="summary-row total">
-                        <span>Total</span>
-                        <span id="total-final">R$ 35,00</span> </div>
 
-                    <button class="btn-checkout">FINALIZAR COMPRA</button> <a href="index.html" class="continue-shopping">Continuar Comprando</a> </div>
+                    <div class="summary-row total">
+                        <span>Total Final:</span>
+                        <span id="total-final">R$ 0,00</span>
+                    </div>
+
+                    <button class="btn-checkout">FINALIZAR COMPRA</button>
+
+                    <a href="index.html" class="continue-shopping">
+                        <i class="fa-solid fa-arrow-left"></i> Continuar Comprando
+                    </a>
+                </div>
 
             </div>
         </section>
     </main>
 
-
     <footer class="site-footer">
-
-        <div class="footer-bottom-bar">
-
-            <div class="copyright">
-
-                <p>Copyright ©2025 DY FITWEAR LTDA</p>
-            </div>
-        </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>

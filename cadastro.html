@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Conta - DY fitwear</title>
+    <title>Cadastro - DY fitwear</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -18,56 +19,64 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Feminino</a></li>
+                <li><a href="#">Masculino</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Conjuntos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="conjuntos-calca.html">Conjunto com Calça</a></li>
+                        <li><a href="conjuntos-short.html">Conjunto com Short</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html" class="active-link">Login</a></li>
+                <li><a href="carrinho.html">🛒 Carrinho</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="login-section">
+
             <div class="login-card">
+
                 <h2>Crie sua conta</h2>
-                <p>Preencha os dados abaixo para se cadastrar.</p>
+                <p>Preencha os campos abaixo para se cadastrar.</p>
 
                 <form id="cadastroForm">
                     <div class="input-group">
                         <label for="nome">Nome Completo</label>
-                        <input type="text" id="nome" required placeholder="Seu nome">
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
                     </div>
 
                     <div class="input-group">
                         <label for="emailCadastro">E-mail</label>
-                        <input type="email" id="emailCadastro" required placeholder="seu@email.com">
+                        <input type="email" id="emailCadastro" name="email" placeholder="seu@email.com" required>
                     </div>
 
                     <div class="input-group">
                         <label for="senhaCadastro">Senha</label>
-                        <input type="password" id="senhaCadastro" required placeholder="Mínimo 6 caracteres" minlength="6">
+                        <input type="password" id="senhaCadastro" name="senha" placeholder="********" required>
                     </div>
 
                     <div class="input-group">
                         <label for="senhaConfirmar">Confirmar Senha</label>
-                        <input type="password" id="senhaConfirmar" required placeholder="Repita a senha">
+                        <input type="password" id="senhaConfirmar" name="senhaConfirmar" placeholder="********" required>
                     </div>
 
                     <div id="msgErrorCadastro" class="msg-error"></div>
 
-                    <button type="submit" class="btn-login">ENTRAR</button>
+                    <button type="submit" class="btn-login">CADASTRAR</button>
                 </form>
 
                 <div class="register-link">
-                    <p>Não tem uma conta? tem uma conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+                    <p>Já tem uma conta? <a href="login.html">Faça login aqui</a></p>
                 </div>
+
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-bottom-bar">
-            <div class="copyright">
-                <p>Copyright ©2025 DY FITWEAR LTDA</p>
-            </div>
-        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos os Produtos - DY fitwear</title>
+    <title>Produtos | DY fitwear</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -18,98 +19,79 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="produtos.html" style="color: #000;">Produtos</a></li>
-                <li><a href="#">Acessórios</a></li>
+                <li><a href="produtos.html" class="active-link">Todos</a></li>
+                <li><a href="produtos.html?categoria=shorts">Shorts</a></li>
+                <li><a href="produtos.html?categoria=tops">Tops</a></li>
+                <li><a href="produtos.html?categoria=leggin">Leggin</a></li>
+                <li><a href="produtos.html?categoria=macaquinhos">Macaquinhos</a></li>
+                <li class="dropdown">
+                    <a href="produtos.html?categoria=conjuntos" class="dropbtn">Conjuntos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="conjuntos-calca.html">Conjunto com Calça</a></li>
+                        <li><a href="conjuntos-short.html">Conjunto com Short</a></li>
+                    </ul>
+                </li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="carrinho.html">🛒 Carrinho</a></li>
             </ul>
         </nav>
     </header>
+    <main>
+        <section class="products-page-section">
 
-    <main class="pagina-produtos">
+            <h1 id="page-title">Todos os Produtos</h1>
 
-        <aside class="filtros">
-            <h2>Filtros</h2>
+            <div class="products-page-container">
 
-            <button type="button" class="filtro-trigger">
-                <h3>Categorias</h3>
-                <span>+</span> </button>
-            <div class="filtro-conteudo">
-                <ul>
-                    <li><input type="checkbox" id="cat-top"> <label for="cat-top">Tops</label></li>
-                    <li><input type="checkbox" id="cat-legging"> <label for="cat-legging">Leggings</label></li>
-                    <li><input type="checkbox" id="cat-camiseta"> <label for="cat-camiseta">Camisetas</label></li>
-                    <li><input type="checkbox" id="cat-short"> <label for="cat-short">Shorts</label></li>
-                </ul>
-            </div>
+                <aside class="sidebar-filters">
+                    <h2>Filtros</h2>
 
-            <button type="button" class="filtro-trigger">
-                <h3>Preço</h3>
-                <span>+</span> </button>
-            <div class="filtro-conteudo">
-                <input type="range" min="0" max="300" style="width: 100%;">
-                <p>Até: R$ 300</p>
-            </div>
+                    <div class="filter-group">
+                        <h4>Categoria</h4>
+                        <ul>
+                            <li><a href="produtos.html?categoria=shorts">Shorts</a></li>
+                            <li><a href="produtos.html?categoria=leggin">Leggin</a></li>
+                            <li><a href="produtos.html?categoria=tops">Tops</a></li>
+                            <li><a href="produtos.html">Mostrar Todos</a></li>
+                        </ul>
+                    </div>
 
-        </aside>
+                    <div class="filter-group">
+                        <h4>Preço</h4>
+                        <input type="range" min="50" max="300" value="300" id="price-range">
+                        <p>Até: <span id="price-value">R$ 300</span></p>
+                    </div>
 
-        <section class="todos-os-produtos">
-            <h2>Nossos Produtos</h2>
+                    <button class="btn-filter-apply btn-login">APLICAR FILTROS</button>
+                </aside>
 
-            <div class="grid-produtos">
+                <div class="products-main-content">
 
-                <div class="produto">
-                    <img src="imagem/imagem1.jpg " alt=" Produto 1 ">
-                    <h3>Top Fitness Performance</h3>
-                    <p>R$ 89,90</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
+                    <div class="sort-options">
+                        <p><span id="product-count">0</span> produtos encontrados</p>
+                        <select id="sort-select">
+                            <option value="default">Ordenar por</option>
+                            <option value="price-asc">Menor Preço</option>
+                            <option value="price-desc">Maior Preço</option>
+                        </select>
+                    </div>
 
-                <div class="produto ">
-                    <img src="httpsa://via.placeholder.com/300x300 " alt="Produto 2 ">
-                    <h3>Legging Alta Compressão</h3>
-                    <p>R$ 129,90</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
+                    <div class="grid-produtos" id="product-list-grid">
+                    </div>
 
-                <div class="produto ">
-                    <img src="httpsa://via.placeholder.com/300x300 " alt="Produto 3 ">
-                    <h3>Camiseta Dry Fit Masculina</h3>
-                    <p>R$ 79,90</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
+                    <p id="no-products-message" style="display: none; text-align: center; margin-top: 50px;">
+                        Nenhum produto encontrado nesta categoria.
+                    </p>
 
-                <div class="produto ">
-                    <img src="httpsa://via.placeholder.com/300x300 " alt="Produto 4 ">
-                    <h3>Short Corrida 2 em 1</h3>
-                    <p>R$ 99,90</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-
-                <div class="produto ">
-                    <img src="httpsa://via.placeholder.com/300x300 " alt="Produto 5 ">
-                    <h3>Top Conforto</h3>
-                    <p>R$ 69,90</p>
-                    <button>Adicionar ao Carrinho</button>
-                </div>
-
-                <div class="produto ">
-                    <img src="httpsa://via.placeholder.com/300x300 " alt="Produto 6 ">
-                    <h3>Jaqueta Corta-Vento</h3>
-                    <p>R$ 149,90</p>
-                    <button>Adicionar ao Carrinho</button>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer>
-        <p>DY fitwear &copy; 2025 - Todos os direitos reservados.</p>
-        <p>Siga-nos nas redes sociais!</p>
+    <footer class="site-footer">
     </footer>
 
-    <script src="script.js "></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

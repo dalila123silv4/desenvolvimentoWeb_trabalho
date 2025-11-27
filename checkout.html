@@ -2,11 +2,9 @@
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar Compra - DY fitwear</title>
-
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,70 +12,43 @@
 
 <body>
 
-
     <header>
-
         <div class="logo">
-
             <h1>DY fitwear</h1>
         </div>
-
         <nav>
-
             <ul>
-
                 <li><a href="index.html">Home</a></li>
-
-                <li><a href="carrinho.html">🛒 Carrinho</a></li>
+                <li><a href="#">Feminino</a></li>
+                <li><a href="#">Masculino</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Conjuntos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="conjuntos-calca.html">Conjunto com Calça</a></li>
+                        <li><a href="conjuntos-short.html">Conjunto com Short</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="carrinho.html" class="active-link">🛒 Carrinho</a></li>
             </ul>
         </nav>
     </header>
 
-
     <main>
-
-        <section id="pix-confirmation-step" class="pix-confirmation-section" style="display: none;">
-
-            <h2>Pagamento via Pix</h2>
-
-
-            <div class="pix-content">
-
-
-                <p class="pix-timer">Seu código expira em: <strong>15:00</strong></p>
-
-
-                <div class="pix-qr-code-container">
-                    <div class="qr-code-box">
-                        <img src="imagem/qrcode1.png" alt="QR Code Pix" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <p class="scan-instruction">Escaneie para pagar</p>
-                </div>
-
-
-                <div class="pix-copy-paste">
-
-                    <h4>Chave Copia e Cola</h4>
-                    <textarea id="pix-code-area" readonly rows="3">Código gerado pelo JavaScript</textarea>                     <button id="copy-pix-button" class="btn-checkout btn-copy">
-                        <i class="fa-solid fa-copy"></i> Copiar Código Pix
-                    </button>                 </div>
-
-
-                <p class="pix-info">Após o pagamento, a confirmação é automática (geralmente em segundos).</p>
-
-                <a href="index.html" class="continue-shopping back-to-home">Voltar para a Loja</a>             </div>
-        </section>
-
         <section class="checkout-section">
-            <h2>Finalizar Pedido</h2>
+            <h2>Finalizar Compra</h2>
 
             <div class="checkout-container">
-
                 <div class="checkout-form-area">
 
                     <div id="shipping-step">
                         <h3>1. Endereço de Entrega</h3>
-                        <form id="shipping-form">
+
+                        <form id="shipping-form" class="checkout-form">
+                            <div class="input-group">
+                                <label for="nomeEntrega">Nome Completo</label>
+                                <input type="text" id="nomeEntrega" name="nomeEntrega" required>
+                            </div>
 
                             <div class="input-group">
                                 <label for="cep">CEP</label>
@@ -85,76 +56,65 @@
                             </div>
 
                             <div class="input-group">
-                                <label for="address">Rua/Avenida</label>
-                                <input type="text" id="address" name="address" required>
+                                <label for="endereco">Rua e Número</label>
+                                <input type="text" id="endereco" name="endereco" required>
                             </div>
 
                             <div class="input-group-row">
                                 <div class="input-group">
-                                    <label for="number">Número</label>
-                                    <input type="text" id="number" name="number" required>
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" id="cidade" name="cidade" required>
                                 </div>
                                 <div class="input-group">
-                                    <label for="complement">Complemento (Opcional)</label>
-                                    <input type="text" id="complement" name="complement">
+                                    <label for="estado">Estado</label>
+                                    <input type="text" id="estado" name="estado" required>
                                 </div>
-                            </div>
-
-                            <div class="input-group">
-                                <label for="city">Cidade / Estado</label>
-                                <input type="text" id="city" name="city" required>
                             </div>
 
                             <button type="button" id="btn-address-continue" class="btn-login btn-continue">
-                                Continuar para Pagamento
+                                CONTINUAR PARA O PAGAMENTO
                             </button>
                         </form>
                     </div>
 
-                    <div id="payment-step" style="display: none;">
-                        <h3>2. Selecione o Método de Pagamento</h3>
+                    <div id="payment-step" style="display:none;">
+                        <h3>2. Método de Pagamento</h3>
 
-                        <form id="payment-form">
+                        <form id="payment-form" class="checkout-form">
 
                             <div class="payment-option">
-                                <input type="radio" id="pay-pix" name="payment-method" value="pix" required>
-                                <label for="pay-pix">
-                                    <i class="fa-solid fa-qrcode"></i> PIX (Aprovação Imediata)
-                                </label>
+                                <input type="radio" id="pay-pix" name="payment-method" value="pix" checked>
+                                <label for="pay-pix"><i class="fa-solid fa-qrcode"></i> PIX</label>
                             </div>
 
                             <div class="payment-option">
                                 <input type="radio" id="pay-card" name="payment-method" value="card">
-                                <label for="pay-card">
-                                    <i class="fa-solid fa-credit-card"></i> Cartão de Crédito (Em até 3x sem juros)
-                                </label>
+                                <label for="pay-card"><i class="fa-solid fa-credit-card"></i> Cartão de Crédito</label>
                             </div>
 
-                            <div id="card-fields" style="display: none; padding: 15px; background-color: #f9f9f9; border-radius: 5px;">
+                            <div id="card-fields" style="display:none;">
                                 <div class="input-group">
                                     <label for="card-number">Número do Cartão</label>
-                                    <input type="text" id="card-number" name="card-number" placeholder="XXXX XXXX XXXX XXXX">
+                                    <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX">
                                 </div>
                                 <div class="input-group-row">
                                     <div class="input-group">
-                                        <label for="card-expiry">Validade</label>
-                                        <input type="text" id="card-expiry" name="card-expiry" placeholder="MM/AA">
+                                        <label for="expiry">Validade</label>
+                                        <input type="text" id="expiry" placeholder="MM/AA">
                                     </div>
                                     <div class="input-group">
-                                        <label for="card-cvv">CVV</label>
-                                        <input type="text" id="card-cvv" name="card-cvv" placeholder="123">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123">
                                     </div>
                                 </div>
                             </div>
-                            <div class="checkout-actions">
-                                <button type="button" id="back-to-shipping" class="btn-login" style="background-color: #555;">
-                                    ← Voltar para Endereço
-                                </button>
-                                <button type="submit" class="btn-checkout btn-login" style="width: 100%;">
-                                    FINALIZAR COMPRA
-                                </button>
-                            </div>
 
+                            <div class="checkout-actions">
+                                <button type="button" id="back-to-shipping" class="btn-login" style="background-color:#555;">
+                                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                                </button>
+                                <button type="submit" class="btn-login">FINALIZAR COMPRA</button>
+                            </div>
                         </form>
                     </div>
 
@@ -163,44 +123,53 @@
                 <div class="cart-summary checkout-summary">
                     <h3>Resumo do Pedido</h3>
 
-                    <div id="checkout-items-list">
-                        <p>Total de itens: <span id="checkout-total-items">...</span></p>
-                    </div>
-
-                    <hr>
-
                     <div class="summary-row">
-                        <span>Subtotal</span>
+                        <span>Subtotal:</span>
                         <span id="checkout-subtotal">R$ 0,00</span>
                     </div>
 
                     <div class="summary-row">
-                        <span>Frete</span>
-                        <span id="checkout-frete">R$ 35,00</span>
+                        <span>Frete:</span>
+                        <span id="checkout-frete">R$ 0,00</span>
                     </div>
 
+                    <hr>
+
                     <div class="summary-row total">
-                        <span>Total Final</span>
-                        <span id="checkout-total-final">R$ 35,00</span>
+                        <span>Total Final:</span>
+                        <span id="checkout-total-final">R$ 0,00</span>
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <section id="pix-confirmation-step" class="pix-confirmation-section" style="display:none;">
+            <h3>Pagamento via PIX</h3>
+            <p class="pix-timer">Seu código QR expira em 30 minutos.</p>
+
+            <div class="pix-content">
+                <div class="pix-qr-code-container">
+                    <div class="qr-code-box">
+                        <i class="fa-solid fa-qrcode" style="font-size: 80px; color: #333;"></i>
+                    </div>
+                    <p class="scan-instruction">Escaneie o código QR acima.</p>
+                </div>
+
+                <div class="pix-copy-paste">
+                    <h4>Ou copie o código PIX:</h4>
+                    <textarea id="pix-code-area" rows="4" readonly></textarea>
+
+                    <button type="button" id="copy-pix-button" class="btn-login btn-copy">
+                        <i class="fa-solid fa-copy"></i> COPIAR CÓDIGO PIX
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
-
     <footer class="site-footer">
-
-        <div class="footer-bottom-bar">
-
-            <div class="copyright">
-
-                <p>Copyright ©2025 DY FITWEAR LTDA</p>
-            </div>
-        </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>
