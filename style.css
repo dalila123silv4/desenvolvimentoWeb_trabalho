@@ -1,10 +1,13 @@
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 1. Estilos Globais e Reset --- */
+/* ------------------------------- style.css COMPLETO E FINALIZADO ------------------- */
 
 
 /* ----------------------------------------------------------------------------------- */
+
+
+/* --- 1. Estilos Globais e Reset --- */
 
 * {
     margin: 0;
@@ -17,6 +20,8 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -29,6 +34,7 @@ body {
 
 main {
     flex-grow: 1;
+    width: 100%;
 }
 
 html {
@@ -40,9 +46,6 @@ html {
 
 
 /* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
-
-
-/* ----------------------------------------------------------------------------------- */
 
 header {
     background-color: #fff;
@@ -111,38 +114,23 @@ nav ul li a[href="carrinho.html"]:hover {
 
 /* --- 3. Estilo do Dropdown Mega-Menu (Conjuntos) --- */
 
-
-/* ----------------------------------------------------------------------------------- */
-
-
-/* 1. O LI pai deve ser o ponto de referência para posicionamento */
-
 .dropdown {
     position: relative;
 }
 
-
-/* 2. O menu flutuante - Torná-lo GRANDE, BRANCO e ABSOLUTO */
-
 .dropdown-content {
     display: none;
-    /* Esconde por padrão */
     position: absolute;
-    /* Layout de Mega-Menu */
     min-width: 380px;
     padding: 20px 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: white;
     z-index: 10;
-    /* Posicionamento e centralização */
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
     list-style: none;
 }
-
-
-/* 3. Estilizando e posicionando os LI's internos (as "colunas") */
 
 .dropdown-content li {
     flex: 1;
@@ -150,9 +138,6 @@ nav ul li a[href="carrinho.html"]:hover {
     margin: 0 15px;
     padding: 0;
 }
-
-
-/* 4. Estilizando os links para se parecerem com os títulos da referência */
 
 .dropdown-content li a {
     color: #333;
@@ -162,35 +147,26 @@ nav ul li a[href="carrinho.html"]:hover {
     padding: 5px 0;
 }
 
-
-/* 5. Efeito hover */
-
 .dropdown-content li a:hover {
     color: #28a745;
-    /* Destaque na cor principal do seu menu */
     background-color: transparent;
 }
 
-
-/* 6. Ação principal: Mostrar o menu ao passar o mouse sobre o item pai */
-
 .dropdown:hover .dropdown-content {
     display: flex;
-    /* Ativa o layout de duas "colunas" */
 }
 
 
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 4. Estilo do Carrossel de Banners e Produtos (Principal) --- */
-
-
-/* ----------------------------------------------------------------------------------- */
+/* --- 4. Estilo do Carrossel de Banners (PRINCIPAL E GENÉRICO) --- */
 
 .banner-area {
     width: 100%;
     margin-bottom: 50px;
+    padding: 0;
+    overflow: hidden;
 }
 
 
@@ -198,7 +174,10 @@ nav ul li a[href="carrinho.html"]:hover {
 
 #main-banner-slider {
     position: relative;
-    width: 100%;
+    /* CORREÇÃO VITAL PARA LARGURA TOTAL: Ignora margens e ocupa 100% da viewport */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     overflow: hidden;
     height: auto;
 }
@@ -215,12 +194,13 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* A Imagem (REGRA CRUCIAL) */
+/* A Imagem do Banner (REGRA CONSOLIDADA) */
 
 #main-banner-slider .image-slider img {
     width: 100%;
     height: auto;
     object-fit: contain;
+    /* Mantém a imagem inteira, sem cortar */
     display: block;
 }
 
@@ -241,7 +221,6 @@ nav ul li a[href="carrinho.html"]:hover {
 .image-slider img {
     width: 100%;
     flex-shrink: 0;
-    object-fit: cover;
 }
 
 
@@ -305,10 +284,7 @@ nav ul li a[href="carrinho.html"]:hover {
 /* ----------------------------------------------------------------------------------- */
 
 
-/* --- 5. Estilo da Seção de Produtos em Destaque e Grade --- */
-
-
-/* ----------------------------------------------------------------------------------- */
+/* --- 5. Estilo da Seção de Produtos em Destaque e Grade (AJUSTE FINAL DE ENQUADRAMENTO) --- */
 
 .produtos-destaque {
     padding: 40px 30px;
@@ -381,8 +357,9 @@ nav ul li a[href="carrinho.html"]:hover {
     position: relative;
     width: 100%;
     overflow: hidden;
-    aspect-ratio: 1/1;
-    /* Garante que a proporção da imagem seja quadrada */
+    /* PROPORÇÃO: Mais vertical para caber a modelo */
+    aspect-ratio: 4/5;
+    height: auto;
 }
 
 .product-image-slider {
@@ -397,7 +374,6 @@ nav ul li a[href="carrinho.html"]:hover {
     object-fit: cover;
     flex-shrink: 0;
     display: none;
-    /* ESCONDE POR PADRÃO */
 }
 
 
@@ -427,7 +403,6 @@ nav ul li a[href="carrinho.html"]:hover {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    /* ESCONDE AS SETAS POR PADRÃO */
     transition: opacity 0.2s;
 }
 
@@ -441,7 +416,6 @@ nav ul li a[href="carrinho.html"]:hover {
 
 .produto:hover .product-slider-btn {
     opacity: 1;
-    /* MOSTRA AS SETAS NO HOVER */
 }
 
 .product-slider-dots {
@@ -477,9 +451,6 @@ nav ul li a[href="carrinho.html"]:hover {
 
 
 /* --- 6. Estilo da Página de Login / Cadastro / Contato --- */
-
-
-/* ----------------------------------------------------------------------------------- */
 
 .login-section {
     display: flex;
@@ -567,7 +538,6 @@ nav ul li a[href="carrinho.html"]:hover {
     width: 100%;
     padding: 15px;
     background-color: #000;
-    /* Preto forte */
     color: white;
     border: none;
     border-radius: 5px;
@@ -611,9 +581,6 @@ nav ul li a[href="carrinho.html"]:hover {
     text-align: center;
 }
 
-
-/* --- CORREÇÃO DE ERRO VISUAL DA CAIXA VAZIA --- */
-
 .msg-error:empty {
     padding: 0;
     border: none;
@@ -628,9 +595,6 @@ nav ul li a[href="carrinho.html"]:hover {
 
 /* --- 7. Estilo da Página de Carrinho --- */
 
-
-/* ----------------------------------------------------------------------------------- */
-
 .carrinho-section {
     padding: 40px 30px;
     max-width: 1200px;
@@ -643,18 +607,12 @@ nav ul li a[href="carrinho.html"]:hover {
     text-align: center;
 }
 
-
-/* Container para a grade de 2 colunas */
-
 .carrinho-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
     align-items: flex-start;
 }
-
-
-/* Estilo da Mensagem de Frete Grátis/Aviso */
 
 #shipping-message {
     text-align: center;
@@ -667,11 +625,7 @@ nav ul li a[href="carrinho.html"]:hover {
     font-size: 16px;
     font-weight: bold;
     grid-column: 1 / -1;
-    /* Ocupa as duas colunas */
 }
-
-
-/* Estilo de cada produto individual */
 
 .item-produto {
     display: flex;
@@ -709,9 +663,6 @@ nav ul li a[href="carrinho.html"]:hover {
     font-size: 1.1em;
 }
 
-
-/* Estilo do Seletor de Quantidade */
-
 .quantidade {
     display: flex;
     align-items: center;
@@ -743,9 +694,6 @@ nav ul li a[href="carrinho.html"]:hover {
     outline: none;
 }
 
-
-/* Estilo do Ícone de Remover (Lixeira) */
-
 .remover i {
     color: #aaa;
     cursor: pointer;
@@ -757,9 +705,6 @@ nav ul li a[href="carrinho.html"]:hover {
 .remover i:hover {
     color: #dc3545;
 }
-
-
-/* Estilo do Painel de Resumo (Summary) */
 
 .cart-summary {
     background: #fff;
@@ -833,9 +778,6 @@ nav ul li a[href="carrinho.html"]:hover {
 
 /* --- 8. ESTILO DO RODAPÉ (FOOTER) - Final Consolidado --- */
 
-
-/* ----------------------------------------------------------------------------------- */
-
 .site-footer {
     background-color: #000;
     color: #f1f1f1;
@@ -858,9 +800,6 @@ nav ul li a[href="carrinho.html"]:hover {
     margin-bottom: 20px;
     padding: 0 15px;
 }
-
-
-/* Estilo especial para o título da Logo no Rodapé */
 
 .footer-column:first-child h3 {
     font-family: "Times New Roman", Times, serif;
@@ -899,9 +838,6 @@ nav ul li a[href="carrinho.html"]:hover {
     color: #28a745;
 }
 
-
-/* --- Barra Inferior do Rodapé (Copyright e Pagamentos) --- */
-
 .footer-bottom-bar {
     background-color: #111;
     color: #aaa;
@@ -937,10 +873,8 @@ nav ul li a[href="carrinho.html"]:hover {
 .content-page {
     padding: 40px 30px;
     background-color: #fff;
-    /* Fundo branco para a leitura */
     margin: 30px auto;
     max-width: 900px;
-    /* Limita a largura para melhor leitura do texto */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -969,48 +903,37 @@ nav ul li a[href="carrinho.html"]:hover {
 
 /* --- 9. Media Queries para Responsividade (FINAL) --- */
 
-
-/* ----------------------------------------------------------------------------------- */
-
 @media (max-width: 1024px) {
-    /* Ajustes na grade de produtos em tablets (3 colunas) */
     .grid-produtos {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    /* Layout de coluna para navegação */
     header {
         flex-direction: column;
         align-items: flex-start;
         padding: 15px 20px;
     }
     nav ul {
-        /* Garante que os links quebrem em várias linhas (ajuste fino para caber todos) */
         gap: 10px 15px;
         margin-top: 10px;
         flex-wrap: wrap;
         width: 100%;
     }
-    /* Remove o Mega-Menu horizontalmente em telas pequenas */
     .dropdown:hover .dropdown-content {
         display: none;
     }
-    /* Ajuste para grids menores (2 colunas em telas de tablet/portrait) */
     .grid-produtos {
         grid-template-columns: repeat(2, 1fr);
     }
-    /* Carrinho Responsivo (Coluna Única) */
     .carrinho-container {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    /* Itens do Carrinho - Organização Vertical */
     .item-produto {
         flex-wrap: wrap;
         align-items: flex-start;
-        /* Alinha a imagem e os detalhes um abaixo do outro */
     }
     .item-produto img {
         margin-bottom: 15px;
@@ -1030,7 +953,6 @@ nav ul li a[href="carrinho.html"]:hover {
         margin-left: 20px;
         padding-top: 0;
     }
-    /* Rodapé Responsivo (Empilhamento) */
     .footer-container {
         flex-direction: column;
         padding: 0 20px 20px;
@@ -1055,14 +977,180 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 @media (max-width: 480px) {
-    /* Layout de coluna única em celulares (Telas menores) */
     .grid-produtos {
         grid-template-columns: 1fr;
     }
-    /* Diminui o padding geral em telas muito pequenas */
     .produtos-destaque,
     .carrinho-section,
     .checkout-section {
         padding: 20px 15px;
     }
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/* --- ESTILOS DA PÁGINA DE PRODUTOS (produtos.html) --- */
+
+.products-page-section {
+    padding: 20px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* Título principal da página (Ex: Tops ou Todos os Produtos) */
+
+#page-title {
+    font-size: 32px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: 400;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* --- LAYOUT DA PÁGINA: Sidebar + Catálogo --- */
+
+.products-page-container {
+    display: flex;
+    gap: 30px;
+    /* Espaço entre a barra lateral e o conteúdo principal */
+    align-items: flex-start;
+}
+
+
+/* --- ESTILO DA BARRA LATERAL (FILTROS) --- */
+
+.sidebar-filters {
+    width: 250px;
+    /* Largura fixa para a barra lateral */
+    flex-shrink: 0;
+    /* Impede que a barra lateral encolha */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    /* Fixa a barra lateral ao rolar */
+    top: 100px;
+    /* Distância do topo */
+}
+
+.sidebar-filters h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
+}
+
+.filter-group:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.filter-group h4 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-group ul li a {
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    padding: 3px 0;
+    transition: color 0.2s;
+}
+
+.filter-group ul li a:hover,
+.filter-group ul li a.active {
+    color: #28a745;
+    font-weight: bold;
+}
+
+
+/* Estilo do Range de Preço */
+
+#price-range {
+    width: 100%;
+    margin: 10px 0 5px;
+}
+
+#price-value {
+    font-weight: bold;
+    color: #28a745;
+}
+
+
+/* Botão Aplicar Filtros */
+
+.btn-filter-apply {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    /* Usa a cor do btn-login, garantindo a consistência */
+}
+
+
+/* --- CONTEÚDO PRINCIPAL (CATÁLOGO) --- */
+
+.products-main-content {
+    flex-grow: 1;
+}
+
+
+/* Barra de Ordenação e Contagem (sort-options) */
+
+.sort-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #555;
+}
+
+.sort-options p {
+    font-weight: normal;
+    color: #333;
+}
+
+.sort-options span {
+    font-weight: bold;
+}
+
+.sort-options select {
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #fff;
 }

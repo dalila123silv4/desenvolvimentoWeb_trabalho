@@ -1,7 +1,7 @@
 /* === VARIÁVEIS GLOBAIS (CONSTANTES) === */
 const FRETE_FIXO = 35.00;
 const LIMITE_FRETE_GRATIS = 300.00;
-// --- DADOS DE PRODUTOS PARA EXIBIÇÃO NO SITE ---
+// --- DADOS DE PRODUTOS PARA EXIBIÇÃO NO SITE (CAMINHOS CORRIGIDOS) ---
 
 const PRODUCTS_DATA = [
     // --- CATEGORIA: TOPS (IDs ÚNICOS, NOMES ÚNICOS E CAMINHOS CORRIGIDOS) ---
@@ -13,51 +13,50 @@ const PRODUCTS_DATA = [
     { id: 'top-basico06', name: 'Top Alça Média (Mod. 06)', price: 60.00, category: 'tops', images: ['imagem/tops/top11.jpg', 'imagem/tops/top12.jpg'] },
     { id: 'top-basico07', name: 'Top Alça Média (Mod. 07)', price: 60.00, category: 'tops', images: ['imagem/tops/top13.jpg', 'imagem/tops/top14.jpg'] },
     { id: 'top-basico08', name: 'Top Recorte (Mod. 08)', price: 60.00, category: 'tops', images: ['imagem/tops/top15.jpg', 'imagem/tops/top16.jpg'] },
-    { id: 'top-basico09', name: 'Top Recorte (Mod. 09)', price: 60.00, category: 'tops', images: ['imagem/tops/top17.jpg', 'imagem/tops/tops/top18.jpg'] },
-    { id: 'top-basico10', name: 'Top Detalhe Tule (Mod. 10)', price: 65.00, category: 'tops', images: ['imagem/tops/tops/top19.jpg', 'imagem/tops/tops/top20.jpg'] },
-    { id: 'top-basico11', name: 'Top Detalhe Tule (Mod. 11)', price: 65.00, category: 'tops', images: ['imagem/tops/tops/top21.jpg', 'imagem/tops/tops/top22.jpg'] },
-    { id: 'top-basico12', name: 'Top Detalhe Tule (Mod. 12)', price: 65.00, category: 'tops', images: ['imagem/tops/tops/top23.jpg', 'imagem/tops/tops/top24.jpg'] },
-    { id: 'top-basico13', name: 'Top C/ Bojo (Mod. 13)', price: 70.00, category: 'tops', images: ['imagem/tops/tops/top25.jpg', 'imagem/tops/tops/top26.jpg'] },
-    { id: 'top-basico14', name: 'Top C/ Bojo (Mod. 14)', price: 70.00, category: 'tops', images: ['imagem/tops/tops/top27.jpg', 'imagem/tops/tops/top28.jpg'] },
-    { id: 'top-basico15', name: 'Top Estampado A (Mod. 15)', price: 75.00, category: 'tops', images: ['imagem/tops/tops/top29.jpg', 'imagem/tops/tops/top30.jpg'] },
-    { id: 'top-basico16', name: 'Top Estampado B (Mod. 16)', price: 75.00, category: 'tops', images: ['imagem/tops/tops/top31.jpg', 'imagem/tops/tops/top32.jpg'] },
-    { id: 'top-basico17', name: 'Top Estampado C (Mod. 17)', price: 79.90, category: 'tops', images: ['imagem/tops/tops/top33.jpg', 'imagem/tops/tops/top34.jpg'] },
-    { id: 'top-basico18', name: 'Top Estampado D (Mod. 18)', price: 79.90, category: 'tops', images: ['imagem/tops/tops/top35.jpg', 'imagem/tops/tops/top36.jpg'] },
-    { id: 'top-basico19', name: 'Top Performance X (Mod. 19)', price: 85.00, category: 'tops', images: ['imagem/tops/tops/top37.jpg', 'imagem/tops/tops/top38.jpg'] },
-    { id: 'top-basico20', name: 'Top Performance X (Mod. 20)', price: 85.00, category: 'tops', images: ['imagem/tops/tops/top39.jpg', 'imagem/tops/tops/top40.jpg'] },
-    { id: 'top-basico21', name: 'Top Alça Larga Detalhe (Mod. 21)', price: 90.00, category: 'tops', images: ['imagem/tops/tops/top41.jpg', 'imagem/tops/tops/top42.jpg'] },
-    { id: 'top-basico22', name: 'Top Alça Larga Detalhe (Mod. 22)', price: 90.00, category: 'tops', images: ['imagem/tops/tops/top43.jpg', 'imagem/tops/tops/top44.jpg'] },
-    { id: 'top-basico23', name: 'Top Recorte Lateral (Mod. 23)', price: 95.00, category: 'tops', images: ['imagem/tops/tops/top45.jpg', 'imagem/tops/tops/top46.jpg'] },
-    { id: 'top-basico24', name: 'Top Recorte Lateral (Mod. 24)', price: 95.00, category: 'tops', images: ['imagem/tops/tops/top47.jpg', 'imagem/tops/tops/top48.jpg'] },
-    { id: 'top-basico25', name: 'Top Decote V (Mod. 25)', price: 99.90, category: 'tops', images: ['imagem/tops/tops/top49.jpg', 'imagem/tops/tops/top50.jpg'] },
-    { id: 'top-basico26', name: 'Top Decote V (Mod. 26)', price: 99.90, category: 'tops', images: ['imagem/tops/tops/top51.jpg', 'imagem/tops/tops/top52.jpg'] },
-    { id: 'top-basico27', name: 'Top Nadador (Mod. 27)', price: 105.00, category: 'tops', images: ['imagem/tops/tops/top53.jpg', 'imagem/tops/tops/top54.jpg'] },
-    { id: 'top-basico28', name: 'Top Nadador (Mod. 28)', price: 105.00, category: 'tops', images: ['imagem/tops/tops/top55.jpg', 'imagem/tops/tops/top56.jpg'] },
-    { id: 'top-basico29', name: 'Top Dupla Face (Mod. 29)', price: 110.00, category: 'tops', images: ['imagem/tops/tops/top57.jpg', 'imagem/tops/tops/top58.jpg'] },
-    { id: 'top-basico30', name: 'Top Dupla Face (Mod. 30)', price: 110.00, category: 'tops', images: ['imagem/tops/tops/top59.jpg', 'imagem/tops/tops/top60.jpg'] },
-    { id: 'top-basico31', name: 'Top Performance Z (Mod. 31)', price: 115.00, category: 'tops', images: ['imagem/tops/tops/top61.jpg', 'imagem/tops/tops/top62.jpg'] },
-    { id: 'top-basico32', name: 'Top Performance Z (Mod. 32)', price: 115.00, category: 'tops', images: ['imagem/tops/tops/top63.jpg', 'imagem/tops/tops/top64.jpg'] },
-    { id: 'top-basico33', name: 'Top Max Sustain (Mod. 33)', price: 120.00, category: 'tops', images: ['imagem/tops/tops/top65.jpg', 'imagem/tops/tops/top66.jpg'] },
-    { id: 'top-basico34', name: 'Top Max Sustain (Mod. 34)', price: 120.00, category: 'tops', images: ['imagem/tops/tops/top67.jpg', 'imagem/tops/tops/top68.jpg'] },
-    { id: 'top-basico35_a', name: 'Top Alto Impacto (Mod. 35A)', price: 125.00, category: 'tops', images: ['imagem/tops/tops/top69.jpg', 'imagem/tops/tops/top70.jpg'] },
-    { id: 'top-basico35_b', name: 'Top Alto Impacto (Mod. 35B)', price: 125.00, category: 'tops', images: ['imagem/tops/tops/top71.jpg', 'imagem/tops/tops/top72.jpg'] },
-    { id: 'top-basico36', name: 'Top com Zíper (Mod. 36)', price: 129.90, category: 'tops', images: ['imagem/tops/tops/top73.jpg', 'imagem/tops/tops/top74.jpg'] },
-    { id: 'top-basico37', name: 'Top C/ Detalhe Costas (Mod. 37)', price: 129.90, category: 'tops', images: ['imagem/tops/tops/top75.jpg', 'imagem/tops/tops/top76.jpg'] },
-    { id: 'top-basico38', name: 'Top Compressão (Mod. 38)', price: 135.00, category: 'tops', images: ['imagem/tops/tops/top77.jpg', 'imagem/tops/tops/top78.jpg'] },
-    { id: 'top-basico39', name: 'Top Compressão (Mod. 39)', price: 135.00, category: 'tops', images: ['imagem/tops/tops/top79.jpg', 'imagem/tops/tops/top80.jpg'] },
-    { id: 'top-basico40', name: 'Top Recorte Duplo (Mod. 40)', price: 139.90, category: 'tops', images: ['imagem/tops/tops/top81.jpg', 'imagem/tops/tops/top82.jpg'] },
-    { id: 'top-basico41', name: 'Top Recorte Duplo (Mod. 41)', price: 139.90, category: 'tops', images: ['imagem/tops/tops/top83.jpg', 'imagem/tops/tops/top84.jpg'] },
-    { id: 'top-basico42', name: 'Top Estampado K (Mod. 42)', price: 145.00, category: 'tops', images: ['imagem/tops/tops/top85.jpg', 'imagem/tops/tops/top86.jpg'] },
-    { id: 'top-basico43', name: 'Top Estampado L (Mod. 43)', price: 145.00, category: 'tops', images: ['imagem/tops/tops/top87.jpg', 'imagem/tops/tops/top88.jpg'] },
-    { id: 'top-basico44', name: 'Top Estampado M (Mod. 44)', price: 149.90, category: 'tops', images: ['imagem/tops/tops/top89.jpg', 'imagem/tops/tops/top90.jpg'] },
-    { id: 'top-basico45', name: 'Top Estampado N (Mod. 45)', price: 149.90, category: 'tops', images: ['imagem/tops/tops/top91.jpg', 'imagem/tops/tops/top92.jpg'] },
-    { id: 'top-basico46', name: 'Top Estampado O (Mod. 46)', price: 155.00, category: 'tops', images: ['imagem/tops/tops/top93.jpg', 'imagem/tops/tops/top94.jpg'] },
-    { id: 'top-basico47', name: 'Top Estampado P (Mod. 47)', price: 155.00, category: 'tops', images: ['imagem/tops/tops/top95.jpg', 'imagem/tops/tops/top96.jpg'] },
-    { id: 'top-basico48', name: 'Top Estampado Q (Mod. 48)', price: 159.90, category: 'tops', images: ['imagem/tops/tops/top97.jpg', 'imagem/tops/tops/top98.jpg'] },
-    { id: 'top-basico49', name: 'Top Estampado R (Mod. 49)', price: 159.90, category: 'tops', images: ['imagem/tops/tops/top99.jpg', 'imagem/tops/tops/top100.jpg'] },
-
-    // --- ADICIONE AQUI MAIS PRODUTOS DE OUTRAS CATEGORIAS! ---
+    { id: 'top-basico09', name: 'Top Recorte (Mod. 09)', price: 60.00, category: 'tops', images: ['imagem/tops/top17.jpg', 'imagem/tops/top18.jpg'] },
+    { id: 'top-basico10', name: 'Top Detalhe Tule (Mod. 10)', price: 65.00, category: 'tops', images: ['imagem/tops/top19.jpg', 'imagem/tops/top20.jpg'] },
+    { id: 'top-basico11', name: 'Top Detalhe Tule (Mod. 11)', price: 65.00, category: 'tops', images: ['imagem/tops/top21.jpg', 'imagem/tops/top22.jpg'] },
+    { id: 'top-basico12', name: 'Top Detalhe Tule (Mod. 12)', price: 65.00, category: 'tops', images: ['imagem/tops/top23.jpg', 'imagem/tops/top24.jpg'] },
+    { id: 'top-basico13', name: 'Top C/ Bojo (Mod. 13)', price: 70.00, category: 'tops', images: ['imagem/tops/top25.jpg', 'imagem/tops/top26.jpg'] },
+    { id: 'top-basico14', name: 'Top C/ Bojo (Mod. 14)', price: 70.00, category: 'tops', images: ['imagem/tops/top27.jpg', 'imagem/tops/top28.jpg'] },
+    { id: 'top-basico15', name: 'Top Estampado A (Mod. 15)', price: 75.00, category: 'tops', images: ['imagem/tops/top29.jpg', 'imagem/tops/top30.jpg'] },
+    { id: 'top-basico16', name: 'Top Estampado B (Mod. 16)', price: 75.00, category: 'tops', images: ['imagem/tops/top31.jpg', 'imagem/tops/top32.jpg'] },
+    { id: 'top-basico17', name: 'Top Estampado C (Mod. 17)', price: 79.90, category: 'tops', images: ['imagem/tops/top33.jpg', 'imagem/tops/top34.jpg'] },
+    { id: 'top-basico18', name: 'Top Estampado D (Mod. 18)', price: 79.90, category: 'tops', images: ['imagem/tops/top35.jpg', 'imagem/tops/top36.jpg'] },
+    { id: 'top-basico19', name: 'Top Performance X (Mod. 19)', price: 85.00, category: 'tops', images: ['imagem/tops/top37.jpg', 'imagem/tops/top38.jpg'] },
+    { id: 'top-basico20', name: 'Top Performance X (Mod. 20)', price: 85.00, category: 'tops', images: ['imagem/tops/top39.jpg', 'imagem/tops/top40.jpg'] },
+    { id: 'top-basico21', name: 'Top Alça Larga Detalhe (Mod. 21)', price: 90.00, category: 'tops', images: ['imagem/tops/top41.jpg', 'imagem/tops/top42.jpg'] },
+    { id: 'top-basico22', name: 'Top Alça Larga Detalhe (Mod. 22)', price: 90.00, category: 'tops', images: ['imagem/tops/top43.jpg', 'imagem/tops/top44.jpg'] },
+    { id: 'top-basico23', name: 'Top Recorte Lateral (Mod. 23)', price: 95.00, category: 'tops', images: ['imagem/tops/top45.jpg', 'imagem/tops/top46.jpg'] },
+    { id: 'top-basico24', name: 'Top Recorte Lateral (Mod. 24)', price: 95.00, category: 'tops', images: ['imagem/tops/top47.jpg', 'imagem/tops/top48.jpg'] },
+    { id: 'top-basico25', name: 'Top Decote V (Mod. 25)', price: 99.90, category: 'tops', images: ['imagem/tops/top49.jpg', 'imagem/tops/top50.jpg'] },
+    { id: 'top-basico26', name: 'Top Decote V (Mod. 26)', price: 99.90, category: 'tops', images: ['imagem/tops/top51.jpg', 'imagem/tops/top52.jpg'] },
+    { id: 'top-basico27', name: 'Top Nadador (Mod. 27)', price: 105.00, category: 'tops', images: ['imagem/tops/top53.jpg', 'imagem/tops/top54.jpg'] },
+    { id: 'top-basico28', name: 'Top Nadador (Mod. 28)', price: 105.00, category: 'tops', images: ['imagem/tops/top55.jpg', 'imagem/tops/top56.jpg'] },
+    { id: 'top-basico29', name: 'Top Dupla Face (Mod. 29)', price: 110.00, category: 'tops', images: ['imagem/tops/top57.jpg', 'imagem/tops/top58.jpg'] },
+    { id: 'top-basico30', name: 'Top Dupla Face (Mod. 30)', price: 110.00, category: 'tops', images: ['imagem/tops/top59.jpg', 'imagem/tops/top60.jpg'] },
+    { id: 'top-basico31', name: 'Top Performance Z (Mod. 31)', price: 115.00, category: 'tops', images: ['imagem/tops/top61.jpg', 'imagem/tops/top62.jpg'] },
+    { id: 'top-basico32', name: 'Top Performance Z (Mod. 32)', price: 115.00, category: 'tops', images: ['imagem/tops/top63.jpg', 'imagem/tops/top64.jpg'] },
+    { id: 'top-basico33', name: 'Top Max Sustain (Mod. 33)', price: 120.00, category: 'tops', images: ['imagem/tops/top65.jpg', 'imagem/tops/top66.jpg'] },
+    { id: 'top-basico34', name: 'Top Max Sustain (Mod. 34)', price: 120.00, category: 'tops', images: ['imagem/tops/top67.jpg', 'imagem/tops/top68.jpg'] },
+    { id: 'top-basico35_a', name: 'Top Alto Impacto (Mod. 35A)', price: 125.00, category: 'tops', images: ['imagem/tops/top69.jpg', 'imagem/tops/top70.jpg'] },
+    { id: 'top-basico35_b', name: 'Top Alto Impacto (Mod. 35B)', price: 125.00, category: 'tops', images: ['imagem/tops/top71.jpg', 'imagem/tops/top72.jpg'] },
+    { id: 'top-basico36', name: 'Top com Zíper (Mod. 36)', price: 129.90, category: 'tops', images: ['imagem/tops/top73.jpg', 'imagem/tops/top74.jpg'] },
+    { id: 'top-basico37', name: 'Top C/ Detalhe Costas (Mod. 37)', price: 129.90, category: 'tops', images: ['imagem/tops/top75.jpg', 'imagem/tops/top76.jpg'] },
+    { id: 'top-basico38', name: 'Top Compressão (Mod. 38)', price: 135.00, category: 'tops', images: ['imagem/tops/top77.jpg', 'imagem/tops/top78.jpg'] },
+    { id: 'top-basico39', name: 'Top Compressão (Mod. 39)', price: 135.00, category: 'tops', images: ['imagem/tops/top79.jpg', 'imagem/tops/top80.jpg'] },
+    { id: 'top-basico40', name: 'Top Recorte Duplo (Mod. 40)', price: 139.90, category: 'tops', images: ['imagem/tops/top81.jpg', 'imagem/tops/top82.jpg'] },
+    { id: 'top-basico41', name: 'Top Recorte Duplo (Mod. 41)', price: 139.90, category: 'tops', images: ['imagem/tops/top83.jpg', 'imagem/tops/top84.jpg'] },
+    { id: 'top-basico42', name: 'Top Estampado K (Mod. 42)', price: 145.00, category: 'tops', images: ['imagem/tops/top85.jpg', 'imagem/tops/top86.jpg'] },
+    { id: 'top-basico43', name: 'Top Estampado L (Mod. 43)', price: 145.00, category: 'tops', images: ['imagem/tops/top87.jpg', 'imagem/tops/top88.jpg'] },
+    { id: 'top-basico44', name: 'Top Estampado M (Mod. 44)', price: 149.90, category: 'tops', images: ['imagem/tops/top89.jpg', 'imagem/tops/top90.jpg'] },
+    { id: 'top-basico45', name: 'Top Estampado N (Mod. 45)', price: 149.90, category: 'tops', images: ['imagem/tops/top91.jpg', 'imagem/tops/top92.jpg'] },
+    { id: 'top-basico46', name: 'Top Estampado O (Mod. 46)', price: 155.00, category: 'tops', images: ['imagem/tops/top93.jpg', 'imagem/tops/top94.jpg'] },
+    { id: 'top-basico47', name: 'Top Estampado P (Mod. 47)', price: 155.00, category: 'tops', images: ['imagem/tops/top95.jpg', 'imagem/tops/top96.jpg'] },
+    { id: 'top-basico48', name: 'Top Estampado Q (Mod. 48)', price: 159.90, category: 'tops', images: ['imagem/tops/top97.jpg', 'imagem/tops/top98.jpg'] },
+    { id: 'top-basico49', name: 'Top Estampado R (Mod. 49)', price: 159.90, category: 'tops', images: ['imagem/tops/top99.jpg', 'imagem/tops/top100.jpg'] },
 ];
+
 
 /* ============================================================
     1. FUNÇÕES GERAIS DO CARRINHO (LocalStorage e Contador)
@@ -96,6 +95,64 @@ function saveCart(cart) {
     if (document.getElementById('lista-de-produtos-carrinho')) {
         if (typeof renderCart !== 'undefined') renderCart();
     }
+}
+/* ============================================================
+    1.1. Lógica do Filtro de Preço (Price Range Slider)
+    ============================================================ */
+
+function initPriceSlider() {
+    const priceRange = document.getElementById('price-range');
+    const priceValueDisplay = document.getElementById('price-value');
+    const btnApplyFilter = document.querySelector('.btn-filter-apply');
+
+    if (priceRange && priceValueDisplay) {
+        // 1. Atualiza o display do valor ao mover o slider
+        priceRange.addEventListener('input', () => {
+            priceValueDisplay.innerText = `R$ ${priceRange.value}`;
+        });
+
+        // 2. Lógica do botão Aplicar Filtros (Chama a renderização com o novo filtro)
+        btnApplyFilter.addEventListener('click', () => {
+            // Re-renderiza a página passando o filtro de preço
+            const maxPrice = parseFloat(priceRange.value);
+            renderProductsPage(maxPrice);
+        });
+    }
+}
+
+
+/* ============================================================
+    2.1. Alteração da função renderProductsPage (Suporte ao filtro de preço)
+    ============================================================ */
+
+// Sua função renderProductsPage precisa ser atualizada para aceitar o maxPrice
+function renderProductsPage(maxPrice = null) {
+    // ... [código existente para pegar a categoria e selecionar PRODUCTS_DATA] ...
+
+    // OBTENDO O VALOR MÁXIMO DE PREÇO (se não for passado, usa o valor atual do slider)
+    if (maxPrice === null) {
+        const priceRangeEl = document.getElementById('price-range');
+        if (priceRangeEl) {
+            maxPrice = parseFloat(priceRangeEl.value);
+        } else {
+            maxPrice = Infinity; // Se o slider não existe, não limite o preço
+        }
+    }
+
+    // FILTRAGEM DE CATEGORIA E PREÇO
+    let filteredProducts = PRODUCTS_DATA;
+
+    // Filtro de Categoria (Mantenha seu código existente de filtro de categoria aqui)
+    // ...
+
+    // NOVO FILTRO: Preço Máximo
+    if (maxPrice !== Infinity) {
+        filteredProducts = filteredProducts.filter(p => p.price <= maxPrice);
+    }
+
+    // ... [O restante da função de renderização continua aqui, criando o HTML] ...
+
+    // (Lembre-se de re-chamar o initProductSliders() e attachCartButtonEvents() no final)
 }
 
 /* ============================================================
