@@ -144,34 +144,40 @@
             </div>
         </section>
 
+
         <section id="pix-confirmation-step" class="pix-confirmation-section" style="display:none;">
-            <h3>Pagamento via PIX</h3>
-            <p class="pix-timer">Seu código QR expira em 30 minutos.</p>
 
-            <div class="pix-content">
-                <div class="pix-qr-code-container">
-                    <div class="qr-code-box">
-                        <i class="fa-solid fa-qrcode" style="font-size: 80px; color: #333;"></i>
+            <div class="pix-card">
+
+                <h3>Pagamento via PIX</h3>
+                <p class="pix-timer">Seu código QR expira em 30 minutos.</p>
+
+                <div class="pix-content">
+                    <div class="pix-qr-code-container">
+                        <div class="qr-code-box">
+                            <img src="imagem/qrcode1.png" alt="QR Code PIX para pagamento" class="qr-code-image">
+                        </div>
+                        <p class="scan-instruction">Escaneie o código QR acima.</p>
                     </div>
-                    <p class="scan-instruction">Escaneie o código QR acima.</p>
+
+                    <div class="pix-copy-paste">
+                        <h4>Ou copie o código PIX:</h4>
+
+                        <textarea id="pix-code-area" rows="4" readonly></textarea>
+
+                        <button type="button" id="copy-pix-button" class="btn-login btn-copy">
+                    <i class="fa-solid fa-copy"></i> COPIAR CÓDIGO PIX
+                </button>
+                    </div>
                 </div>
 
-                <div class="pix-copy-paste">
-                    <h4>Ou copie o código PIX:</h4>
-                    <textarea id="pix-code-area" rows="4" readonly></textarea>
-
-                    <button type="button" id="copy-pix-button" class="btn-login btn-copy">
-                        <i class="fa-solid fa-copy"></i> COPIAR CÓDIGO PIX
-                    </button>
-                </div>
             </div>
         </section>
-    </main>
 
-    <footer class="site-footer">
-    </footer>
+        <footer class="site-footer">
+        </footer>
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
