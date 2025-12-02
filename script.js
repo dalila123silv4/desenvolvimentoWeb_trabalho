@@ -9,13 +9,13 @@ const LIMITE_FRETE_GRATIS = 300.00;
 
 const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
-    { id: 'top-basico01', name: 'Top Alça Fina (Mod. 01)', price: 60.00, category: 'tops', images: ['imagem/tops/top1.jpg', 'imagem/tops/top2.jpg'] },
-    { id: 'top-basico02', name: 'Top Alça Fina (Mod. 02)', price: 60.00, category: 'tops', images: ['imagem/tops/top3.jpg', 'imagem/tops/top4.jpg'] },
-    { id: 'top-basico03', name: 'Top Alça Fina (Mod. 03)', price: 60.00, category: 'tops', images: ['imagem/tops/top5.jpg', 'imagem/tops/top6.jpg'] },
-    { id: 'top-basico04', name: 'Top Alça Fina (Mod. 04)', price: 60.00, category: 'tops', images: ['imagem/tops/top7.jpg', 'imagem/tops/top8.jpg'] },
-    { id: 'top-basico05', name: 'Top Alça Fina (Mod. 05)', price: 60.00, category: 'tops', images: ['imagem/tops/top9.jpg', 'imagem/tops/top10.jpg'] },
-    { id: 'top-basico06', name: 'Top Alça Média (Mod. 06)', price: 60.00, category: 'tops', images: ['imagem/tops/top11.jpg', 'imagem/tops/top12.jpg'] },
-    { id: 'top-basico07', name: 'Top Alça Média (Mod. 07)', price: 60.00, category: 'tops', images: ['imagem/tops/top13.jpg', 'imagem/tops/top14.jpg'] },
+    { id: 'top-basico01', name: 'Top Clara', price: 180.00, category: 'tops', images: ['imagem/tops/top1.jpg', 'imagem/tops/top2.jpg'] },
+    { id: 'top-basico02', name: 'Top Clara ', price: 60.00, category: 'tops', images: ['imagem/tops/top3.jpg', 'imagem/tops/top4.jpg'] },
+    { id: 'top-basico03', name: 'Top estilo V ', price: 60.00, category: 'tops', images: ['imagem/tops/top5.jpg', 'imagem/tops/top6.jpg'] },
+    { id: 'top-basico04', name: 'Top Retângular', price: 60.00, category: 'tops', images: ['imagem/tops/top7.jpg', 'imagem/tops/top8.jpg'] },
+    { id: 'top-basico05', name: 'Top Maria', price: 60.00, category: 'tops', images: ['imagem/tops/top9.jpg', 'imagem/tops/top10.jpg'] },
+    { id: 'top-basico06', name: 'Top Trançado nas Costas', price: 60.00, category: 'tops', images: ['imagem/tops/top11.jpg', 'imagem/tops/top12.jpg'] },
+    { id: 'top-basico07', name: 'Top Amélia', price: 60.00, category: 'tops', images: ['imagem/tops/top13.jpg', 'imagem/tops/top14.jpg'] },
     { id: 'top-basico08', name: 'Top Recorte (Mod. 08)', price: 60.00, category: 'tops', images: ['imagem/tops/top15.jpg', 'imagem/tops/top16.jpg'] },
     { id: 'top-basico09', name: 'Top Recorte (Mod. 09)', price: 60.00, category: 'tops', images: ['imagem/tops/top17.jpg', 'imagem/tops/top18.jpg'] },
     { id: 'top-basico10', name: 'Top Detalhe Tule (Mod. 10)', price: 65.00, category: 'tops', images: ['imagem/tops/top19.jpg', 'imagem/tops/top20.jpg'] },
@@ -109,9 +109,6 @@ const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     { id: 'mac-15', name: 'Macaquinho Estampado (Mod 8)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma36.jpg', 'imagem/macaquinhos/ma37.jpg', 'imagem/macaquinhos/ma39.jpg'] },
     { id: 'mac-16', name: 'Macaquinho Recorte Tule (Mod 9)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma40.jpg', 'imagem/macaquinhos/ma41.jpg', 'imagem/macaquinhos/ma42.jpg'] }, // <-- FIM MACAQUINHOS
 
-    // --- CATEGORIA: LEGGIN (2 itens) ---
-    { id: 'leg-01', name: 'Legging Alta Compressão (Preta)', price: 129.90, category: 'leggin', images: ['imagem/leggin/leg1.jpg', 'imagem/leggin/leg2.jpg'] },
-    { id: 'leg-02', name: 'Legging Texturizada (Cinza)', price: 139.90, category: 'leggin', images: ['imagem/leggin/leg3.jpg', 'imagem/leggin/leg4.jpg'] }, // <-- FIM LEGGIN
 
     // --- CATEGORIA: CONJUNTOS DE CALÇA (8 itens) ---
     // --- CATEGORIA: NOVOS CONJUNTOS DE SHORT (s1 a s48) ---
@@ -227,19 +224,17 @@ function initPriceSlider() {
     }
 }
 
-
 /* ============================================================
     2. LÓGICA DE PRODUTOS E CARRINHO (CRUD + Renderização)
     ============================================================ */
 
-// Funções de Carrinho (Update Quantity, Remove Item, etc.) - MANTIDAS
-
-
 // --- FUNÇÃO CRÍTICA PARA RENDERIZAR O CATÁLOGO DE PRODUTOS ---
-function renderProductsPage(maxPriceFilter = null, sortBy = 'default') {
+function renderProductsPage(maxPriceFilter = null, sortBy = 'default', productsToRender = PRODUCTS_DATA) {
     const urlParams = new URLSearchParams(window.location.search);
-    // 1. OBTÉM O VALOR DO FILTRO DA URL (ex: 'tops', 'conjuntos-calca')
+
+    // 1. OBTÉM OS FILTROS DA URL
     const categoryFilter = urlParams.get('categoria');
+    const searchQuery = urlParams.get('q'); // NOVO: Captura o termo de busca
 
     // Elementos da interface
     const productGridEl = document.getElementById('product-list-grid');
@@ -250,7 +245,7 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default') {
 
     if (!productGridEl) return;
 
-    // 2. OBTENDO FILTROS ATUAIS (Preço)
+    // 2. OBTENDO FILTROS DE PREÇO
     let maxPrice = Infinity;
     if (maxPriceFilter !== null) {
         maxPrice = maxPriceFilter;
@@ -261,35 +256,44 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default') {
         }
     }
 
-    // Ordenação Atual (Obtém o valor do select de ordenação)
+    // Ordenação Atual
     if (sortSelectEl && sortBy === 'default') {
         sortBy = sortSelectEl.value;
     }
 
-    // 3. FILTRAGEM:
-    let filteredProducts = PRODUCTS_DATA;
+    // 3. FILTRAGEM
+    let filteredProducts = productsToRender;
     let title = 'Todos os Produtos'; // Título padrão
 
-    if (categoryFilter) {
-        // FILTRO PRINCIPAL: Filtra se a CATEGORY OU a SUBCATEGORY corresponderem
+    // --- FILTRAGEM POR TERMO DE BUSCA (PRIORIDADE ALTA) ---
+    if (searchQuery) {
+        const normalizedQuery = searchQuery.toLowerCase().trim();
+        filteredProducts = filteredProducts.filter(p =>
+            p.name.toLowerCase().includes(normalizedQuery) ||
+            (p.description && p.description.toLowerCase().includes(normalizedQuery)) || // Garante que a descrição exista
+            p.category.toLowerCase().includes(normalizedQuery)
+        );
+        title = `Resultados da busca por "${searchQuery}"`;
+    }
+
+    // --- FILTRAGEM POR CATEGORIA (SE NÃO HOUVER BUSCA GLOBAL) ---
+    if (categoryFilter && !searchQuery) {
         filteredProducts = filteredProducts.filter(p =>
             p.category === categoryFilter || p.subcategory === categoryFilter
         );
-
-        // DEFINIÇÃO DO TÍTULO CORRETO:
+        // Lógica de título de categoria (mantida)
         if (categoryFilter === 'conjuntos-calca') {
             title = 'Conjuntos com Calça';
         } else if (categoryFilter === 'conjunto-short') {
             title = 'Conjuntos com Short';
         } else if (categoryFilter === 'leggin') {
-            title = 'Legging'; // Corrige a capitalização
+            title = 'Leggin';
         } else {
-            // Títulos para categorias simples (Tops, Shorts, Macaquinhos)
             title = categoryFilter.charAt(0).toUpperCase() + categoryFilter.slice(1);
         }
     }
 
-    // Filtro B: Preço Máximo
+    // Filtro C: Preço Máximo
     if (maxPrice !== Infinity) {
         filteredProducts = filteredProducts.filter(p => p.price <= maxPrice);
     }
@@ -329,20 +333,22 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default') {
 
             const productHTML = `
                 <div class="produto" data-product-id="${product.id}"> 
-                    <div class="product-slider-container">
-                        <div class="product-image-slider">
-                            ${imagesHtml}
+                    <a href="detalhe.html?id=${product.id}">
+                        <div class="product-slider-container">
+                            <div class="product-image-slider">
+                                ${imagesHtml}
+                            </div>
+                            <button class="product-slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="product-slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                            <div class="product-slider-dots">
+                                ${dotsHtml}
+                            </div>
                         </div>
-                        <button class="product-slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                        <button class="product-slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                        <div class="product-slider-dots">
-                            ${dotsHtml}
-                        </div>
-                    </div>
+                    </a>
                     <div class="produto-info">
                         <a href="detalhe.html?id=${product.id}">
                         <h3>${product.name}</h3>
-                    </a>
+                        </a>
                         <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
                         <button class="btn-add-to-cart" 
                                 data-id="${product.id}" 
@@ -362,7 +368,6 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default') {
     attachCartButtonEvents();
     initProductSliders();
 }
-
 
 // Funções de Carrinho (Update Quantity, Remove Item, etc.) - [MANTIDAS]
 function updateQuantity(id, change) {
@@ -441,6 +446,7 @@ function renderCart() {
     cart.forEach(item => {
         const itemTotal = item.price * item.qty;
         const itemTotalFormatado = itemTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        const sizeDisplay = item.size ? `Tam: ${item.size}` : 'Tamanho: Padrão';
 
         const itemHTML = `
         <div class="item-produto" data-id="${item.id}" data-price="${item.price}"> 
@@ -519,32 +525,67 @@ function initProductSliders() {
 
 
 // Funções Auxiliares (Para reativar os botões do carrinho após a renderização)
+// NOVO E CORRIGIDO BLOCO DA FUNÇÃO attachCartButtonEvents
 function attachCartButtonEvents() {
+    // Re-anexa os eventos para todos os botões que já existem no DOM
     document.querySelectorAll('.btn-add-to-cart').forEach(button => {
-        button.addEventListener('click', (event) => {
+        // Remove listeners antigos para evitar duplicação, caso a função seja chamada várias vezes
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+
+        newButton.addEventListener('click', (event) => {
+            event.preventDefault();
+
             const prodData = event.currentTarget.dataset;
             let cart = getCart();
-            const existingItem = cart.find(item => item.id === prodData.id);
+
+            // 1. TENTA ENCONTRAR O SELETOR DE TAMANHO
+            // Usamos o seletor mais genérico. Se estiver em detalhe.html, ele existe.
+            const sizeSelect = document.getElementById('product-size');
+            const isDetailPageButton = newButton.classList.contains('detail-btn');
+
+            let selectedSize = 'Padrão'; // Default para listagem/relacionados
+            let uniqueId = prodData.id;
+
+            // 2. LÓGICA DE VALIDAÇÃO DE TAMANHO (Ativada APENAS para o botão principal)
+            if (sizeSelect && isDetailPageButton) {
+
+                let tempSize = sizeSelect.value.toUpperCase();
+
+                if (tempSize === 'SELECIONE') {
+                    alert(" Por favor, selecione um tamanho (P, M ou G) para adicionar ao carrinho.");
+                    sizeSelect.focus();
+                    return; // Bloqueia a adição ao carrinho
+                }
+
+                // Tamanho selecionado e validado
+                selectedSize = tempSize;
+                uniqueId = prodData.id + `-${selectedSize}`; // Cria ID único
+            }
+            // 3. LÓGICA DE ADIÇÃO AO CARRINHO
+            const existingItem = cart.find(item => item.id === uniqueId);
 
             if (existingItem) {
                 existingItem.qty += 1;
             } else {
                 const newItem = {
-                    id: prodData.id,
+                    id: uniqueId,
                     name: prodData.name,
                     price: parseFloat(prodData.price),
                     image: prodData.image,
-                    qty: 1
+                    qty: 1,
+                    // Garante que o item no carrinho sempre tenha 'Padrão' se a validação falhar/não for necessária
+                    size: selectedSize || 'Padrão'
                 };
                 cart.push(newItem);
             }
             saveCart(cart);
-            alert(`"${prodData.name}" adicionado ao carrinho!`);
-
+            // Corrigindo o ALERTA para sempre mostrar Padrão se não houver tamanho:
+            alert(`"${prodData.name}" (Tam: ${selectedSize || 'Padrão'}) adicionado ao carrinho!`);
+            // O problema era que selectedSize podia ser "" ou null, fazendo aparecer "(Tam: Não Selecionado)"
         });
     });
 }
-
 
 /* ============================================================
     2.1. LÓGICA DE DETALHES DO PRODUTO E RELACIONADOS (NOVO)
@@ -657,7 +698,7 @@ function renderDetailPage() {
                 <div class="input-group">
                     <label for="product-size">Tamanho:</label>
                     <select id="product-size" required>
-                        <option value="">Selecione</option>
+                        <option value="SELECIONE">Selecione</option>
                         <option value="P">P (36-38)</option>
                         <option value="M">M (40-42)</option>
                         <option value="G">G (44-46)</option>
@@ -907,6 +948,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Inicializa lógica de Login/Cadastro/Recuperação
     setupAuthLogic();
+    //nova linha
+    setupSearch();
 
     // 3. SE ESTIVER NA PÁGINA DE PRODUTOS, RENDERIZA O CATÁLOGO e inicia o slider de preço
     if (document.querySelector('.products-page-section')) {
@@ -954,5 +997,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Assume que o container principal de detalhes tem o ID 'product-detail-container'
     if (document.getElementById('product-detail-container')) {
         renderDetailPage();
+    }
+    /* ============================================================
+    6. LÓGICA DE BUSCA
+    ============================================================ */
+    function setupSearch() {
+        const searchForm = document.getElementById('search-form');
+
+        if (searchForm) {
+            searchForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // <-- Essencial: impede que o formulário recarregue a página
+
+                const searchInput = document.getElementById('search-input');
+                const query = searchInput.value.trim();
+
+                if (query) {
+                    // Redireciona para a página de produtos com o termo de busca na URL, 
+                    // que será lido pela função renderProductsPage.
+                    // O encodeURIComponent garante que caracteres especiais funcionem.
+                    window.location.href = `produtos.html?q=${encodeURIComponent(query)}`;
+                } else {
+                    // Se o campo estiver vazio, apenas volta para a lista de todos os produtos
+                    window.location.href = `produtos.html`;
+                }
+            });
+        }
     }
 });

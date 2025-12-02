@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DY fitwear - ivista-se em você</title>
 
@@ -42,13 +43,13 @@
 
     <main>
 
+
         <section class="banner-area">
             <div class="slider-container" id="main-banner-slider">
                 <div class="image-slider">
                     <a href="#destaques">
                         <img src="imagem/fotodefundo.png" alt="DY fitwear - Nossos Modelos">
                     </a>
-
                 </div>
 
                 <div class="slider-dots banner-dots"></div>
@@ -59,250 +60,282 @@
             <h2>Produtos em Destaque</h2>
 
             <div class="grid-produtos">
-
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem1.jpg" alt="Top Fitness Performance - Vista 1">
-                            <img src="imagem/imagem2.jpg" alt="Top Fitness Performance - Vista 2">
-                            <img src="imagem/imagem3.jpg" alt="Top Fitness Performance - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('top-basico01')">
+
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem1.jpg" alt="Top Fitness Performance - Vista 1">
+                                <img src="imagem/imagem2.jpg" alt="Top Fitness Performance - Vista 2">
+                                <img src="imagem/imagem3.jpg" alt="Top Fitness Performance - Vista 3">
+                            </div>
+
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
-                    </div>
-                    <div class="produto-info">
-                        <h3>Top Fitness Performance</h3>
-                        <p>R$ 89,90</p>
-                        <button class="btn-add-to-cart" data-id="top-perf-bege" data-name="Top Fitness Performance" data-price="89.90" data-image="imagem/imagem1.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('top-basico01')">Top Alça Fina (Mod. 01)</h3>
+                            <p>R$ 60,00</p>
+                        </div>
+                    </div> <button class="btn-add-to-cart" data-id="top-basico01" data-name="Top Alça Fina (Mod. 01)" data-price="60.00" data-image="imagem/imagem1.jpg">
+        Adicionar ao Carrinho
+    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem14.jpg" alt="Leggin Alta Compressão - Vista 4">
-                            <img src="imagem/imagem15.jpg" alt="Top Fitness Performance - Vista 5">
-                            <img src="imagem/imagem16.jpg" alt="Top Fitness Performance - Vista 6">
+                    <div class="product-link-overlay" onclick="openProductModal('short-fit01')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem14.jpg" alt="Leggin Alta Compressão - Vista 4">
+                                <img src="imagem/imagem15.jpg" alt="Top Fitness Performance - Vista 5">
+                                <img src="imagem/imagem16.jpg" alt="Top Fitness Performance - Vista 6">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('short-fit01')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-preta" data-name="Leggin Alta Compressão (Preta)" data-price="129.90" data-image="imagem/imagem14.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="short-fit01" data-name="Leggin Alta Compressão (Preta)" data-price="129.90" data-image="imagem/imagem14.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem23.jpg" alt="Leggin Alta Compressão - Vista 7">
-                            <img src="imagem/imagem24.jpg" alt="Top Fitness Performance - Vista 8">
+                    <div class="product-link-overlay" onclick="openProductModal('leg-02')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem23.jpg" alt="Leggin Alta Compressão - Vista 7">
+                                <img src="imagem/imagem24.jpg" alt="Top Fitness Performance - Vista 8">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leg-02')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-vermelha" data-name="Leggin Alta Compressão (Vermelha)" data-price="129.90" data-image="imagem/imagem23.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leg-02" data-name="Leggin Alta Compressão (Vermelha)" data-price="129.90" data-image="imagem/imagem23.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem20.jpg" alt="Camiseta Dry Fit Masculina - Vista 9">
-                            <img src="imagem/imagem21.jpg" alt="Top Fitness Performance - Vista 10">
-                            <img src="imagem/imagem22.jpg" alt="Top Fitness Performance - Vista 11">
+                    <div class="product-link-overlay" onclick="openProductModal('camiseta-dryfit')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem20.jpg" alt="Camiseta Dry Fit Masculina - Vista 9">
+                                <img src="imagem/imagem21.jpg" alt="Top Fitness Performance - Vista 10">
+                                <img src="imagem/imagem22.jpg" alt="Top Fitness Performance - Vista 11">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('camiseta-dryfit')">Camiseta Dry Fit Masculina</h3>
+                            <p>R$ 79,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Camiseta Dry Fit Masculina</h3>
-                        <p>R$ 79,90</p>
-                        <button class="btn-add-to-cart" data-id="camiseta-dryfit" data-name="Camiseta Dry Fit Masculina" data-price="79.90" data-image="imagem/imagem20.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="camiseta-dryfit" data-name="Camiseta Dry Fit Masculina" data-price="79.90" data-image="imagem/imagem20.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem17.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem18.jpg" alt="Top Fitness Performance - Vista 2">
-                            <img src="imagem/imagem19.jpg" alt="Top Fitness Performance - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-azul-verde')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem17.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem18.jpg" alt="Top Fitness Performance - Vista 2">
+                                <img src="imagem/imagem19.jpg" alt="Top Fitness Performance - Vista 3">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-azul-verde')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-azul-verde" data-name="Leggin Alta Compressão (Azul/Verde)" data-price="129.90" data-image="imagem/imagem17.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-azul-verde" data-name="Leggin Alta Compressão (Azul/Verde)" data-price="129.90" data-image="imagem/imagem17.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem4.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem6.jpg" alt="Leggin Alta Compressão - Vista 2">
-                            <img src="imagem/imagem7.jpg" alt="Leggin Alta Compressão - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-cinza-claro')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem4.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem6.jpg" alt="Leggin Alta Compressão - Vista 2">
+                                <img src="imagem/imagem7.jpg" alt="Leggin Alta Compressão - Vista 3">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-cinza-claro')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-cinza-claro" data-name="Leggin Alta Compressão (Cinza Claro)" data-price="129.90" data-image="imagem/imagem4.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-cinza-claro" data-name="Leggin Alta Compressão (Cinza Claro)" data-price="129.90" data-image="imagem/imagem4.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem11.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem12.jpg" alt="Leggin Alta Compressão - Vista 2">
-                            <img src="imagem/imagem13.jpg" alt="Leggin Alta Compressão - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-vinho')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem11.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem12.jpg" alt="Leggin Alta Compressão - Vista 2">
+                                <img src="imagem/imagem13.jpg" alt="Leggin Alta Compressão - Vista 3">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-vinho')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-vinho" data-name="Leggin Alta Compressão (Vinho)" data-price="129.90" data-image="imagem/imagem11.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-vinho" data-name="Leggin Alta Compressão (Vinho)" data-price="129.90" data-image="imagem/imagem11.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem26.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem27.jpg" alt="Leggin Alta Compressão - Vista 2">
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-estampada-a')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem26.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem27.jpg" alt="Leggin Alta Compressão - Vista 2">
 
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-estampada-a')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-estampada-a" data-name="Leggin Alta Compressão (Estampa A)" data-price="129.90" data-image="imagem/imagem28.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-estampada-a" data-name="Leggin Alta Compressão (Estampa A)" data-price="129.90" data-image="imagem/imagem26.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem31.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem32.jpg" alt="Leggin Alta Compressão - Vista 2">
-                            <img src="imagem/imagem33.jpg" alt="Leggin Alta Compressão - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('conjunto-recorte')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem31.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem32.jpg" alt="Leggin Alta Compressão - Vista 2">
+                                <img src="imagem/imagem33.jpg" alt="Leggin Alta Compressão - Vista 3">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('conjunto-recorte')">Conjunto Recorte</h3>
+                            <p>R$ 189,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-estampada-b" data-name="Leggin Alta Compressão (Estampa B)" data-price="129.90" data-image="imagem/imagem32.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="conjunto-recorte" data-name="Conjunto Recorte (Novo)" data-price="189.90" data-image="imagem/imagem34.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem34.jpg" alt="Conjunto Recorte - Vista 1">
-                            <img src="imagem/imagem35.jpg" alt="Conjunto Recorte - Vista 2">
-                            <img src="imagem/imagem36.jpg" alt="Conjunto Recorte - Vista 1">
+                    <div class="product-link-overlay" onclick="openProductModal('top-estampado')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem34.jpg" alt="Conjunto Recorte - Vista 1">
+                                <img src="imagem/imagem35.jpg" alt="Conjunto Recorte - Vista 2">
+                                <img src="imagem/imagem36.jpg" alt="Conjunto Recorte - Vista 1">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('top-estampado')">Top Estampado</h3>
+                            <p>R$ 99,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Conjunto Recorte</h3>
-                        <p>R$ 189,90</p>
-                        <button class="btn-add-to-cart" data-id="conjunto-recorte" data-name="Conjunto Recorte (Novo)" data-price="189.90" data-image="imagem/imagem34.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="top-estampado" data-name="Top Estampado" data-price="99.90" data-image="imagem/imagem39.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem39.jpg" alt="Top Estampado - Vista 1">
-                            <img src="imagem/imagem40.jpg" alt="Top Estampado - Vista 2">
-                            <img src="imagem/imagem41.jpg" alt="Top Estampado - Vista 3">
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-estampada-b-2')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem39.jpg" alt="Top Estampado - Vista 1">
+                                <img src="imagem/imagem40.jpg" alt="Top Estampado - Vista 2">
+                                <img src="imagem/imagem41.jpg" alt="Top Estampado - Vista 3">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-estampada-b-2')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Top Estampado</h3>
-                        <p>R$ 99,90</p>
-                        <button class="btn-add-to-cart" data-id="top-estampado" data-name="Top Estampado" data-price="99.90" data-image="imagem/imagem39.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-estampada-b-2" data-name="Leggin Alta Compressão (Estampa B - 2)" data-price="129.90" data-image="imagem/imagem39.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
                 <div class="produto">
-                    <div class="slider-container">
-                        <div class="image-slider">
-                            <img src="imagem/imagem37.jpg" alt="Leggin Alta Compressão - Vista 1">
-                            <img src="imagem/imagem38.jpg" alt="Leggin Alta Compressão - Vista 2">
-
+                    <div class="product-link-overlay" onclick="openProductModal('leggin-estampada-b-3')">
+                        <div class="slider-container">
+                            <div class="image-slider">
+                                <img src="imagem/imagem37.jpg" alt="Leggin Alta Compressão - Vista 1">
+                                <img src="imagem/imagem38.jpg" alt="Leggin Alta Compressão - Vista 2">
+                            </div>
+                            <button class="slider-btn prev-btn">&lt;</button>
+                            <button class="slider-btn next-btn">&gt;</button>
+                            <div class="slider-dots"></div>
                         </div>
-                        <button class="slider-btn prev-btn">&lt;</button>
-                        <button class="slider-btn next-btn">&gt;</button>
-                        <div class="slider-dots"></div>
+                        <div class="produto-info">
+                            <h3 onclick="openProductModal('leggin-estampada-b-3')">Leggin Alta Compressão</h3>
+                            <p>R$ 129,90</p>
+                        </div>
                     </div>
-                    <div class="produto-info">
-                        <h3>Leggin Alta Compressão</h3>
-                        <p>R$ 129,90</p>
-                        <button class="btn-add-to-cart" data-id="leggin-estampada-a" data-name="Leggin Alta Compressão (Estampa A)" data-price="129.90" data-image="imagem/imagem28.jpg">
-                    Adicionar ao Carrinho
-                </button>
-                    </div>
+                    <button class="btn-add-to-cart" data-id="leggin-estampada-b-3" data-name="Leggin Alta Compressão (Estampa B - 3)" data-price="129.90" data-image="imagem/imagem37.jpg">
+                        Adicionar ao Carrinho
+                    </button>
                 </div>
 
             </div>
         </section>
+
     </main>
 
+    <div id="product-modal-content" class="modal-content">
+        <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+        <div id="modal-product-detail-area">
+            <p style="text-align: center;">Carregando...</p>
+        </div>
+    </div>
+    </div>
     <footer class="site-footer">
         <div class="footer-container">
 
