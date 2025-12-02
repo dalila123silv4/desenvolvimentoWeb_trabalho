@@ -119,19 +119,19 @@ const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     { id: 'conj-calca-01', name: 'Conjunto Top e Legging Recorte (Mod. 1)', price: 259.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c1.jpg', 'imagem/conjuntos/c2.jpg', 'imagem/conjuntos/c3.jpg'] },
     { id: 'conj-calca-02', name: 'Conjunto Monocromático (Mod. 2)', price: 240.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c4.jpg', 'imagem/conjuntos/c5.jpg', 'imagem/conjuntos/c6.jpg'] },
     { id: 'conj-calca-01', name: 'Conjunto Top e Short Ciclista (Mod. 1)', price: 189.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c7.jpg', 'imagem/conjuntos/c8.jpg', 'imagem/conjuntos/c9.jpg'] },
-    { id: 'conj-calca-02', name: 'Conjunto Recorte com Tule (Mod. 2)', price: 195.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c10.jpg', 'imagem/conjuntos/c11.jpg', 'imagem/conjuntos/c12.jpg'] },
-    { id: 'conj-calca-03', name: 'Conjunto Alto Impacto (Mod. 3)', price: 269.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c13.jpg', 'imagem/conjuntos/c14.jpg', 'imagem/conjuntos/c15.jpg'] },
-    { id: 'conj-calca-04', name: 'Conjunto Detalhe Tela (Mod. 4)', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c16.jpg', 'imagem/conjuntos/c17.jpg', 'imagem/conjuntos/c18.jpg'] },
-    { id: 'conj-calca-03', name: 'Conjunto Top Alça Fina e Short (Mod. 3)', price: 179.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c19.jpg', 'imagem/conjuntos/c20.jpg', 'imagem/conjuntos/c21.jpg'] },
-    { id: 'conj-calca-04', name: 'Conjunto Estampado com Short (Mod. 4)', price: 205.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c22.jpg', 'imagem/conjuntos/c23.jpg', 'imagem/conjuntos/c24.jpg'] },
-    { id: 'conj-calca-05', name: 'Conjunto Performance com Calça (Mod. 5)', price: 275.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c25.jpg', 'imagem/conjuntos/c26.jpg', 'imagem/conjuntos/c27.jpg'] },
-    { id: 'conj-calca-06', name: 'Conjunto Listrado (Mod. 6)', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c28.jpg', 'imagem/conjuntos/c29.jpg', 'imagem/conjuntos/c30.jpg'] },
-    { id: 'conj-calca-05', name: 'Conjunto Short Saia e Top (Mod. 5)', price: 199.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c31.jpg', 'imagem/conjuntos/c32.jpg', 'imagem/conjuntos/c33.jpg'] },
-    { id: 'conj-calca-06', name: 'Conjunto Ciclista Liso (Mod. 6)', price: 185.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c34.jpg', 'imagem/conjuntos/c35.jpg', 'imagem/conjuntos/c36.jpg'] },
-    { id: 'conj-calca-07', name: 'Conjunto Recorte Duplo (Mod. 7)', price: 289.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c37.jpg', 'imagem/conjuntos/c38.jpg', 'imagem/conjuntos/c39.jpg'] },
-    { id: 'conj-calca-08', name: 'Conjunto Estampado c/ Calça (Mod. 8)', price: 265.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c40.jpg', 'imagem/conjuntos/c41.jpg', 'imagem/conjuntos/c42.jpg'] },
-    { id: 'conj-calca-07', name: 'Conjunto Top Decote V e Short (Mod. 7)', price: 209.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c43.jpg', 'imagem/conjuntos/c44.jpg', 'imagem/conjuntos/c45.jpg'] },
-    { id: 'conj-calca-08', name: 'Conjunto Compressão com Short (Mod. 8)', price: 215.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c46.jpg', 'imagem/conjuntos/c47.jpg', 'imagem/conjuntos/c48.jpg'] },
+    { id: 'conj-calca-02-A', name: 'Conjunto Recorte com Tule (Mod. 2)', price: 195.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c10.jpg', 'imagem/conjuntos/c11.jpg', 'imagem/conjuntos/c12.jpg'] },
+    { id: 'conj-calca-03-B', name: 'Conjunto Alto Impacto (Mod. 3)', price: 269.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c13.jpg', 'imagem/conjuntos/c14.jpg', 'imagem/conjuntos/c15.jpg'] },
+    { id: 'conj-calca-04-B', name: 'Conjunto Detalhe Tela (Mod. 4)', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c16.jpg', 'imagem/conjuntos/c17.jpg', 'imagem/conjuntos/c18.jpg'] },
+    { id: 'conj-calca-03-B', name: 'Conjunto Top Alça Fina e Short (Mod. 3)', price: 179.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c19.jpg', 'imagem/conjuntos/c20.jpg', 'imagem/conjuntos/c21.jpg'] },
+    { id: 'conj-calca-04-B', name: 'Conjunto Estampado com Short (Mod. 4)', price: 205.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c22.jpg', 'imagem/conjuntos/c23.jpg', 'imagem/conjuntos/c24.jpg'] },
+    { id: 'conj-calca-05-A', name: 'Conjunto Performance com Calça (Mod. 5)', price: 275.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c25.jpg', 'imagem/conjuntos/c26.jpg', 'imagem/conjuntos/c27.jpg'] },
+    { id: 'conj-calca-06-A', name: 'Conjunto Listrado (Mod. 6)', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c28.jpg', 'imagem/conjuntos/c29.jpg', 'imagem/conjuntos/c30.jpg'] },
+    { id: 'conj-calca-05-B', name: 'Conjunto Short Saia e Top (Mod. 5)', price: 199.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c31.jpg', 'imagem/conjuntos/c32.jpg', 'imagem/conjuntos/c33.jpg'] },
+    { id: 'conj-calca-06-B', name: 'Conjunto Ciclista Liso (Mod. 6)', price: 185.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c34.jpg', 'imagem/conjuntos/c35.jpg', 'imagem/conjuntos/c36.jpg'] },
+    { id: 'conj-calca-07-A', name: 'Conjunto Recorte Duplo (Mod. 7)', price: 289.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c37.jpg', 'imagem/conjuntos/c38.jpg', 'imagem/conjuntos/c39.jpg'] },
+    { id: 'conj-calca-08-A', name: 'Conjunto Estampado c/ Calça (Mod. 8)', price: 265.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c40.jpg', 'imagem/conjuntos/c41.jpg', 'imagem/conjuntos/c42.jpg'] },
+    { id: 'conj-calca-07-B', name: 'Conjunto Top Decote V e Short (Mod. 7)', price: 209.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c43.jpg', 'imagem/conjuntos/c44.jpg', 'imagem/conjuntos/c45.jpg'] },
+    { id: 'conj-calca-08-B', name: 'Conjunto Compressão com Short (Mod. 8)', price: 215.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c46.jpg', 'imagem/conjuntos/c47.jpg', 'imagem/conjuntos/c48.jpg'] },
 
     // --- CATEGORIA: NOVOS CONJUNTOS DE SHORT (s1 a s48) ---
     { id: 'conj-short-09', name: 'Conjunto Top e Short Recorte (Mod. 9)', price: 259.90, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s1.jpg', 'imagem/conjunto/s2.jpg', 'imagem/conjunto/s3.jpg'] },
@@ -150,10 +150,10 @@ const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     { id: 'conj-short-22', name: 'Conjunto Short Texturizado (Mod. 22)', price: 280.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s40.jpg', 'imagem/conjunto/s41.jpg', 'imagem/conjunto/s42.jpg'] },
     { id: 'conj-short-23', name: 'Conjunto Short Liso Clássico (Mod. 23)', price: 230.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s43.jpg', 'imagem/conjunto/s44.jpg', 'imagem/conjunto/s45.jpg'] },
     { id: 'conj-short-24', name: 'Conjunto Short Performance (Mod. 24)', price: 245.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s46.jpg', 'imagem/conjunto/s47.jpg', 'imagem/conjunto/s48.jpg'] },
-    { id: 'conj-short-25', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s49.jpg', 'imagem/conjunto/s50.jpg', 'imagem/conjunto/s51.jpg'] },
-    { id: 'conj-short-26', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s52.jpg', 'imagem/conjunto/s53.jpg', 'imagem/conjunto/s54.jpg'] },
-    { id: 'conj-short-25', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s55.jpg', 'imagem/conjunto/s56.jpg', 'imagem/conjunto/s57.jpg'] },
-    { id: 'conj-short-26', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s58.jpg', 'imagem/conjunto/s59.jpg', 'imagem/conjunto/s60.jpg'] },
+    { id: 'conj-short-25A', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s49.jpg', 'imagem/conjunto/s50.jpg', 'imagem/conjunto/s51.jpg'] },
+    { id: 'conj-short-26A', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s52.jpg', 'imagem/conjunto/s53.jpg', 'imagem/conjunto/s54.jpg'] },
+    { id: 'conj-short-25B', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s55.jpg', 'imagem/conjunto/s56.jpg', 'imagem/conjunto/s57.jpg'] },
+    { id: 'conj-short-26B', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s58.jpg', 'imagem/conjunto/s59.jpg', 'imagem/conjunto/s60.jpg'] },
 
 
 ];
@@ -333,8 +333,7 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default', productsT
 
             const productHTML = `
                 <div class="produto" data-product-id="${product.id}"> 
-                    <a href="detalhe.html?id=${product.id}">
-                        <div class="product-slider-container">
+                         <div class="product-slider-container">
                             <div class="product-image-slider">
                                 ${imagesHtml}
                             </div>
@@ -346,7 +345,6 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default', productsT
                         </div>
                     </a>
                     <div class="produto-info">
-                        <a href="detalhe.html?id=${product.id}">
                         <h3>${product.name}</h3>
                         </a>
                         <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
@@ -451,11 +449,7 @@ function renderCart() {
         const itemHTML = `
         <div class="item-produto" data-id="${item.id}" data-price="${item.price}"> 
             <img src="${item.image}" alt="${item.name}"> 
-            <div class="detalhes">
-                <h3>${item.name}</h3>
-                <p>Preço Unit.: R$ ${item.price.toFixed(2).replace('.', ',')}</p> 
-                <p class="price">${itemTotalFormatado}</p>
-            </div>
+           
             <div class="quantidade">
                 <button class="btn-qty minus" data-id="${item.id}">-</button>
                 <input type="number" value="${item.qty}" readonly class="input-qty">
@@ -464,6 +458,12 @@ function renderCart() {
             <div class="remover">
                 <i class="fa-solid fa-trash-can" data-id="${item.id}"></i>
             </div>
+            <div class="detalhes">
+                <h3>${item.name}</h3>
+                <p>Preço Unit.: R$ ${item.price.toFixed(2).replace('.', ',')}</p> <p class="size-display">${sizeDisplay}</p>                
+ <p class="price">${itemTotalFormatado}</p>
+            </div>
+
         </div>
         `;
         cartListEl.insertAdjacentHTML('beforeend', itemHTML);
@@ -473,56 +473,78 @@ function renderCart() {
     attachCartEvents();
 }
 
-
 // --- Lógica para os Sliders de Produtos Individuais ---
 function initProductSliders() {
     document.querySelectorAll('.produto').forEach(productCard => {
-        const slider = productCard.querySelector('.product-image-slider');
+        const sliderContainer = productCard.querySelector('.slider-container');
+        if (!sliderContainer) return;
+
+        // CORREÇÃO ESSENCIAL: Tenta encontrar o trilho de imagens com a classe correta
+        // No index.html, a classe é apenas '.image-slider'
+        // No catálogo dinâmico, pode ser '.product-image-slider' (depende de como o HTML é gerado lá)
+        const slider = productCard.querySelector('.image-slider') || productCard.querySelector('.product-image-slider');
+
         if (!slider) return;
 
         const images = Array.from(slider.querySelectorAll('img'));
+        if (images.length <= 1) return;
+
         const prevBtn = productCard.querySelector('.prev-btn');
         const nextBtn = productCard.querySelector('.next-btn');
-        const dotsContainer = productCard.querySelector('.product-slider-dots');
-        const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.dot')) : [];
+        const dotsContainer = productCard.querySelector('.slider-dots');
         let currentIndex = 0;
 
+        // 1. FUNÇÃO DE ATUALIZAÇÃO (SHOW SLIDE)
         function updateSlider() {
+            // CRÍTICO: Aplica a classe 'active-slide' para mostrar a imagem correta
             images.forEach((img, i) => {
                 img.classList.toggle('active-slide', i === currentIndex);
             });
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
-            });
+
+            // 2. ATUALIZA OS DOTS (Bolinhas)
+            if (dotsContainer) {
+                dotsContainer.innerHTML = ''; // Limpa antes de gerar
+                images.forEach((_, i) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.setAttribute('data-slide-index', i);
+                    if (i === currentIndex) {
+                        dot.classList.add('active');
+                    }
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentIndex = parseInt(e.target.dataset.slideIndex);
+                        updateSlider();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
         }
 
+        // 3. EVENT LISTENERS PARA AS SETAS
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Impede o clique de abrir o link de detalhe
                 currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
                 updateSlider();
             });
         }
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Impede o clique de abrir o link de detalhe
                 currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
                 updateSlider();
             });
         }
 
-        if (dots.length > 0) {
-            dots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    currentIndex = parseInt(e.target.dataset.slideIndex);
-                    updateSlider();
-                });
-            });
-        }
-
+        // 4. CHAMA PELA PRIMEIRA VEZ para inicializar a imagem, os dots e as setas
         updateSlider();
     });
 }
-
 
 // Funções Auxiliares (Para reativar os botões do carrinho após a renderização)
 // NOVO E CORRIGIDO BLOCO DA FUNÇÃO attachCartButtonEvents
@@ -532,36 +554,60 @@ function attachCartButtonEvents() {
         // Remove listeners antigos para evitar duplicação, caso a função seja chamada várias vezes
         const newButton = button.cloneNode(true);
         button.parentNode.replaceChild(newButton, button);
-
-        newButton.addEventListener('click', (event) => {
+        newButton.addEventListener('click', (event) => {            
             event.preventDefault();
 
-            const prodData = event.currentTarget.dataset;
+                  
+            const prodData = event.currentTarget.dataset;            
             let cart = getCart();
 
-            // 1. TENTA ENCONTRAR O SELETOR DE TAMANHO
-            // Usamos o seletor mais genérico. Se estiver em detalhe.html, ele existe.
-            const sizeSelect = document.getElementById('product-size');
-            const isDetailPageButton = newButton.classList.contains('detail-btn');
-
-            let selectedSize = 'Padrão'; // Default para listagem/relacionados
+                  
+            let selectedSize = 'Padrão';            
             let uniqueId = prodData.id;
 
-            // 2. LÓGICA DE VALIDAÇÃO DE TAMANHO (Ativada APENAS para o botão principal)
-            if (sizeSelect && isDetailPageButton) {
+                   // Busca seletores
+                  
+            const sizeSelectDetalhe = document.getElementById('product-size'); // Seletor da página detalhe
+                  
+            const isDetailPageButton = newButton.classList.contains('detail-btn');
 
-                let tempSize = sizeSelect.value.toUpperCase();
+                   // NOVO: Tenta encontrar o SELETOR da MODAL
+                  
+            const sizeSelectModal = document.getElementById('modal-size');      
+            const isModalButton = event.currentTarget.id === 'modal-add-to-cart-btn'; // O ID do botão que criamos
 
-                if (tempSize === 'SELECIONE') {
-                    alert(" Por favor, selecione um tamanho (P, M ou G) para adicionar ao carrinho.");
-                    sizeSelect.focus();
-                    return; // Bloqueia a adição ao carrinho
+                  
+            let selectToUse = null;
+
+                  
+            if (sizeSelectDetalhe && isDetailPageButton) {         // CASO 1: PÁGINA DE DETALHES
+                         selectToUse = sizeSelectDetalhe;       } else if (sizeSelectModal && isModalButton) {         // CASO 2: BOTÃO DENTRO DA MODAL (ESTE É O NOVO CASO!)
+                         selectToUse = sizeSelectModal;       }            
+            if (selectToUse) {         // Lógica para seletor (Detalhe ou Modal)
+                        
+                let tempSize = selectToUse.value.toUpperCase();
+
+                        
+                if (tempSize === 'SELECIONE') {          
+                    alert("Por favor, selecione um tamanho (P, M ou G) para adicionar ao carrinho.");          
+                    selectToUse.focus();          
+                    return;        
                 }
 
-                // Tamanho selecionado e validado
-                selectedSize = tempSize;
-                uniqueId = prodData.id + `-${selectedSize}`; // Cria ID único
-            }
+                        
+                selectedSize = tempSize;        
+                uniqueId = prodData.id + `-${selectedSize}`;
+
+                      
+            } else {         // CASO 3: BOTOES DA LISTAGEM DE PRODUTOS (PROMPT)
+                        
+                const tempSize = prompt(`"${prodData.name}" selecionado.\nPor favor, digite o tamanho desejado (P, M ou G) para este item:`);
+
+                        
+                if (!tempSize || tempSize.trim() === "" || ['P', 'M', 'G'].indexOf(tempSize.toUpperCase().trim()) === -1) {           alert("Seleção de tamanho inválida ou cancelada. Adição ao carrinho cancelada.");           return;         }                
+                selectedSize = tempSize.toUpperCase().trim();        
+                uniqueId = prodData.id + `-${selectedSize}`;      
+            }                   
             // 3. LÓGICA DE ADIÇÃO AO CARRINHO
             const existingItem = cart.find(item => item.id === uniqueId);
 
@@ -620,27 +666,53 @@ function renderRelatedProducts(currentProduct) {
     if (relatedProducts.length > 0) {
         // Reutilizamos a lógica de renderização de cards aqui, mas de forma simplificada
         relatedProducts.forEach(product => {
+            // ADICIONE A GERAÇÃO DO HTML DO SLIDER AQUI:
+            const images = product.images || [];
+            const imagesHtml = images.map((imgSrc, index) => `
+        <img src="${imgSrc}" alt="${product.name} - Imagem ${index + 1}" ${index === 0 ? 'class="active-slide"' : ''}>
+    `).join('');
+
+            const dotsHtml = images.map((_, index) => `
+        <span class="dot ${index === 0 ? 'active' : ''}" data-slide-index="${index}"></span>
+    `).join('');
+            // FIM DA ADIÇÃO
             const productHTML = `
-                <div class="produto" data-product-id="${product.id}"> 
-                    <a href="detalhe.html?id=${product.id}">
-                        <div class="product-slider-container">
-                            <img src="${product.images[0]}" alt="${product.name}" class="active-slide">
-                        </div>
-                    </a>
-                    <div class="produto-info">
-                        <a href="detalhe.html?id=${product.id}">
-                            <h3>${product.name}</h3>
-                        </a>
-                        <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-                        <button class="btn-add-to-cart" 
-                                data-id="${product.id}" 
-                                data-name="${product.name}" 
-                                data-price="${product.price}" 
-                                data-image="${product.images[0] || ''}"> 
-                            Adicionar ao Carrinho
-                        </button>
-                    </div>
+    <div class="produto" data-product-id="${product.id}"> 
+        <a href="detalhe.html?id=${product.id}">
+            <div class="product-slider-container">
+                <div class="product-image-slider">
+                    ${imagesHtml}
                 </div>
+                <button class="product-slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="product-slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                <div class="product-slider-dots">
+                    ${dotsHtml}
+                </div>
+            </div>
+        </a>
+        <div class="produto-info">
+            <a href="detalhe.html?id=${product.id}">
+                <h3>${product.name}</h3>
+            </a>
+            <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+            
+            <div class="input-group-listagem">
+                <label for="size-${product.id}">Tam:</label>
+                <select id="size-${product.id}" class="select-tamanho-listagem">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                </select>
+            </div>
+            <button class="btn-add-to-cart" 
+                data-id="${product.id}" 
+                data-name="${product.name}" 
+                data-price="${product.price}" 
+                data-image="${product.images[0] || ''}"> 
+                Adicionar ao Carrinho
+            </button>
+        </div>
+    </div>
             `;
             relatedGridEl.insertAdjacentHTML('beforeend', productHTML);
         });
@@ -965,12 +1037,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderProductsPage();
     }
-
     // Lógica específica para a página de Produtos/Home
     if (document.querySelector('.produtos-destaque')) {
         attachCartButtonEvents();
+        initProductSliders(); // <-- ADICIONE ESTA LINHA
     }
-
     // Lógica específica para a página de Carrinho
     if (document.getElementById('lista-de-produtos-carrinho')) {
         renderCart();
