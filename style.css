@@ -1,12 +1,3 @@
-/* ----------------------------------------------------------------------------------- */
-
-
-/* ------------------------------- style.css COMPLETO E CORRIGIDO -------------------- */
-
-
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 1. Estilos Globais e Reset --- */
 
 * {
@@ -40,9 +31,6 @@ main {
 html {
     scroll-behavior: smooth;
 }
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 2. Estilo do Cabeçalho e Menu (Header) --- */
@@ -109,9 +97,6 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 3. Estilo do Dropdown Mega-Menu (Conjuntos) --- */
 
 .dropdown {
@@ -157,9 +142,6 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 4. Estilo do Carrossel de Banners (PRINCIPAL E GENÉRICO) --- */
 
 .banner-area {
@@ -167,6 +149,7 @@ nav ul li a[href="carrinho.html"]:hover {
     margin-bottom: 0;
     padding: 0;
     overflow: hidden;
+    max-height: 400px;
 }
 
 
@@ -174,12 +157,13 @@ nav ul li a[href="carrinho.html"]:hover {
 
 #main-banner-slider {
     position: relative;
-    /* CORREÇÃO VITAL PARA LARGURA TOTAL: Ignora margens e ocupa 100% da viewport */
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     overflow: hidden;
     height: auto;
+    height: 100%;
+    overflow: hidden;
 }
 
 
@@ -251,7 +235,7 @@ nav ul li a[href="carrinho.html"]:hover {
 /* Para a Home estática (index.html) - Evita o zoom e mostra a imagem completa */
 
 .produto .image-slider img {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 
@@ -287,12 +271,6 @@ nav ul li a[href="carrinho.html"]:hover {
 .produto:hover .slider-dots {
     opacity: 1;
 }
-
-
-/* ... (demais estilos para .dot, .active, prev-btn, next-btn) ... */
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 5. Estilo da Seção de Produtos em Destaque e Grade --- */
@@ -434,9 +412,6 @@ nav ul li a[href="carrinho.html"]:hover {
     display: none;
 }
 
-
-/* O CSS CRÍTICO PARA FAZER A FOTO APARECER (É CONTROLADO PELO JAVASCRIPT) */
-
 .product-image-slider img.active-slide {
     display: block;
 }
@@ -495,7 +470,6 @@ nav ul li a[href="carrinho.html"]:hover {
 
 .produto:hover .product-slider-dots,
 .produto:hover .slider-dots {
-    /* <--- CORREÇÃO AQUI */
     opacity: 1;
 }
 
@@ -514,13 +488,7 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 6. Estilo da Página de Login / Cadastro / Contato (Mantido) --- */
-
-
-/* ... (Seção 6, 7 e 8 mantidas, sem alterações críticas) ... */
 
 .login-section {
     display: flex;
@@ -658,9 +626,6 @@ nav ul li a[href="carrinho.html"]:hover {
     margin-bottom: 0;
     display: none;
 }
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 7. Estilo da Página de Carrinho e Checkout (Mantido) --- */
@@ -922,9 +887,6 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 8. ESTILO DO RODAPÉ (FOOTER) - Final Consolidado (Mantido) --- */
 
 .site-footer {
@@ -1014,9 +976,6 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- Estilos para Páginas de Conteúdo (Sobre, Políticas, etc.) (Mantido) --- */
 
 .content-page {
@@ -1045,9 +1004,6 @@ nav ul li a[href="carrinho.html"]:hover {
     line-height: 1.7;
     margin-bottom: 5px;
 }
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 9. Media Queries para Responsividade (FINAL) (Mantido) --- */
@@ -1144,9 +1100,6 @@ nav ul li a[href="carrinho.html"]:hover {
         gap: 10px;
     }
 }
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- ESTILOS DA PÁGINA DE PRODUTOS (produtos.html) (Mantido) --- */
@@ -1288,9 +1241,6 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
-
-
 /* --- 10. Estilos da Página de Checkout/Pagamento (PIX) (Mantido) --- */
 
 .pix-confirmation-section {
@@ -1386,9 +1336,6 @@ nav ul li a[href="carrinho.html"]:hover {
 .btn-copy:hover {
     background-color: #28a745;
 }
-
-
-/* ----------------------------------------------------------------------------------- */
 
 
 /* --- 11. Estilo da Página de Detalhes do Produto (detalhe.html) (Mantido) --- */
@@ -1652,10 +1599,69 @@ nav ul li a[href="carrinho.html"]:hover {
 }
 
 
-/* ----------------------------------------------------------------------------------- */
+/* 1. CSS para o Novo Link (<a>) que leva ao detalhe.html */
+
+.produto .product-detail-link {
+    display: block;
+    /* CRÍTICO: Faz o link se comportar como uma DIV e ocupar o espaço total da imagem/info. */
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
 
 
-/* ------------------------------- FIM DO style.css CORRIGIDO ------------------------ */
+/* 2. Z-Index para os Botões do Slider */
 
 
-/* ----------------------------------------------------------------------------------- */
+/* Garante que as setas do slider fiquem por cima do novo link, permitindo o clique no slider. */
+
+.product-slider-btn,
+.slider-btn {
+    z-index: 10;
+    /* Elevar o z-index da seta ACIMA de todos os outros elementos */
+}
+
+
+/* 3. Ajuste no Container de Informações (Para manter o espaçamento do botão) */
+
+
+/* Garante que o conteúdo do link (imagem + info) use o Flexbox para empurrar o botão */
+
+.produto .product-detail-link .product-link-overlay {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* 1. Cor dos preços nos Cards de Produto (Index e Catálogo) */
+
+
+/* Sobrescreve a cor #333 ou a cor padrão */
+
+.produto .produto-info p {
+    color: #007bff;
+    font-weight: bold;
+    /* Garante que o peso da fonte seja mantido */
+}
+
+
+/* 2. Cor do Preço na Página de Detalhes (Detalhe/Modal) */
+
+
+/* Sobrescreve a cor da classe .detail-price */
+
+.detail-price {
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+/* 3. Cor dos preços no Carrinho (Seção 7 - opcional) */
+
+
+/* Sobrescreve a cor verde (#28a745) no resumo do item no carrinho */
+
+.item-produto .price {
+    color: #007bff;
+}

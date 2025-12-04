@@ -9,105 +9,105 @@ const LIMITE_FRETE_GRATIS = 300.00;
 
 const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
-    { id: 'top-basico01', name: 'Top Clara', price: 180.00, category: 'tops', images: ['imagem/tops/top1.jpg', 'imagem/tops/top2.jpg'] },
-    { id: 'top-basico02', name: 'Top Clara ', price: 60.00, category: 'tops', images: ['imagem/tops/top3.jpg', 'imagem/tops/top4.jpg'] },
-    { id: 'top-basico03', name: 'Top estilo V ', price: 60.00, category: 'tops', images: ['imagem/tops/top5.jpg', 'imagem/tops/top6.jpg'] },
-    { id: 'top-basico04', name: 'Top Retângular', price: 60.00, category: 'tops', images: ['imagem/tops/top7.jpg', 'imagem/tops/top8.jpg'] },
-    { id: 'top-basico05', name: 'Top Maria', price: 60.00, category: 'tops', images: ['imagem/tops/top9.jpg', 'imagem/tops/top10.jpg'] },
-    { id: 'top-basico06', name: 'Top Trançado nas Costas', price: 60.00, category: 'tops', images: ['imagem/tops/top11.jpg', 'imagem/tops/top12.jpg'] },
-    { id: 'top-basico07', name: 'Top Amélia', price: 60.00, category: 'tops', images: ['imagem/tops/top13.jpg', 'imagem/tops/top14.jpg'] },
-    { id: 'top-basico08', name: 'Top Recorte (Mod. 08)', price: 60.00, category: 'tops', images: ['imagem/tops/top15.jpg', 'imagem/tops/top16.jpg'] },
-    { id: 'top-basico09', name: 'Top Recorte (Mod. 09)', price: 60.00, category: 'tops', images: ['imagem/tops/top17.jpg', 'imagem/tops/top18.jpg'] },
-    { id: 'top-basico10', name: 'Top Detalhe Tule (Mod. 10)', price: 65.00, category: 'tops', images: ['imagem/tops/top19.jpg', 'imagem/tops/top20.jpg'] },
-    { id: 'top-basico11', name: 'Top Detalhe Tule (Mod. 11)', price: 65.00, category: 'tops', images: ['imagem/tops/top21.jpg', 'imagem/tops/top22.jpg'] },
-    { id: 'top-basico12', name: 'Top Detalhe Tule (Mod. 12)', price: 65.00, category: 'tops', images: ['imagem/tops/top23.jpg', 'imagem/tops/top24.jpg'] },
-    { id: 'top-basico13', name: 'Top C/ Bojo (Mod. 13)', price: 70.00, category: 'tops', images: ['imagem/tops/top25.jpg', 'imagem/tops/top26.jpg'] },
-    { id: 'top-basico14', name: 'Top C/ Bojo (Mod. 14)', price: 70.00, category: 'tops', images: ['imagem/tops/top27.jpg', 'imagem/tops/top28.jpg'] },
-    { id: 'top-basico15', name: 'Top Estampado A (Mod. 15)', price: 75.00, category: 'tops', images: ['imagem/tops/top29.jpg', 'imagem/tops/top30.jpg'] },
-    { id: 'top-basico16', name: 'Top Estampado B (Mod. 16)', price: 75.00, category: 'tops', images: ['imagem/tops/top31.jpg', 'imagem/tops/top32.jpg'] },
-    { id: 'top-basico17', name: 'Top Estampado C (Mod. 17)', price: 79.90, category: 'tops', images: ['imagem/tops/top33.jpg', 'imagem/tops/top34.jpg'] },
-    { id: 'top-basico18', name: 'Top Estampado D (Mod. 18)', price: 79.90, category: 'tops', images: ['imagem/tops/top35.jpg', 'imagem/tops/top36.jpg'] },
-    { id: 'top-basico19', name: 'Top Performance X (Mod. 19)', price: 85.00, category: 'tops', images: ['imagem/tops/top37.jpg', 'imagem/tops/top38.jpg'] },
-    { id: 'top-basico20', name: 'Top Performance X (Mod. 20)', price: 85.00, category: 'tops', images: ['imagem/tops/top39.jpg', 'imagem/tops/top40.jpg'] },
-    { id: 'top-basico21', name: 'Top Alça Larga Detalhe (Mod. 21)', price: 90.00, category: 'tops', images: ['imagem/tops/top41.jpg', 'imagem/tops/top42.jpg'] },
-    { id: 'top-basico22', name: 'Top Alça Larga Detalhe (Mod. 22)', price: 90.00, category: 'tops', images: ['imagem/tops/top43.jpg', 'imagem/tops/top44.jpg'] },
-    { id: 'top-basico23', name: 'Top Recorte Lateral (Mod. 23)', price: 95.00, category: 'tops', images: ['imagem/tops/top45.jpg', 'imagem/tops/top46.jpg'] },
-    { id: 'top-basico24', name: 'Top Recorte Lateral (Mod. 24)', price: 95.00, category: 'tops', images: ['imagem/tops/top47.jpg', 'imagem/tops/top48.jpg'] },
-    { id: 'top-basico25', name: 'Top Decote V (Mod. 25)', price: 99.90, category: 'tops', images: ['imagem/tops/top49.jpg', 'imagem/tops/top50.jpg'] },
-    { id: 'top-basico26', name: 'Top Decote V (Mod. 26)', price: 99.90, category: 'tops', images: ['imagem/tops/top51.jpg', 'imagem/tops/top52.jpg'] },
-    { id: 'top-basico27', name: 'Top Nadador (Mod. 27)', price: 105.00, category: 'tops', images: ['imagem/tops/top53.jpg', 'imagem/tops/top54.jpg'] },
-    { id: 'top-basico28', name: 'Top Nadador (Mod. 28)', price: 105.00, category: 'tops', images: ['imagem/tops/top55.jpg', 'imagem/tops/top56.jpg'] },
-    { id: 'top-basico29', name: 'Top Dupla Face (Mod. 29)', price: 110.00, category: 'tops', images: ['imagem/tops/top57.jpg', 'imagem/tops/top58.jpg'] },
-    { id: 'top-basico30', name: 'Top Dupla Face (Mod. 30)', price: 110.00, category: 'tops', images: ['imagem/tops/top59.jpg', 'imagem/tops/top60.jpg'] },
-    { id: 'top-basico31', name: 'Top Performance Z (Mod. 31)', price: 115.00, category: 'tops', images: ['imagem/tops/top61.jpg', 'imagem/tops/top62.jpg'] },
-    { id: 'top-basico32', name: 'Top Performance Z (Mod. 32)', price: 115.00, category: 'tops', images: ['imagem/tops/top63.jpg', 'imagem/tops/top64.jpg'] },
-    { id: 'top-basico33', name: 'Top Max Sustain (Mod. 33)', price: 120.00, category: 'tops', images: ['imagem/tops/top65.jpg', 'imagem/tops/top66.jpg'] },
-    { id: 'top-basico34', name: 'Top Max Sustain (Mod. 34)', price: 120.00, category: 'tops', images: ['imagem/tops/top67.jpg', 'imagem/tops/top68.jpg'] },
-    { id: 'top-basico35_a', name: 'Top Alto Impacto (Mod. 35A)', price: 125.00, category: 'tops', images: ['imagem/tops/top69.jpg', 'imagem/tops/top70.jpg'] },
-    { id: 'top-basico35_b', name: 'Top Alto Impacto (Mod. 35B)', price: 125.00, category: 'tops', images: ['imagem/tops/top71.jpg', 'imagem/tops/top72.jpg'] },
-    { id: 'top-basico36', name: 'Top com Zíper (Mod. 36)', price: 129.90, category: 'tops', images: ['imagem/tops/top73.jpg', 'imagem/tops/top74.jpg'] },
-    { id: 'top-basico37', name: 'Top C/ Detalhe Costas (Mod. 37)', price: 129.90, category: 'tops', images: ['imagem/tops/top75.jpg', 'imagem/tops/top76.jpg'] },
-    { id: 'top-basico38', name: 'Top Compressão (Mod. 38)', price: 135.00, category: 'tops', images: ['imagem/tops/top77.jpg', 'imagem/tops/top78.jpg'] },
-    { id: 'top-basico39', name: 'Top Compressão (Mod. 39)', price: 135.00, category: 'tops', images: ['imagem/tops/top79.jpg', 'imagem/tops/top80.jpg'] },
-    { id: 'top-basico40', name: 'Top Recorte Duplo (Mod. 40)', price: 139.90, category: 'tops', images: ['imagem/tops/top81.jpg', 'imagem/tops/top82.jpg'] },
-    { id: 'top-basico41', name: 'Top Recorte Duplo (Mod. 41)', price: 139.90, category: 'tops', images: ['imagem/tops/top83.jpg', 'imagem/tops/top84.jpg'] },
-    { id: 'top-basico42', name: 'Top Estampado K (Mod. 42)', price: 145.00, category: 'tops', images: ['imagem/tops/top85.jpg', 'imagem/tops/top86.jpg'] },
-    { id: 'top-basico43', name: 'Top Estampado L (Mod. 43)', price: 145.00, category: 'tops', images: ['imagem/tops/top87.jpg', 'imagem/tops/top88.jpg'] },
-    { id: 'top-basico44', name: 'Top Estampado M (Mod. 44)', price: 149.90, category: 'tops', images: ['imagem/tops/top89.jpg', 'imagem/tops/top90.jpg'] },
-    { id: 'top-basico45', name: 'Top Estampado N (Mod. 45)', price: 149.90, category: 'tops', images: ['imagem/tops/top91.jpg', 'imagem/tops/top92.jpg'] },
-    { id: 'top-basico46', name: 'Top Estampado O (Mod. 46)', price: 155.00, category: 'tops', images: ['imagem/tops/top93.jpg', 'imagem/tops/top94.jpg'] },
-    { id: 'top-basico47', name: 'Top Estampado P (Mod. 47)', price: 155.00, category: 'tops', images: ['imagem/tops/top95.jpg', 'imagem/tops/top96.jpg'] },
-    { id: 'top-basico48', name: 'Top Estampado Q (Mod. 48)', price: 159.90, category: 'tops', images: ['imagem/tops/top97.jpg', 'imagem/tops/top98.jpg'] },
-    { id: 'top-basico49', name: 'Top Estampado R (Mod. 49)', price: 159.90, category: 'tops', images: ['imagem/tops/top99.jpg', 'imagem/tops/top100.jpg'] }, // <-- FIM TOPS
+    { id: 'top-basico01', name: 'Top Clara', price: 189.90, category: 'tops', images: ['imagem/tops/top1.jpg', 'imagem/tops/top2.jpg'] },
+    { id: 'top-basico02', name: 'Top Clara ', price: 189.90, category: 'tops', images: ['imagem/tops/top3.jpg', 'imagem/tops/top4.jpg'] },
+    { id: 'top-basico03', name: 'Top estilo V ', price: 110.00, category: 'tops', images: ['imagem/tops/top5.jpg', 'imagem/tops/top6.jpg'] },
+    { id: 'top-basico04', name: 'Top Retângular', price: 130.00, category: 'tops', images: ['imagem/tops/top7.jpg', 'imagem/tops/top8.jpg'] },
+    { id: 'top-basico05', name: 'Top Maria', price: 140.00, category: 'tops', images: ['imagem/tops/top9.jpg', 'imagem/tops/top10.jpg'] },
+    { id: 'top-basico06', name: 'Top Costas Trançadas', price: 130.00, category: 'tops', images: ['imagem/tops/top11.jpg', 'imagem/tops/top12.jpg'] },
+    { id: 'top-basico07', name: 'Top Amélia', price: 120.00, category: 'tops', images: ['imagem/tops/top13.jpg', 'imagem/tops/top14.jpg'] },
+    { id: 'top-basico08', name: 'Top Trançado', price: 130.00, category: 'tops', images: ['imagem/tops/top15.jpg', 'imagem/tops/top16.jpg'] },
+    { id: 'top-basico09', name: 'Top Retangular', price: 120.00, category: 'tops', images: ['imagem/tops/top17.jpg', 'imagem/tops/top18.jpg'] },
+    { id: 'top-basico10', name: 'Top Detalhe Aberto Costa', price: 130.00, category: 'tops', images: ['imagem/tops/top19.jpg', 'imagem/tops/top20.jpg'] },
+    { id: 'top-basico11', name: 'Top Retangular (02)', price: 120.00, category: 'tops', images: ['imagem/tops/top21.jpg', 'imagem/tops/top22.jpg'] },
+    { id: 'top-basico12', name: 'Top Cio&Cia', price: 110.00, category: 'tops', images: ['imagem/tops/top23.jpg', 'imagem/tops/top24.jpg'] },
+    { id: 'top-basico13', name: 'Top Costas Trançadas (02)', price: 130.00, category: 'tops', images: ['imagem/tops/top25.jpg', 'imagem/tops/top26.jpg'] },
+    { id: 'top-basico14', name: 'Top Amélia (02)', price: 120.00, category: 'tops', images: ['imagem/tops/top27.jpg', 'imagem/tops/top28.jpg'] },
+    { id: 'top-basico15', name: 'Top Sereia', price: 115.00, category: 'tops', images: ['imagem/tops/top29.jpg', 'imagem/tops/top30.jpg'] },
+    { id: 'top-basico16', name: 'Top Traçado', price: 110.00, category: 'tops', images: ['imagem/tops/top31.jpg', 'imagem/tops/top32.jpg'] },
+    { id: 'top-basico17', name: 'Top Detalhe no Busto', price: 115.90, category: 'tops', images: ['imagem/tops/top33.jpg', 'imagem/tops/top34.jpg'] },
+    { id: 'top-basico18', name: 'Top Jordania', price: 125.90, category: 'tops', images: ['imagem/tops/top35.jpg', 'imagem/tops/top36.jpg'] },
+    { id: 'top-basico19', name: 'Top Cleo', price: 115.00, category: 'tops', images: ['imagem/tops/top37.jpg', 'imagem/tops/top38.jpg'] },
+    { id: 'top-basico20', name: 'Top Detalhe Aberto nas Costas(02)', price: 130.00, category: 'tops', images: ['imagem/tops/top39.jpg', 'imagem/tops/top40.jpg'] },
+    { id: 'top-basico21', name: 'Top Decote V', price: 135.00, category: 'tops', images: ['imagem/tops/top41.jpg', 'imagem/tops/top42.jpg'] },
+    { id: 'top-basico22', name: 'Top Veronica', price: 120.00, category: 'tops', images: ['imagem/tops/top43.jpg', 'imagem/tops/top44.jpg'] },
+    { id: 'top-basico23', name: 'Top Stella', price: 130.00, category: 'tops', images: ['imagem/tops/top45.jpg', 'imagem/tops/top46.jpg'] },
+    { id: 'top-basico24', name: 'Top Mula Manca', price: 120.00, category: 'tops', images: ['imagem/tops/top47.jpg', 'imagem/tops/top48.jpg'] },
+    { id: 'top-basico25', name: 'Top Detalhe Aberto nas Costa (03) ', price: 130.00, category: 'tops', images: ['imagem/tops/top49.jpg', 'imagem/tops/top50.jpg'] },
+    { id: 'top-basico26', name: 'Top Sereia (02)', price: 115.00, category: 'tops', images: ['imagem/tops/top51.jpg', 'imagem/tops/top52.jpg'] },
+    { id: 'top-basico27', name: 'Top Nadador', price: 115.00, category: 'tops', images: ['imagem/tops/top53.jpg', 'imagem/tops/top54.jpg'] },
+    { id: 'top-basico28', name: 'Top Detalhe no Busto(02)', price: 115.90, category: 'tops', images: ['imagem/tops/top55.jpg', 'imagem/tops/top56.jpg'] },
+    { id: 'top-basico29', name: 'Top Nadador (02)', price: 115.00, category: 'tops', images: ['imagem/tops/top57.jpg', 'imagem/tops/top58.jpg'] },
+    { id: 'top-basico30', name: 'Top Nadador (03)', price: 115.00, category: 'tops', images: ['imagem/tops/top59.jpg', 'imagem/tops/top60.jpg'] },
+    { id: 'top-basico31', name: 'Top Performance', price: 119.90, category: 'tops', images: ['imagem/tops/top61.jpg', 'imagem/tops/top62.jpg'] },
+    { id: 'top-basico32', name: 'Top Perola', price: 130.00, category: 'tops', images: ['imagem/tops/top63.jpg', 'imagem/tops/top64.jpg'] },
+    { id: 'top-basico33', name: 'Top Perola (02)', price: 130.00, category: 'tops', images: ['imagem/tops/top65.jpg', 'imagem/tops/top66.jpg'] },
+    { id: 'top-basico34', name: 'Top Nat', price: 120.00, category: 'tops', images: ['imagem/tops/top67.jpg', 'imagem/tops/top68.jpg'] },
+    { id: 'top-basico35_a', name: 'Top Nat (02)', price: 120.00, category: 'tops', images: ['imagem/tops/top69.jpg', 'imagem/tops/top70.jpg'] },
+    { id: 'top-basico35_b', name: 'Top Sereia (03)', price: 115.00, category: 'tops', images: ['imagem/tops/top71.jpg', 'imagem/tops/top72.jpg'] },
+    { id: 'top-basico36', name: 'Top', price: 114.90, category: 'tops', images: ['imagem/tops/top73.jpg', 'imagem/tops/top74.jpg'] },
+    { id: 'top-basico37', name: 'Top Cintia', price: 119.90, category: 'tops', images: ['imagem/tops/top75.jpg', 'imagem/tops/top76.jpg'] },
+    { id: 'top-basico38', name: 'Top ', price: 114.90, category: 'tops', images: ['imagem/tops/top77.jpg', 'imagem/tops/top78.jpg'] },
+    { id: 'top-basico39', name: 'Top Perola (03)', price: 130.00, category: 'tops', images: ['imagem/tops/top79.jpg', 'imagem/tops/top80.jpg'] },
+    { id: 'top-basico40', name: 'Top Recorte Duplo ', price: 139.90, category: 'tops', images: ['imagem/tops/top81.jpg', 'imagem/tops/top82.jpg'] },
+    { id: 'top-basico41', name: 'Top Recorte nas Costas', price: 139.90, category: 'tops', images: ['imagem/tops/top83.jpg', 'imagem/tops/top84.jpg'] },
+    { id: 'top-basico42', name: 'Top Agatha', price: 145.00, category: 'tops', images: ['imagem/tops/top85.jpg', 'imagem/tops/top86.jpg'] },
+    { id: 'top-basico43', name: 'Top Agatha (02)', price: 145.00, category: 'tops', images: ['imagem/tops/top87.jpg', 'imagem/tops/top88.jpg'] },
+    { id: 'top-basico44', name: 'Top Peixe', price: 125.90, category: 'tops', images: ['imagem/tops/top89.jpg', 'imagem/tops/top90.jpg'] },
+    { id: 'top-basico45', name: 'Top Academia', price: 115.90, category: 'tops', images: ['imagem/tops/top91.jpg', 'imagem/tops/top92.jpg'] },
+    { id: 'top-basico46', name: 'Top C/Manga Curta', price: 129.90, category: 'tops', images: ['imagem/tops/top93.jpg', 'imagem/tops/top94.jpg'] },
+    { id: 'top-basico47', name: 'Top C/Manga Longa', price: 149.90, category: 'tops', images: ['imagem/tops/top95.jpg', 'imagem/tops/top96.jpg'] },
+    { id: 'top-basico48', name: 'Top C/Manga Curta(02)', price: 159.90, category: 'tops', images: ['imagem/tops/top97.jpg', 'imagem/tops/top98.jpg'] },
+    { id: 'top-basico49', name: 'Top Amanda', price: 129.90, category: 'tops', images: ['imagem/tops/top99.jpg', 'imagem/tops/top100.jpg'] }, // <-- FIM TOPS
 
     // --- CATEGORIA: SHORTS (29 itens) ---
-    { id: 'short-fit01', name: 'Short Fitness Básico (Preto)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short1.jpg', 'imagem/shorts/short3.jpg'] },
-    { id: 'short-fit02', name: 'Short Fitness Básico (Azul)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short4.jpg', 'imagem/shorts/short5.jpg'] },
-    { id: 'short-fit03', name: 'Short Saia Performance', price: 105.00, category: 'shorts', images: ['imagem/shorts/short6.jpg', 'imagem/shorts/short7.jpg'] },
-    { id: 'short-fit04', name: 'Short Ciclista Alto Giro', price: 95.00, category: 'shorts', images: ['imagem/shorts/short8.jpg', 'imagem/shorts/short9.jpg'] },
-    { id: 'short-fit05', name: 'Short Fitness Básico (Preto Mod 2)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short10.jpg', 'imagem/shorts/short11.jpg'] },
-    { id: 'short-fit06', name: 'Short Fitness Básico (Azul Mod 2)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short12.jpg', 'imagem/shorts/short13.jpg'] },
-    { id: 'short-fit07', name: 'Short Saia Performance (Mod 2)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short14.jpg', 'imagem/shorts/short15.jpg'] },
-    { id: 'short-fit08', name: 'Short Ciclista Alto Giro (Mod 2)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short16.jpg', 'imagem/shorts/short17.jpg'] },
-    { id: 'short-fit09', name: 'Short Fitness Básico (Preto Mod 3)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short18.jpg', 'imagem/shorts/short19.jpg'] },
-    { id: 'short-fit10', name: 'Short Fitness Básico (Azul Mod 3)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short20.jpg', 'imagem/shorts/short21.jpg'] },
-    { id: 'short-fit11', name: 'Short Saia Performance (Mod 3)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short22.jpg', 'imagem/shorts/short23.jpg'] },
-    { id: 'short-fit12', name: 'Short Ciclista Alto Giro (Mod 3)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short24.jpg', 'imagem/shorts/short25.jpg'] },
-    { id: 'short-fit13', name: 'Short Fitness Básico (Preto Mod 4)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short26.jpg', 'imagem/shorts/short27.jpg'] },
-    { id: 'short-fit14', name: 'Short Fitness Básico (Azul Mod 4)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short28.jpg', 'imagem/shorts/short29.jpg'] },
-    { id: 'short-fit15', name: 'Short Saia Performance (Mod 4)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short30.jpg', 'imagem/shorts/short31.jpg'] },
-    { id: 'short-fit16', name: 'Short Ciclista Alto Giro (Mod 4)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short32.jpg', 'imagem/shorts/short33.jpg'] },
-    { id: 'short-fit17', name: 'Short Fitness Básico (Preto Mod 5)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short34.jpg', 'imagem/shorts/short35.jpg'] },
-    { id: 'short-fit18', name: 'Short Fitness Básico (Azul Mod 5)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short36.jpg', 'imagem/shorts/short37.jpg'] },
-    { id: 'short-fit19', name: 'Short Saia Performance (Mod 5)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short38.jpg', 'imagem/shorts/short39.jpg'] },
-    { id: 'short-fit20', name: 'Short Ciclista Alto Giro (Mod 5)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short40.jpg', 'imagem/shorts/short41.jpg'] },
-    { id: 'short-fit21', name: 'Short Fitness Básico (Preto Mod 6)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short42.jpg', 'imagem/shorts/short43.jpg'] },
-    { id: 'short-fit22', name: 'Short Fitness Básico (Azul Mod 6)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short44.jpg', 'imagem/shorts/short45.jpg'] },
-    { id: 'short-fit23', name: 'Short Saia Performance (Mod 6)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short46.jpg', 'imagem/shorts/short47.jpg'] },
-    { id: 'short-fit24', name: 'Short Ciclista Alto Giro (Mod 6)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short48.jpg', 'imagem/shorts/short49.jpg'] },
-    { id: 'short-fit25', name: 'Short Fitness Básico (Preto Mod 7)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short50.jpg', 'imagem/shorts/short51.jpg'] },
-    { id: 'short-fit26', name: 'Short Fitness Básico (Azul Mod 7)', price: 89.90, category: 'shorts', images: ['imagem/shorts/short52.jpg', 'imagem/shorts/short53.jpg'] },
-    { id: 'short-fit27', name: 'Short Saia Performance (Mod 7)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short54.jpg', 'imagem/shorts/short55.jpg'] },
-    { id: 'short-fit28', name: 'Short Ciclista Alto Giro (Mod 7)', price: 95.00, category: 'shorts', images: ['imagem/shorts/short56.jpg', 'imagem/shorts/short57.jpg'] },
-    { id: 'short-fit29', name: 'Short Saia Performance (Mod 8)', price: 105.00, category: 'shorts', images: ['imagem/shorts/short58.jpg', 'imagem/shorts/short59.jpg'] }, // <-- FIM SHORTS
+    { id: 'short-fit01', name: 'Short Fitness Marinho', price: 149.90, category: 'shorts', images: ['imagem/shorts/short1.jpg', 'imagem/shorts/short3.jpg'] },
+    { id: 'short-fit02', name: 'Short Power Preto', price: 140.90, category: 'shorts', images: ['imagem/shorts/short4.jpg', 'imagem/shorts/short5.jpg'] },
+    { id: 'short-fit03', name: 'Short Power Vinho ', price: 140.90, category: 'shorts', images: ['imagem/shorts/short6.jpg', 'imagem/shorts/short7.jpg'] },
+    { id: 'short-fit04', name: 'Short Ciclista Preto Lista Colorido', price: 160.00, category: 'shorts', images: ['imagem/shorts/short8.jpg', 'imagem/shorts/short9.jpg'] },
+    { id: 'short-fit05', name: 'Short Curve Rosa', price: 139.90, category: 'shorts', images: ['imagem/shorts/short10.jpg', 'imagem/shorts/short11.jpg'] },
+    { id: 'short-fit06', name: 'Short Moving Marrom', price: 155.90, category: 'shorts', images: ['imagem/shorts/short12.jpg', 'imagem/shorts/short13.jpg'] },
+    { id: 'short-fit07', name: 'Short Runner Lilas', price: 140.00, category: 'shorts', images: ['imagem/shorts/short14.jpg', 'imagem/shorts/short15.jpg'] },
+    { id: 'short-fit08', name: 'Short Runner Bege', price: 140.00, category: 'shorts', images: ['imagem/shorts/short16.jpg', 'imagem/shorts/short17.jpg'] },
+    { id: 'short-fit09', name: 'Short Club Preto', price: 140.00, category: 'shorts', images: ['imagem/shorts/short18.jpg', 'imagem/shorts/short19.jpg'] },
+    { id: 'short-fit10', name: 'Short Club Bege', price: 140.00, category: 'shorts', images: ['imagem/shorts/short20.jpg', 'imagem/shorts/short21.jpg'] },
+    { id: 'short-fit11', name: 'Short Power', price: 140.90, category: 'shorts', images: ['imagem/shorts/short22.jpg', 'imagem/shorts/short23.jpg'] },
+    { id: 'short-fit12', name: 'Short Fitnnes C/Bolso', price: 170.00, category: 'shorts', images: ['imagem/shorts/short24.jpg', 'imagem/shorts/short25.jpg'] },
+    { id: 'short-fit13', name: 'Short Azzure Vermelho', price: 140.90, category: 'shorts', images: ['imagem/shorts/short26.jpg', 'imagem/shorts/short27.jpg'] },
+    { id: 'short-fit14', name: 'Short Azzure Lilas', price: 140.90, category: 'shorts', images: ['imagem/shorts/short28.jpg', 'imagem/shorts/short29.jpg'] },
+    { id: 'short-fit15', name: 'Short Zaia', price: 135.00, category: 'shorts', images: ['imagem/shorts/short30.jpg', 'imagem/shorts/short31.jpg'] },
+    { id: 'short-fit16', name: 'Short Curver Bege', price: 139.90, category: 'shorts', images: ['imagem/shorts/short32.jpg', 'imagem/shorts/short33.jpg'] },
+    { id: 'short-fit17', name: 'Short Curver Rose', price: 139.90, category: 'shorts', images: ['imagem/shorts/short34.jpg', 'imagem/shorts/short35.jpg'] },
+    { id: 'short-fit18', name: 'Short Curver Preto', price: 140.00, category: 'shorts', images: ['imagem/shorts/short36.jpg', 'imagem/shorts/short37.jpg'] },
+    { id: 'short-fit19', name: 'Short Cintia Verde', price: 150.00, category: 'shorts', images: ['imagem/shorts/short38.jpg', 'imagem/shorts/short39.jpg'] },
+    { id: 'short-fit20', name: 'Short Curver Marrom Claro', price: 139.90, category: 'shorts', images: ['imagem/shorts/short40.jpg', 'imagem/shorts/short41.jpg'] },
+    { id: 'short-fit21', name: 'Short Fitnnes C/Bolso Preto', price: 170.00, category: 'shorts', images: ['imagem/shorts/short42.jpg', 'imagem/shorts/short43.jpg'] },
+    { id: 'short-fit22', name: 'Short Fitnnes C/Bolso Vinho', price: 170.00, category: 'shorts', images: ['imagem/shorts/short44.jpg', 'imagem/shorts/short45.jpg'] },
+    { id: 'short-fit23', name: 'Short Runner Preto', price: 140.00, category: 'shorts', images: ['imagem/shorts/short46.jpg', 'imagem/shorts/short47.jpg'] },
+    { id: 'short-fit24', name: 'Short Curver Bege Com Preto', price: 139.90, category: 'shorts', images: ['imagem/shorts/short48.jpg', 'imagem/shorts/short49.jpg'] },
+    { id: 'short-fit25', name: 'Short Azzure Azul', price: 140.90, category: 'shorts', images: ['imagem/shorts/short50.jpg', 'imagem/shorts/short51.jpg'] },
+    { id: 'short-fit26', name: 'Short Basiic Preto', price: 129.90, category: 'shorts', images: ['imagem/shorts/short52.jpg', 'imagem/shorts/short53.jpg'] },
+    { id: 'short-fit27', name: 'Short Fitness Vinho', price: 149.90, category: 'shorts', images: ['imagem/shorts/short54.jpg', 'imagem/shorts/short55.jpg'] },
+    { id: 'short-fit28', name: 'Short Fitness C/Bolso', price: 170.00, category: 'shorts', images: ['imagem/shorts/short56.jpg', 'imagem/shorts/short57.jpg'] },
+    { id: 'short-fit29', name: 'Short Zara', price: 140.00, category: 'shorts', images: ['imagem/shorts/short58.jpg', 'imagem/shorts/short59.jpg'] }, // <-- FIM SHORTS
 
     // --- CATEGORIA: MACAQUINHOS (16 itens) ---
-    { id: 'mac-01', name: 'Macaquinho Recorte Tule (Mod 1)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma1.jpg', 'imagem/macaquinhos/ma2.jpg', 'imagem/macaquinhos/ma3.jpg'] },
-    { id: 'mac-02', name: 'Macaquinho Estampado (Mod 1)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma4.jpg', 'imagem/macaquinhos/ma5.jpg', 'imagem/macaquinhos/ma6.jpg'] },
-    { id: 'mac-03', name: 'Macaquinho Recorte Tule (Mod 2)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma8.jpg', 'imagem/macaquinhos/ma7.jpg', 'imagem/macaquinhos/ma9.jpg'] },
-    { id: 'mac-04', name: 'Macaquinho Estampado (Mod 2)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma10.jpg', 'imagem/macaquinhos/ma11.jpg', 'imagem/macaquinhos/ma12.jpg'] },
-    { id: 'mac-05', name: 'Macaquinho Recorte Tule (Mod 3)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma13.jpg', 'imagem/macaquinhos/ma14.jpg', 'imagem/macaquinhos/ma15.jpg'] },
-    { id: 'mac-06', name: 'Macaquinho Estampado (Mod 3)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma16.jpg', 'imagem/macaquinhos/ma17.jpg', 'imagem/macaquinhos/ma18.jpg'] },
-    { id: 'mac-07', name: 'Macaquinho Recorte Tule (Mod 4)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma19.jpg', 'imagem/macaquinhos/ma20.jpg'] },
-    { id: 'mac-08', name: 'Macaquinho Estampado (Mod 4)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma21.jpg', 'imagem/macaquinhos/ma22.jpg'] },
-    { id: 'mac-09', name: 'Macaquinho Recorte Tule (Mod 5)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma23.jpg', 'imagem/macaquinhos/ma24.jpg'] },
-    { id: 'mac-10', name: 'Macaquinho Estampado (Mod 5)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma25.jpg', 'imagem/macaquinhos/ma26.jpg'] },
-    { id: 'mac-11', name: 'Macaquinho Recorte Tule (Mod 6)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma27.jpg', 'imagem/macaquinhos/ma28.jpg'] },
-    { id: 'mac-12', name: 'Macaquinho Estampado (Mod 6)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma29.jpg', 'imagem/macaquinhos/ma30.jpg'] },
-    { id: 'mac-13', name: 'Macaquinho Recorte Tule (Mod 7)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma31.jpg', 'imagem/macaquinhos/ma32.jpg'] },
-    { id: 'mac-14', name: 'Macaquinho Recorte Tule (Mod 8)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma33.jpg', 'imagem/macaquinhos/ma34.jpg', 'imagem/macaquinhos/ma35.jpg'] },
-    { id: 'mac-15', name: 'Macaquinho Estampado (Mod 8)', price: 210.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma36.jpg', 'imagem/macaquinhos/ma37.jpg', 'imagem/macaquinhos/ma39.jpg'] },
-    { id: 'mac-16', name: 'Macaquinho Recorte Tule (Mod 9)', price: 199.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma40.jpg', 'imagem/macaquinhos/ma41.jpg', 'imagem/macaquinhos/ma42.jpg'] }, // <-- FIM MACAQUINHOS
+    { id: 'mac-01', name: 'Macaquinho Back Azul Essencial', price: 289.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma1.jpg', 'imagem/macaquinhos/ma2.jpg', 'imagem/macaquinhos/ma3.jpg'] },
+    { id: 'mac-02', name: 'Macaquinho Lollipop Branco', price: 259.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma4.jpg', 'imagem/macaquinhos/ma5.jpg', 'imagem/macaquinhos/ma6.jpg'] },
+    { id: 'mac-03', name: 'Macaquinho Flawless Pocket', price: 255.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma8.jpg', 'imagem/macaquinhos/ma7.jpg', 'imagem/macaquinhos/ma9.jpg'] },
+    { id: 'mac-04', name: 'Macaquinho Lollipop Azul', price: 289.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma10.jpg', 'imagem/macaquinhos/ma11.jpg', 'imagem/macaquinhos/ma12.jpg'] },
+    { id: 'mac-05', name: 'Macaquinho Curver Pink', price: 259.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma13.jpg', 'imagem/macaquinhos/ma14.jpg', 'imagem/macaquinhos/ma15.jpg'] },
+    { id: 'mac-06', name: 'Macaquinho Lollipop Rosa', price: 259.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma16.jpg', 'imagem/macaquinhos/ma17.jpg', 'imagem/macaquinhos/ma18.jpg'] },
+    { id: 'mac-07', name: 'Macaquinho Candy', price: 240.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma19.jpg', 'imagem/macaquinhos/ma20.jpg'] },
+    { id: 'mac-08', name: 'Macaquinho Summer', price: 220.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma21.jpg', 'imagem/macaquinhos/ma22.jpg'] },
+    { id: 'mac-09', name: 'Macaquinho Soulmate', price: 219.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma23.jpg', 'imagem/macaquinhos/ma24.jpg'] },
+    { id: 'mac-10', name: 'Macaquinho Soulmate Roxo', price: 219.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma25.jpg', 'imagem/macaquinhos/ma26.jpg'] },
+    { id: 'mac-11', name: 'Macaquinho Ennergy', price: 229.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma27.jpg', 'imagem/macaquinhos/ma28.jpg'] },
+    { id: 'mac-12', name: 'Macaquinho Ennergy', price: 229.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma29.jpg', 'imagem/macaquinhos/ma30.jpg'] },
+    { id: 'mac-13', name: 'Macaquinho Moving', price: 240.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma31.jpg', 'imagem/macaquinhos/ma32.jpg'] },
+    { id: 'mac-14', name: 'Macaquinho Speed', price: 229.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma33.jpg', 'imagem/macaquinhos/ma34.jpg', 'imagem/macaquinhos/ma35.jpg'] },
+    { id: 'mac-15', name: 'Macaquinho Essencial', price: 280.00, category: 'macaquinhos', images: ['imagem/macaquinhos/ma36.jpg', 'imagem/macaquinhos/ma37.jpg', 'imagem/macaquinhos/ma39.jpg'] },
+    { id: 'mac-16', name: 'Macaquinho Sweet', price: 259.90, category: 'macaquinhos', images: ['imagem/macaquinhos/ma40.jpg', 'imagem/macaquinhos/ma41.jpg', 'imagem/macaquinhos/ma42.jpg'] }, // <-- FIM MACAQUINHOS
 
 
     // --- CATEGORIA: CONJUNTOS DE CALÇA (8 itens) ---
@@ -116,44 +116,44 @@ const PRODUCTS_DATA = [   // --- CATEGORIA: TOPS (IDs ÚNICOS) ---
     // --- CATEGORIA: CONJUNTOS (Subcategorias) ---
 
 
-    { id: 'conj-calca-01', name: 'Conjunto Top e Legging Recorte (Mod. 1)', price: 259.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c1.jpg', 'imagem/conjuntos/c2.jpg', 'imagem/conjuntos/c3.jpg'] },
-    { id: 'conj-calca-02', name: 'Conjunto Monocromático (Mod. 2)', price: 240.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c4.jpg', 'imagem/conjuntos/c5.jpg', 'imagem/conjuntos/c6.jpg'] },
-    { id: 'conj-calca-01', name: 'Conjunto Top e Short Ciclista (Mod. 1)', price: 189.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c7.jpg', 'imagem/conjuntos/c8.jpg', 'imagem/conjuntos/c9.jpg'] },
-    { id: 'conj-calca-02-A', name: 'Conjunto Recorte com Tule (Mod. 2)', price: 195.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c10.jpg', 'imagem/conjuntos/c11.jpg', 'imagem/conjuntos/c12.jpg'] },
-    { id: 'conj-calca-03-B', name: 'Conjunto Alto Impacto (Mod. 3)', price: 269.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c13.jpg', 'imagem/conjuntos/c14.jpg', 'imagem/conjuntos/c15.jpg'] },
-    { id: 'conj-calca-04-B', name: 'Conjunto Detalhe Tela (Mod. 4)', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c16.jpg', 'imagem/conjuntos/c17.jpg', 'imagem/conjuntos/c18.jpg'] },
-    { id: 'conj-calca-03-B', name: 'Conjunto Top Alça Fina e Short (Mod. 3)', price: 179.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c19.jpg', 'imagem/conjuntos/c20.jpg', 'imagem/conjuntos/c21.jpg'] },
-    { id: 'conj-calca-04-B', name: 'Conjunto Estampado com Short (Mod. 4)', price: 205.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c22.jpg', 'imagem/conjuntos/c23.jpg', 'imagem/conjuntos/c24.jpg'] },
-    { id: 'conj-calca-05-A', name: 'Conjunto Performance com Calça (Mod. 5)', price: 275.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c25.jpg', 'imagem/conjuntos/c26.jpg', 'imagem/conjuntos/c27.jpg'] },
-    { id: 'conj-calca-06-A', name: 'Conjunto Listrado (Mod. 6)', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c28.jpg', 'imagem/conjuntos/c29.jpg', 'imagem/conjuntos/c30.jpg'] },
-    { id: 'conj-calca-05-B', name: 'Conjunto Short Saia e Top (Mod. 5)', price: 199.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c31.jpg', 'imagem/conjuntos/c32.jpg', 'imagem/conjuntos/c33.jpg'] },
-    { id: 'conj-calca-06-B', name: 'Conjunto Ciclista Liso (Mod. 6)', price: 185.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c34.jpg', 'imagem/conjuntos/c35.jpg', 'imagem/conjuntos/c36.jpg'] },
-    { id: 'conj-calca-07-A', name: 'Conjunto Recorte Duplo (Mod. 7)', price: 289.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c37.jpg', 'imagem/conjuntos/c38.jpg', 'imagem/conjuntos/c39.jpg'] },
-    { id: 'conj-calca-08-A', name: 'Conjunto Estampado c/ Calça (Mod. 8)', price: 265.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c40.jpg', 'imagem/conjuntos/c41.jpg', 'imagem/conjuntos/c42.jpg'] },
-    { id: 'conj-calca-07-B', name: 'Conjunto Top Decote V e Short (Mod. 7)', price: 209.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c43.jpg', 'imagem/conjuntos/c44.jpg', 'imagem/conjuntos/c45.jpg'] },
-    { id: 'conj-calca-08-B', name: 'Conjunto Compressão com Short (Mod. 8)', price: 215.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c46.jpg', 'imagem/conjuntos/c47.jpg', 'imagem/conjuntos/c48.jpg'] },
+    { id: 'conj-calca-01', name: 'Conjunto legging Speed Bege ', price: 269.90, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c1.jpg', 'imagem/conjuntos/c2.jpg', 'imagem/conjuntos/c3.jpg'] },
+    { id: 'conj-calca-02', name: 'Conjunto legging Monocromático Preto', price: 280.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c4.jpg', 'imagem/conjuntos/c5.jpg', 'imagem/conjuntos/c6.jpg'] },
+    { id: 'conj-calca-01', name: 'Conjunto legging Monocromático Bege', price: 280.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c7.jpg', 'imagem/conjuntos/c8.jpg', 'imagem/conjuntos/c9.jpg'] },
+    { id: 'conj-calca-02-A', name: 'Conjunto legging Soulmate Preto', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c10.jpg', 'imagem/conjuntos/c11.jpg', 'imagem/conjuntos/c12.jpg'] },
+    { id: 'conj-calca-03-B', name: 'Conjunto legging Soulmate Bege Escuro', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c13.jpg', 'imagem/conjuntos/c14.jpg', 'imagem/conjuntos/c15.jpg'] },
+    { id: 'conj-calca-04-B', name: 'Conjunto legging Moving Bege', price: 250.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c16.jpg', 'imagem/conjuntos/c17.jpg', 'imagem/conjuntos/c18.jpg'] },
+    { id: 'conj-calca-03-B', name: 'Conjunto legging Ennergy Preto', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c19.jpg', 'imagem/conjuntos/c20.jpg', 'imagem/conjuntos/c21.jpg'] },
+    { id: 'conj-calca-04-B', name: 'Conjunto legging Summer Ciano', price: 280.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c22.jpg', 'imagem/conjuntos/c23.jpg', 'imagem/conjuntos/c24.jpg'] },
+    { id: 'conj-calca-05-A', name: 'Conjunto legging Candy Preto', price: 275.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c25.jpg', 'imagem/conjuntos/c26.jpg', 'imagem/conjuntos/c27.jpg'] },
+    { id: 'conj-calca-06-A', name: 'Conjunto legging Lucy Vinho', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c28.jpg', 'imagem/conjuntos/c29.jpg', 'imagem/conjuntos/c30.jpg'] },
+    { id: 'conj-calca-05-B', name: 'Conjunto legging Lucy preto', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c31.jpg', 'imagem/conjuntos/c32.jpg', 'imagem/conjuntos/c33.jpg'] },
+    { id: 'conj-calca-06-B', name: 'Conjunto legging Lucy Azul', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c34.jpg', 'imagem/conjuntos/c35.jpg', 'imagem/conjuntos/c36.jpg'] },
+    { id: 'conj-calca-07-A', name: 'Conjunto legging Lucy Bege', price: 245.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c37.jpg', 'imagem/conjuntos/c38.jpg', 'imagem/conjuntos/c39.jpg'] },
+    { id: 'conj-calca-08-A', name: 'Conjunto legging Lucy Rose', price: 265.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c40.jpg', 'imagem/conjuntos/c41.jpg', 'imagem/conjuntos/c42.jpg'] },
+    { id: 'conj-calca-07-B', name: 'Conjunto legging Sereia Bege', price: 290.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c43.jpg', 'imagem/conjuntos/c44.jpg', 'imagem/conjuntos/c45.jpg'] },
+    { id: 'conj-calca-08-B', name: 'Conjunto legging Sweet Azul', price: 255.00, category: 'conjuntos', subcategory: 'conjuntos-calca', images: ['imagem/conjuntos/c46.jpg', 'imagem/conjuntos/c47.jpg', 'imagem/conjuntos/c48.jpg'] },
 
     // --- CATEGORIA: NOVOS CONJUNTOS DE SHORT (s1 a s48) ---
-    { id: 'conj-short-09', name: 'Conjunto Top e Short Recorte (Mod. 9)', price: 259.90, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s1.jpg', 'imagem/conjunto/s2.jpg', 'imagem/conjunto/s3.jpg'] },
-    { id: 'conj-short-10', name: 'Conjunto Monocromático (Mod. 10)', price: 240.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s4.jpg', 'imagem/conjunto/s5.jpg', 'imagem/conjunto/s6.jpg'] }, // Caminho corrigido para 'conjunto/s6.jpg'
-    { id: 'conj-short-11', name: 'Conjunto Ciclista Alto Giro (Mod. 11)', price: 220.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s7.jpg', 'imagem/conjunto/s8.jpg', 'imagem/conjunto/s9.jpg'] },
-    { id: 'conj-short-12', name: 'Conjunto Estampa Geométrica (Mod. 12)', price: 235.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s10.jpg', 'imagem/conjunto/s11.jpg', 'imagem/conjunto/s12.jpg'] },
-    { id: 'conj-short-13', name: 'Conjunto Top Cruzado e Short (Mod. 13)', price: 265.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s13.jpg', 'imagem/conjunto/s14.jpg', 'imagem/conjunto/s15.jpg'] },
-    { id: 'conj-short-14', name: 'Conjunto Básico Detalhe Tule (Mod. 14)', price: 245.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s16.jpg', 'imagem/conjunto/s17.jpg', 'imagem/conjunto/s18.jpg'] },
-    { id: 'conj-short-15', name: 'Conjunto Short Saia Performance (Mod. 15)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s19.jpg', 'imagem/conjunto/s20.jpg', 'imagem/conjunto/s21.jpg'] },
-    { id: 'conj-short-16', name: 'Conjunto Detalhe Lateral (Mod. 16)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s22.jpg', 'imagem/conjunto/s23.jpg', 'imagem/conjunto/s24.jpg'] },
-    { id: 'conj-short-17', name: 'Conjunto Short Estampado Fino (Mod. 17)', price: 239.90, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s25.jpg', 'imagem/conjunto/s26.jpg', 'imagem/conjunto/s27.jpg'] },
-    { id: 'conj-short-18', name: 'Conjunto Short Tonal (Mod. 18)', price: 225.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s28.jpg', 'imagem/conjunto/s29.jpg', 'imagem/conjunto/s30.jpg'] },
-    { id: 'conj-short-19', name: 'Conjunto Short Recorte Duplo (Mod. 19)', price: 250.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s31.jpg', 'imagem/conjunto/s32.jpg', 'imagem/conjunto/s33.jpg'] },
-    { id: 'conj-short-20', name: 'Conjunto Short Saia Esportivo (Mod. 20)', price: 260.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s34.jpg', 'imagem/conjunto/s35.jpg', 'imagem/conjunto/s36.jpg'] },
-    { id: 'conj-short-21', name: 'Conjunto Short Alto Contraste (Mod. 21)', price: 275.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s37.jpg', 'imagem/conjunto/s38.jpg', 'imagem/conjunto/s39.jpg'] },
-    { id: 'conj-short-22', name: 'Conjunto Short Texturizado (Mod. 22)', price: 280.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s40.jpg', 'imagem/conjunto/s41.jpg', 'imagem/conjunto/s42.jpg'] },
-    { id: 'conj-short-23', name: 'Conjunto Short Liso Clássico (Mod. 23)', price: 230.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s43.jpg', 'imagem/conjunto/s44.jpg', 'imagem/conjunto/s45.jpg'] },
-    { id: 'conj-short-24', name: 'Conjunto Short Performance (Mod. 24)', price: 245.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s46.jpg', 'imagem/conjunto/s47.jpg', 'imagem/conjunto/s48.jpg'] },
-    { id: 'conj-short-25A', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s49.jpg', 'imagem/conjunto/s50.jpg', 'imagem/conjunto/s51.jpg'] },
-    { id: 'conj-short-26A', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s52.jpg', 'imagem/conjunto/s53.jpg', 'imagem/conjunto/s54.jpg'] },
-    { id: 'conj-short-25B', name: 'Conjunto Top Alça Dupla (Mod. 25)', price: 255.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s55.jpg', 'imagem/conjunto/s56.jpg', 'imagem/conjunto/s57.jpg'] },
-    { id: 'conj-short-26B', name: 'Conjunto Short Saia C/ Bolso (Mod. 26)', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s58.jpg', 'imagem/conjunto/s59.jpg', 'imagem/conjunto/s60.jpg'] },
+    { id: 'conj-short-09', name: 'Conjunto short Speed Preto ', price: 279.90, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s1.jpg', 'imagem/conjunto/s2.jpg', 'imagem/conjunto/s3.jpg'] },
+    { id: 'conj-short-10', name: 'Conjunto short Soulmate Vinho', price: 280.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s4.jpg', 'imagem/conjunto/s5.jpg', 'imagem/conjunto/s6.jpg'] }, // Caminho corrigido para 'conjunto/s6.jpg'
+    { id: 'conj-short-11', name: 'Conjunto short Sereia Preto', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s7.jpg', 'imagem/conjunto/s8.jpg', 'imagem/conjunto/s9.jpg'] },
+    { id: 'conj-short-12', name: 'Conjunto short Monocromatico', price: 269.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s10.jpg', 'imagem/conjunto/s11.jpg', 'imagem/conjunto/s12.jpg'] },
+    { id: 'conj-short-13', name: 'Conjunto short Lucy Bege', price: 265.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s13.jpg', 'imagem/conjunto/s14.jpg', 'imagem/conjunto/s15.jpg'] },
+    { id: 'conj-short-14', name: 'Conjunto short Stella Cinza', price: 250.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s16.jpg', 'imagem/conjunto/s17.jpg', 'imagem/conjunto/s18.jpg'] },
+    { id: 'conj-short-15', name: 'Conjunto short Sereia Vinho', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s19.jpg', 'imagem/conjunto/s20.jpg', 'imagem/conjunto/s21.jpg'] },
+    { id: 'conj-short-16', name: 'Conjunto short Moving Preto', price: 260.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s22.jpg', 'imagem/conjunto/s23.jpg', 'imagem/conjunto/s24.jpg'] },
+    { id: 'conj-short-17', name: 'Conjunto short Moving Branco ', price: 249.90, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s25.jpg', 'imagem/conjunto/s26.jpg', 'imagem/conjunto/s27.jpg'] },
+    { id: 'conj-short-18', name: 'Conjunto short Sweet Azul', price: 249.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s28.jpg', 'imagem/conjunto/s29.jpg', 'imagem/conjunto/s30.jpg'] },
+    { id: 'conj-short-19', name: 'Conjunto short Soul Vinho', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s31.jpg', 'imagem/conjunto/s32.jpg', 'imagem/conjunto/s33.jpg'] },
+    { id: 'conj-short-20', name: 'Conjunto short Curver Azul', price: 280.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s34.jpg', 'imagem/conjunto/s35.jpg', 'imagem/conjunto/s36.jpg'] },
+    { id: 'conj-short-21', name: 'Conjunto short Modal Rosa', price: 275.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s37.jpg', 'imagem/conjunto/s38.jpg', 'imagem/conjunto/s39.jpg'] },
+    { id: 'conj-short-22', name: 'Conjunto short Match Ciano ', price: 280.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s40.jpg', 'imagem/conjunto/s41.jpg', 'imagem/conjunto/s42.jpg'] },
+    { id: 'conj-short-23', name: 'Conjunto short Modal Vermelho', price: 275.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s43.jpg', 'imagem/conjunto/s44.jpg', 'imagem/conjunto/s45.jpg'] },
+    { id: 'conj-short-24', name: 'Conjunto short Match Preto', price: 290.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s46.jpg', 'imagem/conjunto/s47.jpg', 'imagem/conjunto/s48.jpg'] },
+    { id: 'conj-short-25A', name: 'Conjunto short Match Bege', price: 290.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s49.jpg', 'imagem/conjunto/s50.jpg', 'imagem/conjunto/s51.jpg'] },
+    { id: 'conj-short-26A', name: 'Conjunto short Sereia Preto ', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s52.jpg', 'imagem/conjunto/s53.jpg', 'imagem/conjunto/s54.jpg'] },
+    { id: 'conj-short-25B', name: 'Conjunto short Sereia Rosa', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s55.jpg', 'imagem/conjunto/s56.jpg', 'imagem/conjunto/s57.jpg'] },
+    { id: 'conj-short-26B', name: 'Conjunto short Sweet Branco/azul', price: 270.00, category: 'conjuntos', subcategory: 'conjunto-short', images: ['imagem/conjunto/s58.jpg', 'imagem/conjunto/s59.jpg', 'imagem/conjunto/s60.jpg'] },
 
 
 ];
@@ -332,31 +332,34 @@ function renderProductsPage(maxPriceFilter = null, sortBy = 'default', productsT
 
 
             const productHTML = `
-                <div class="produto" data-product-id="${product.id}"> 
-                         <div class="product-slider-container">
-                            <div class="product-image-slider">
-                                ${imagesHtml}
-                            </div>
-                            <button class="product-slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                            <button class="product-slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                            <div class="product-slider-dots">
+            <div class="produto" data-product-id="${product.id}"> 
+
+            <div class="product-link-overlay">
+            <div class="product-slider-container">
+            <div class="product-image-slider">
+                 ${imagesHtml}
+            </div>
+                <button class="product-slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="product-slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="product-slider-dots">
                                 ${dotsHtml}
                             </div>
                         </div>
-                    </a>
-                    <div class="produto-info">
-                        <h3>${product.name}</h3>
-                        </a>
-                        <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
-                        <button class="btn-add-to-cart" 
-                                data-id="${product.id}" 
-                                data-name="${product.name}" 
-                                data-price="${product.price}" 
-                                data-image="${product.images[0] || ''}"> 
-                            Adicionar ao Carrinho
-                        </button>
+                    
+             <div class="produto-info">
+                <h3>${product.name}</h3>
+        <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+            </div>
+            </div>
+                <button class="btn-add-to-cart" 
+                     data-id="${product.id}" 
+                     data-name="${product.name}" 
+                     data-price="${product.price}" 
+                     data-image="${product.images[0] || ''}"> 
+                     Adicionar ao Carrinho
+                    </button>
                     </div>
-                </div>
+               
             `;
             productGridEl.insertAdjacentHTML('beforeend', productHTML);
         });
@@ -678,7 +681,7 @@ function renderRelatedProducts(currentProduct) {
             // FIM DA ADIÇÃO
             const productHTML = `
     <div class="produto" data-product-id="${product.id}"> 
-        <a href="detalhe.html?id=${product.id}">
+        
             <div class="product-slider-container">
                 <div class="product-image-slider">
                     ${imagesHtml}
@@ -689,11 +692,11 @@ function renderRelatedProducts(currentProduct) {
                     ${dotsHtml}
                 </div>
             </div>
-        </a>
+        
         <div class="produto-info">
-            <a href="detalhe.html?id=${product.id}">
+            
                 <h3>${product.name}</h3>
-            </a>
+            
             <p>R$ ${product.price.toFixed(2).replace('.', ',')}</p>
             
             <div class="input-group-listagem">
@@ -795,7 +798,103 @@ function renderDetailPage() {
     attachCartButtonEvents();
     // Você precisará criar uma função específica para inicializar o slider de detalhes, se houver
 }
+/* ============================================================
+    2.2. LÓGICA DO MODAL DE COMPRA RÁPIDA (QUICK VIEW)
+    ============================================================ */
 
+/**
+ * Preenche e exibe o modal de compra rápida.
+ * @param {string} productId - O ID do produto a ser exibido.
+ */
+function renderQuickViewModal(productId) {
+    const product = findProductById(productId);
+    const modalArea = document.getElementById('modal-product-detail-area');
+    const modal = document.getElementById('quick-view-modal');
+    const detailsLink = document.getElementById('modal-full-details-link');
+
+    if (!product || !modal || !modalArea) return;
+
+    // Constrói o HTML com o layout de duas colunas (imagem + info)
+    const modalHTML = `
+        <div class="product-detail-card">
+            
+            <div class="detail-images">
+                <img src="${product.images[0]}" alt="${product.name}" style="width: 100%; object-fit: cover; border-radius: 6px;">
+            </div>
+            
+            <div class="detail-info">
+                <h1>${product.name}</h1>
+                <p class="detail-price">R$ ${product.price.toFixed(2).replace('.', ',')}</p>
+                
+                <div class="detail-description">
+                    <h3>Descrição (Rápida)</h3>
+                    <p>Feito com tecido de alta compressão. Ideal para treinos e conforto. Possui proteção UV e tecnologia dry fit.</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="modal-size">Tamanho:</label>
+                    <select id="modal-size" required>
+                        <option value="SELECIONE">Selecione</option>
+                        <option value="P">P</option>
+                        <option value="M">M</option>
+                        <option value="G">G</option>
+                    </select>
+                </div>
+                
+                <button class="btn-add-to-cart detail-btn btn-login" 
+                        id="modal-add-to-cart-btn"
+                        data-id="${product.id}" 
+                        data-name="${product.name}" 
+                        data-price="${product.price}" 
+                        data-image="${product.images[0] || ''}"> 
+                    SELECIONE TODAS AS OPÇÕES
+                </button>
+            </div>
+        </div>
+    `;
+
+    modalArea.innerHTML = modalHTML;
+
+    // Atualiza o link "Ver detalhes"
+    detailsLink.href = `detalhe.html?id=${product.id}`;
+
+    // 1. Exibe o modal
+    modal.classList.add('is-open');
+    // 2. Reanexa o evento de carrinho (para usar o seletor #modal-size)
+    attachCartButtonEvents();
+}
+
+// Lógica de Fechamento do Modal
+function setupModalEvents() {
+    const modal = document.getElementById('quick-view-modal');
+    const closeBtn = document.getElementById('modal-close-btn');
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            if (modal) modal.classList.remove('is-open');
+        });
+    }
+
+    // Fechar ao clicar fora (backdrop)
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('is-open');
+            }
+        });
+    }
+}
+
+// Função que anexa os cliques nos novos botões
+function attachQuickViewEvents() {
+    document.querySelectorAll('.quick-view-btn').forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            const productId = event.currentTarget.dataset.id;
+            renderQuickViewModal(productId);
+        });
+    });
+}
 
 /* ============================================================
     3. LÓGICA DE LOGIN, CADASTRO E RECUPERAÇÃO
@@ -1068,6 +1167,15 @@ document.addEventListener("DOMContentLoaded", () => {
     // Assume que o container principal de detalhes tem o ID 'product-detail-container'
     if (document.getElementById('product-detail-container')) {
         renderDetailPage();
+    }
+    // Lógica específica para a página de Produtos/Home
+    if (document.querySelector('.produtos-destaque')) {  
+        attachCartButtonEvents();
+        initProductSliders();
+
+        // NOVO: Inicializa a lógica do Modal de Compra Rápida
+        setupModalEvents();
+        attachQuickViewEvents();
     }
     /* ============================================================
     6. LÓGICA DE BUSCA
